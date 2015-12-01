@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <TextView
+        style="@style/set_title_text_view"
+        android:text="加入方式" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_sub_bg_color" >
+
+        <TextView
+            style="@style/set_context_text_view"
+            android:layout_centerVertical="true"
+            android:text="允许任何人" />
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/sys_default_margin_right_size"
+            android:src="@drawable/select_icon" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+    <RelativeLayout
+        android:id="@+id/rl_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_sub_bg_color" >
+
+        <TextView
+            style="@style/set_context_text_view"
+            android:layout_centerVertical="true"
+            android:text="需要验证信息" />
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/sys_default_margin_right_size"
+            android:src="@drawable/select_icon"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+</LinearLayout>

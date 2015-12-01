@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top_image" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sys_main_bg_color"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_me_info"
+                style="@style/set_layout_view"
+                 >
+
+                <com.geihoo.view.CustomImageView
+                    android:id="@+id/civ_image"
+                    android:layout_width="@dimen/icon_medium_size"
+                    android:layout_height="@dimen/icon_medium_size"
+                    zhy:src="@drawable/touxiang"
+                    zhy:type="ring" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/civ_image"
+                    android:text="小女子"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <View
+                style="@style/dividing_view_fill"
+                android:layout_marginTop="@dimen/me_margin_top_size" />
+
+            <RelativeLayout
+                android:id="@+id/rl_me_home"
+                style="@style/set_layout_view" >
+
+                <ImageView
+                    android:id="@+id/iv_image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_image1"
+                    android:text="我的主页"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_me_message"
+                style="@style/set_layout_view" >
+
+                <ImageView
+                    android:id="@+id/iv_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_mes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_image2"
+                    android:text="我的消息"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+
+
+            <View style="@style/dividing_view_fill" />
+
+            <View
+                style="@style/dividing_view"
+                android:layout_marginTop="@dimen/me_margin_top_size" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_me_collect"
+                style="@style/set_layout_view" >
+
+                <ImageView
+                    android:id="@+id/iv_image5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_collect" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_image5"
+                    android:text="我的收藏"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+			<View style="@style/dividing_view_fill" />
+            <RelativeLayout
+                android:id="@+id/rl_me_activity"
+                style="@style/set_layout_view" >
+
+                <ImageView
+                    android:id="@+id/iv_image5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_friend" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_image5"
+                    android:text="我的活动"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_me_set"
+                style="@style/set_layout_view" >
+
+                <ImageView
+                    android:id="@+id/iv_image6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_set" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_image6"
+                    android:text="设置"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/list_chevron" />
+            </RelativeLayout>
+            
+            <View style="@style/dividing_view_fill" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

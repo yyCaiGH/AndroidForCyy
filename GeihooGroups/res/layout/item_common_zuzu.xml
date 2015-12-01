@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"  
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@id/drag_handle"
+        android:layout_width="@dimen/contacts_icon_size"
+        android:layout_height="@dimen/contacts_icon_size"
+        android:background="@drawable/drag" />
+
+    <com.geihoo.view.CustomImageView
+        android:id="@+id/civ_zuzu_image"
+        android:layout_width="@dimen/contacts_icon_size"
+        android:layout_height="@dimen/contacts_icon_size"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/drag_handle"
+        zhy:src="@drawable/default_bg"
+        zhy:type="ring" />
+
+    <TextView
+        android:id="@+id/tv_zuzu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/civ_zuzu_image"
+        android:layout_centerVertical="true"
+        android:text="name" />
+
+    <ImageView
+        android:id="@id/click_remove"
+        android:layout_width="@dimen/contacts_icon_size"
+        android:layout_height="@dimen/contacts_icon_size"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_move_common" />
+
+</RelativeLayout>

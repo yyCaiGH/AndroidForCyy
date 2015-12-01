@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geihoo.groups"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/gh_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.geihoo.activity.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+        <activity 
+            android:name="com.geihoo.activity.MainTabActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" >
+          <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.geihoo.activity.SocietyMainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.geihoo.activity.CreateSocietyActivity" >
+        </activity>
+        <activity android:name="com.geihoo.activity.MemberActivity" >
+        </activity>
+        <activity android:name="com.geihoo.activity.SignupLoginActivity" >
+        </activity>
+        <activity android:name="com.geihoo.activity.SlidingMenuActivity"></activity>
+        <activity android:name="com.geihoo.activity.MeActivity"/>
+        <activity android:name="com.geihoo.activity.AddFriendsActivity"></activity>
+        <activity android:name="com.geihoo.activity.SendMessageActivity"></activity>
+        <activity android:name="com.geihoo.activity.SendPicActivity"></activity>
+        <activity android:name="com.geihoo.activity.AlbumActivity"></activity>
+        <activity android:name="com.geihoo.activity.SocietySettingsActivity"></activity>
+        <activity android:name="com.geihoo.activity.SocietyDocumentActivity"></activity>
+        <activity android:name="com.geihoo.activity.FriendCircleActivity"></activity>
+    </application>
+
+</manifest>

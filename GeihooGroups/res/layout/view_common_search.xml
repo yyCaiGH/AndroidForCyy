@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_sub_bg_color"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+     >
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/search_bg"
+        android:clickable="true"
+        android:drawableLeft="@drawable/search"
+        android:drawablePadding="7dp"
+        android:hint="搜索族族"
+        android:paddingBottom="4dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="4dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_search_cancel"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+       	android:padding="5dp"
+       	android:layout_marginLeft="5dp"
+        android:text="取消"
+        android:textColor="@color/sys_main_color"
+        android:textSize="13sp" />
+
+</LinearLayout>

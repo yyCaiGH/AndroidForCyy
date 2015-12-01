@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <ListView
+        android:id="@+id/postListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/grey_light"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:scrollbars="none" /> 
+
+    <RelativeLayout
+        android:id="@+id/rl_top_suspension"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="8dp" >
+
+        <ImageView
+            android:id="@+id/iv_zuzu_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/x_icon" />
+
+        <TextView
+            android:id="@+id/society_name_sus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="旅游"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_group_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_top_suspension"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/send_message_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:background="@color/clear_color"
+            android:drawableLeft="@drawable/post_message_icon"
+            android:gravity="center"
+            android:text="@string/post_message"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/send_pic_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@color/clear_color"
+            android:drawableLeft="@drawable/post_pic_icon"
+            android:gravity="center"
+            android:text="@string/post_pic"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>

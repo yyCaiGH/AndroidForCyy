@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.geihoo.view.ElasticityScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <com.geihoo.view.CustomImageView
+                android:id="@+id/civ_image"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                zhy:src="@drawable/touxiang"
+                zhy:type="ring" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="小女子"
+                android:textColor="@color/sys_main_text_color"
+                android:textSize="@dimen/set_big_text_size_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加入5族族  | 管理5族族  | 创建1族族"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/sys_main_text_color"
+                android:textSize="@dimen/set_big_text_size" />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+
+        <LinearLayout
+            android:id="@+id/ll_push_tz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sys_sub_bg_color"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/set_context_text_view"
+                android:text="推送通知"
+                />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sys_sub_bg_color"
+            android:padding="5dp" >
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textOff="off"
+                android:textOn="on" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/sys_main_text_color"
+                android:text="应用内置音效"
+                android:textSize="@dimen/set_big_text_size" />
+        </RelativeLayout>
+
+        <View style="@style/dividing_view_fill" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="加族族设置(管理员，族主)" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <ListView
+                android:id="@+id/lv_groups_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sys_sub_bg_color"
+                android:scrollbars="none"
+                 >
+            </ListView>
+
+            <View style="@style/dividing_view" />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="族族发帖通知" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <ListView
+                android:id="@+id/lv_groups_notice_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sys_sub_bg_color"
+                android:scrollbars="none"
+                >
+            </ListView>
+
+            <View style="@style/dividing_view_fill" />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+		<TextView 
+		    android:layout_width="match_parent"
+            android:layout_height="80dp"
+		    />
+    </LinearLayout>
+
+</com.geihoo.view.ElasticityScrollView>

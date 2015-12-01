@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/iv_add_zz_bg"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@drawable/default_bg" />
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_add_zz_tx"
+            android:layout_width="@dimen/icon_zz_head_set_size"
+            android:layout_height="@dimen/icon_zz_head_set_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            zhy:src="@drawable/icon_zz_tx"
+            zhy:type="ring" />
+
+        <EditText
+            android:id="@+id/et_society_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/civ_add_zz_tx"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/et_border_bg"
+            android:ems="9"
+            android:hint="族族名称"
+            android:padding="6dp"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_society_name"
+            android:layout_margin="@dimen/sys_default_margin_left_size"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:checked="true"
+                android:gravity="center"
+                android:text="私密"
+                android:textColor="@color/sys_main_text_color"
+                android:textSize="@dimen/set_big_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:hint="只有成员能找到族族并查看发布内容。"
+                android:textSize="@dimen/set_big_text_size" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="公开"
+                android:textColor="@color/sys_main_text_color"
+                android:textSize="@dimen/set_big_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:hint="任何用户都能看到族族、成员和成员发帖。"
+                android:textSize="@dimen/set_big_text_size" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</ScrollView>

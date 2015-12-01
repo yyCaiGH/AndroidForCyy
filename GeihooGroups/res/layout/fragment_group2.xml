@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top_image" />
+
+    <include layout="@layout/view_common_search" />
+
+    <View style="@style/dividing_view" />
+
+    <com.geihoo.view.ElasticityScrollView
+        android:id="@+id/main_srcoll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sys_small_text_size_margin" >
+
+                <TextView
+                    android:id="@+id/tv_recent_seen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tips_friend_circle"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="@dimen/sys_small_text_size" />
+
+                <com.geihoo.view.MyGridView
+                    android:id="@+id/mgv_friend_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_recent_seen"
+                    android:layout_marginTop="20dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="10dp" >
+                </com.geihoo.view.MyGridView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <View style="@style/dividing_view" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/sys_small_text_size_margin"
+                        android:text="我的族族（ 22 ）"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:textSize="@dimen/sys_small_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:text="编辑"
+                        android:textColor="@color/sys_sub_color"
+                        android:textSize="@dimen/sys_small_text_size" />
+                </RelativeLayout>
+
+                <View style="@style/dividing_view" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_cyzz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/sys_small_text_size_margin"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="常用( 7 )"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:textSize="@dimen/sys_small_text_size" />
+
+                    <View
+                        android:layout_width="0.3dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:background="@color/dividing_line_color" />
+
+                    <TextView
+                        android:id="@+id/tv_smzz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/sys_small_text_size_margin"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="私密( 8 )"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/sys_small_text_size" />
+
+                    <View
+                        android:layout_width="0.3dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:background="@color/dividing_line_color" />
+
+                    <TextView
+                        android:id="@+id/tv_gkzz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/sys_small_text_size_margin"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="公开( 5 )"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/sys_small_text_size" />
+                </LinearLayout>
+
+                <View style="@style/dividing_view" />
+
+                <com.geihoo.view.MyGridView
+                    android:id="@+id/mgv_my_zz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="10dp" >
+                </com.geihoo.view.MyGridView>
+            </LinearLayout>
+        </LinearLayout>
+    </com.geihoo.view.ElasticityScrollView>
+
+</LinearLayout>

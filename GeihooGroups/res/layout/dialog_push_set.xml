@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <TextView
+        style="@style/set_title_text_view"
+        android:text="族族通知" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <RelativeLayout style="@style/set_layout_view" >
+
+        <TextView
+            android:id="@+id/tv_push_tz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <TextView
+            android:id="@+id/tv_pull_tz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_push_tz"
+            android:text="打开"
+            android:textColor="@color/sys_main_color"
+            android:textSize="@dimen/set_small_text_size" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textOff="off"
+            android:textOn="on" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+    <RelativeLayout style="@style/set_layout_view" >
+
+        <TextView
+            android:id="@+id/tv_push_tohes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示音"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textOff="off"
+            android:textOn="on" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+    <RelativeLayout style="@style/set_layout_view" >
+
+        <TextView
+            android:id="@+id/tv_push_vibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="振动"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <Switch
+            android:id="@+id/switch4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textOff="off"
+            android:textOn="on" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+</LinearLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/dividing_view"
+        android:layout_marginTop="@dimen/me_margin_top_size" />
+
+    <RelativeLayout
+        android:id="@+id/rl_me_mes_zan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sys_default_padding_size"
+        android:paddingBottom="@dimen/sys_default_padding_size"
+        android:paddingLeft="@dimen/sys_default_padding_left_size"
+        android:paddingRight="@dimen/sys_default_padding_right_size"
+         >
+
+        <ImageView
+            android:id="@+id/iv_image1"
+            android:layout_width="@dimen/me_icon_size"
+            android:layout_height="@dimen/me_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_image1"
+            android:text="赞我的"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view" />
+
+    <RelativeLayout
+        android:id="@+id/rl_me_mes_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sys_default_padding_size"
+        android:paddingBottom="@dimen/sys_default_padding_size"
+        android:paddingLeft="@dimen/sys_default_padding_left_size"
+        android:paddingRight="@dimen/sys_default_padding_right_size" >
+
+        <ImageView
+            android:id="@+id/iv_image2"
+            android:layout_width="@dimen/me_icon_size"
+            android:layout_height="@dimen/me_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/common" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_image2"
+            android:text="评论我的"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view" />
+
+    <RelativeLayout
+        android:id="@+id/rl_me_mes_aite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sys_default_padding_size"
+        android:paddingBottom="@dimen/sys_default_padding_size"
+        android:paddingLeft="@dimen/sys_default_padding_left_size"
+        android:paddingRight="@dimen/sys_default_padding_right_size" >
+
+        <ImageView
+            android:id="@+id/iv_image3"
+            android:layout_width="@dimen/me_icon_size"
+            android:layout_height="@dimen/me_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/aite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_image3"
+            android:text="艾特我的"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view" />
+
+    <RelativeLayout
+        android:id="@+id/rl_me_mes_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sys_default_padding_size"
+        android:paddingBottom="@dimen/sys_default_padding_size"
+        android:paddingLeft="@dimen/sys_default_padding_left_size"
+        android:paddingRight="@dimen/sys_default_padding_right_size" >
+
+        <ImageView
+            android:id="@+id/iv_image3"
+            android:layout_width="@dimen/me_icon_size"
+            android:layout_height="@dimen/me_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_image3"
+            android:text="加我的"
+            android:textSize="@dimen/set_big_text_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron" />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/me_margin_top_size" 
+        android:paddingLeft="@dimen/sys_default_padding_left_size"
+        android:text="系统通知"
+        android:textSize="@dimen/set_big_text_size" />
+    <View
+        style="@style/dividing_view"
+        />
+
+
+    <ListView
+        android:id="@+id/lv_sys_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/sys_default_padding_size"
+        android:paddingRight="@dimen/sys_default_padding_size" >
+    </ListView>
+
+</LinearLayout>

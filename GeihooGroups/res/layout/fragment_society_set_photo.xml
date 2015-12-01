@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sys_main_bg_color"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.geihoo.view.CustomImageView
+                android:id="@+id/civ_image"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_margin="30dp"
+                android:visibility="gone"
+                zhy:src="@drawable/touxiang"
+                zhy:type="ring" />
+
+            <ImageView
+                android:id="@+id/iv_zz_tx"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/test_content_img_8"
+                 />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_edit_img"
+                style="@style/fragment_more_text_style"
+                android:gravity="center"
+                android:text="更换封面照片" />
+
+            <View style="@style/dividing_view_fill" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

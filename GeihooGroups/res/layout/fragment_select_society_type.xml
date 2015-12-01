@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <GridView
+        android:id="@+id/gv_group_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:numColumns="3"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_image"
+            android:layout_width="@dimen/icon_size_85"
+            android:layout_height="@dimen/icon_size_85"
+            zhy:src="@drawable/icon_zz_tx"
+            zhy:type="circle" />
+
+        <TextView
+            android:id="@+id/tv_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_grou_margin_top"
+            android:gravity="center"
+            android:text="自定义"
+            android:textSize="@dimen/item_group_text_size" />
+    </LinearLayout>
+
+</LinearLayout>

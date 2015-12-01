@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="我的社团" />
+
+            <View style="@style/dividing_view" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sys_default_margin_size_5"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="吉他社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="文学社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="跑步社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="我关注的" />
+
+            <View style="@style/dividing_view" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sys_default_margin_size_5"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="绘画社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="摄影社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sys_default_margin_size_5"
+                    android:text="游泳社"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <View style="@style/dividing_view" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

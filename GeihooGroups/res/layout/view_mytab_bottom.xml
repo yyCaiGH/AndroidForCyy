@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg_tab"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/rb_tab_st"
+        style="@style/tab_radio_button"
+        android:checked="true"
+        android:text="@string/tab_st"
+        android:drawableTop="@drawable/main_tab_society_bg"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_tab_tx"
+        style="@style/tab_radio_button"
+        android:text="@string/tab_tx"
+        android:drawableTop="@drawable/main_tab_contact_bg"
+         />
+
+    <RadioButton
+        android:id="@+id/rb_tab_dt"
+        style="@style/tab_radio_button"
+        android:drawableTop="@drawable/main_tab_dynamic_bg"
+        android:text="@string/tab_dt"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_tab_fj"
+        style="@style/tab_radio_button"
+        android:drawableTop="@drawable/main_tab_nearby_bg"
+        android:text="@string/tab_wo"
+         />
+
+</RadioGroup>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_search" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门族族"
+            android:textColor="@color/sys_sub_color"
+            android:textSize="@dimen/sys_small_text_size" />
+
+        <GridView
+            android:id="@+id/gv_hot_society"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:numColumns="4"
+            android:verticalSpacing="10dp" >
+        </GridView>
+    </LinearLayout>
+
+</LinearLayout>

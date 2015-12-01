@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <RadioGroup
+        android:id="@+id/rg_photo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_main_bg_color"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_photo"
+            style="@style/radioStyle"
+            android:checked="true"
+            android:drawableBottom="@drawable/line_blue_img"
+            android:text="@string/photo_tab1" />
+
+        <View
+            android:layout_width="0.3dp"
+            android:layout_height="fill_parent"
+            android:background="@color/dividing_line_color" />
+
+        <RadioButton
+            android:id="@+id/rb_album"
+            style="@style/radioStyle"
+            android:text="@string/photo_tab2" />
+    </RadioGroup>
+
+    <View style="@style/dividing_view_fill" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/search_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

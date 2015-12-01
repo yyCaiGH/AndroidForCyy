@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 系统主色调 -->
+    <color name="sys_main_color">#2EA1CE</color>
+    
+    <!-- 系统副色调 -->
+    <color name="sys_sub_color">#666666</color>
+    <!-- 系统主背景色 -->
+    <color name="sys_main_bg_color">#F8F8F8</color>
+    <!-- 系统副背景色 -->
+    <color name="sys_sub_bg_color">#FFFFFF</color>
+    <!-- 系统文字主色调 -->
+    <color name="sys_main_text_color">#424242</color>
+    <!-- 设置小标题文字颜色 -->
+    <color name="sys_set_title_text_color">#bb000000</color>
+    
+    <color name="dividing_line_color">#cdcdcd</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="push">#E2E2E2</color>
+    <color name="grey_light">#eeeeee</color>
+    <color name="grey">#7f7f7f</color>
+    <color name="grey_litter">#A9A9A9</color>
+    <color name="huise">#afadae</color>
+    <color name="headcolor">#005693</color>
+    <color name="join">#F39801</color>
+    <color name="guanzhu">#727272</color>
+    <color name="nearby_text">#7A7A7A</color>
+    <color name="comment_list_bg">#EBEBEB</color>
+    <color name="clear_color">#00000000</color>
+    <color name="orange">#F39801</color>
+    <color name="login_backcolor">#F8F8F8</color>
+</resources>

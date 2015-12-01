@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_me_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/sys_default_padding_size" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_contact_head"
+            android:layout_width="@dimen/icon_medium_size"
+            android:layout_height="@dimen/icon_medium_size"
+            zhy:src="@drawable/touxiang"
+            zhy:type="ring" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/civ_contact_head"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="小女子"
+                android:textSize="@dimen/set_big_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="女"
+                android:textSize="@dimen/set_big_text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_home_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/civ_contact_head"
+            android:layout_marginTop="10dp"
+            android:text="我是个有点冲动的女孩"
+            android:textColor="@color/sys_sub_color"
+            android:textSize="@dimen/set_big_text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_sub_bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+        android:layout_marginRight="@dimen/sys_default_margin_right_size"
+        android:layout_marginTop="@dimen/sys_default_margin_size"
+        android:layout_marginBottom="@dimen/sys_default_margin_size"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="我的相册01"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/album_text_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sys_main_text_color"
+            	android:textSize="@dimen/album_small_text_size"
+                android:text="日期：" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sys_main_text_color"
+            	android:textSize="@dimen/album_small_text_size"
+                android:text="2015-09-05" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sys_main_text_color"
+            	android:textSize="@dimen/album_small_text_size"
+                android:text="说明：" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sys_main_text_color"
+            	android:textSize="@dimen/album_small_text_size"
+                android:text="用于记录我在社团中的点点滴滴，记住我以往的时间片段，让我的过往停留在这里" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+    <TextView
+        android:id="@+id/album_addimage_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="3dp"
+        android:drawableLeft="@drawable/add_black"
+        android:text="添加照片"
+        android:textSize="@dimen/set_big_text_size" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <GridView
+        android:id="@+id/photo_gridview_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/sys_default_padding_size"
+        android:horizontalSpacing="3dp"
+        android:verticalSpacing="3dp"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:background="@color/sys_main_bg_color"
+        android:stretchMode="columnWidth"
+         >
+    </GridView>
+
+</LinearLayout>

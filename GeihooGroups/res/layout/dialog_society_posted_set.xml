@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <com.geihoo.view.ElasticityScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sys_main_bg_color"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="应用内通知" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_inapp_1"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_inapp_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="所有帖子"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_inapp_all"
+                    android:text="族族成员发帖时"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_inapp_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_inapp_2"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_inapp_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好友帖子"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_inapp_friend"
+                    android:text="好友发帖时"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_inapp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_inapp_3"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_inapp_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关闭"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_inapp_close"
+                    android:text="成员发帖时不通知"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_inapp_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="推送通知" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_push_1"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_push_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="所有帖子"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_push_all"
+                    android:text="族族成员发帖时"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_push_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_push_2"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_push_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好友帖子"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_push_friend"
+                    android:text="好友发帖时"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_push_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout
+                android:id="@+id/rl_push_3"
+                style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_push_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关闭"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_push_close"
+                    android:text="成员发帖时不通知"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_push_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/select_icon"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="在族族中被圈出或提及时，您仍会收到应用内通知和推送通知。"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/set_small_text_size" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="加入通知" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <RelativeLayout style="@style/set_layout_view" >
+
+                <TextView
+                    android:id="@+id/tv_add_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="加入请求"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_add_request"
+                    android:text="用户请求加入时通知我"
+                    android:textColor="@color/sys_sub_color"
+                    android:textSize="@dimen/set_small_text_size" />
+
+                <Switch
+                    android:id="@+id/switch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textOff="off"
+                    android:textOn="on" />
+            </RelativeLayout>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                />
+        </LinearLayout>
+    </com.geihoo.view.ElasticityScrollView>
+
+</LinearLayout>

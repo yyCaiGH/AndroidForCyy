@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popwindow_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_all_dynam"
+        style="@style/pop_window_text_view"
+        android:layout_marginTop="10dp"
+        android:text="所有动态" />
+
+
+    <TextView
+        android:id="@+id/tv_my_dynam"
+        style="@style/pop_window_text_view"
+        android:text="私密动态" />
+
+
+    <!-- <TextView
+        android:id="@+id/tv_attention_dynam"
+        style="@style/pop_window_text_view"
+        android:text="封闭动态" /> -->
+
+
+    <TextView
+        android:id="@+id/tv_scholl_dynam"
+        style="@style/pop_window_text_view"
+        android:text="公开动态"/>
+
+</LinearLayout>

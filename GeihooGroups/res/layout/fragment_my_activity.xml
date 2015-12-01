@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	 <RadioGroup
+        android:id="@+id/rg_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_main_bg_color"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_foreshow"
+            style="@style/radioStyle"
+            android:checked="true"
+            android:drawableBottom="@drawable/line_blue_img"
+            android:text="正参与的" />
+
+        <View
+            android:layout_width="0.3dp"
+            android:layout_height="fill_parent"
+            android:background="@color/dividing_line_color" />
+
+        <RadioButton
+            android:id="@+id/rb_advance"
+            style="@style/radioStyle"
+            android:text="参加过的" />
+    </RadioGroup>
+	
+	
+	<View
+	    style="@style/dividing_view_fill"
+         />
+	<android.support.v4.view.ViewPager
+        android:id="@+id/vp_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+    </android.support.v4.view.ViewPager>
+	
+
+</LinearLayout>

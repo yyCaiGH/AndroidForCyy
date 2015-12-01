@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            zhy:src="@drawable/geihoo_logo"
+            zhy:type="ring" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textSize="@dimen/item_group_text_size"
+        	android:layout_marginTop="@dimen/item_grou_margin_top"
+        	android:layout_marginBottom="20dp"
+            android:text="123" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="12dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

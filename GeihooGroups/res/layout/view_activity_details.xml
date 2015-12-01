@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/society_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/test_content_img_5" />
+
+        <TextView
+            android:id="@+id/tv_act_organizer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/society_homepage"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:text="习近平"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_item_small_text_size" />
+
+        <TextView
+            android:id="@+id/tv_act_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_act_organizer"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:text="鼓山"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_item_small_text_size" />
+
+        <TextView
+            android:id="@+id/tv_act_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_act_place"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:text="9月12日 12:00 - 9月13日12:00"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_item_small_text_size" />
+
+        <TextView
+            android:id="@+id/tv_act_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_act_date"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:text="鼓山爬山"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/set_big_text_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+        android:layout_marginTop="@dimen/sys_default_margin_size_5"
+        android:layout_marginBottom="@dimen/sys_default_margin_size"
+        android:textSize="@dimen/set_big_text_size"
+        android:text="活动介绍"
+        android:textColor="@android:color/holo_orange_dark" />
+
+    <TextView
+        android:id="@+id/tv_act_introduce"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+        android:layout_marginRight="@dimen/sys_default_margin_right_size"
+        android:text="				项目充分利用互联网及传统媒体资源优势，发动全国网友参与互动，同时邀请了一批全国知名媒体单位及社会各界知名人士，对发生在全国各地的正能量事件，进行推送、传播和评选。每周评选出的获奖正能量故事，将根据所得票数多少，分别获得由“天天正能量”项目组颁发的正能量奖金。"
+        android:textSize="@dimen/activity_item_small_text_size" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+        android:layout_marginTop="@dimen/sys_default_margin_size"
+        android:layout_marginRight="@dimen/sys_default_margin_right_size"
+         >
+
+        <TextView
+            android:id="@+id/tv_act_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="报名成员"
+            android:textSize="@dimen/set_big_text_size"
+            android:textColor="@android:color/holo_orange_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="8人参加" />
+    </RelativeLayout>
+
+</LinearLayout>

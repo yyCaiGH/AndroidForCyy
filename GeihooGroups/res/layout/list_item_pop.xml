@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ff3e3e3e"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tv_pop_zan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:text="赞" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#000000" />
+
+    <TextView
+        android:id="@+id/tv_pop_pl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="11sp"
+        android:text="评论" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#000000" />
+
+    <TextView
+        android:id="@+id/tv_pop_fx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:text="分享" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#000000" />
+
+    <ImageView
+        android:id="@+id/btn_pop_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/listpage_more_close_normal" />
+
+</LinearLayout>

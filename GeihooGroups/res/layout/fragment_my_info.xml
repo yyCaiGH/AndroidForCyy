@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+    
+    <View 
+        android:layout_marginTop="@dimen/me_margin_top_size"
+        style="@style/dividing_view_fill" />
+    
+    <RelativeLayout
+        android:id="@+id/rl_me_head"
+        style="@style/set_layout_view" >
+        <TextView
+            android:id="@+id/tv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头像"
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        
+         <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_contact_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:layout_toRightOf="@id/tv_head"
+            android:layout_centerVertical="true"
+            zhy:src="@drawable/touxiang"
+            zhy:type="circle" /> 
+
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+
+    <View style="@style/dividing_view_fill" />
+    <RelativeLayout
+        android:id="@+id/rl_me_nickname"
+        style="@style/set_layout_view" 
+        >
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称 "
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <TextView
+            android:id="@+id/tv_nickname_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:layout_toRightOf="@id/tv_nickname"
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_sub_color"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/set_big_text_size" />
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+    
+    <View style="@style/dividing_view_fill" />
+    
+    <View 
+        android:layout_marginTop="@dimen/me_margin_top_size"
+        style="@style/dividing_view_fill" />
+    <RelativeLayout
+        android:id="@+id/rl_me_sex"
+        style="@style/set_layout_view"
+        >
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别 "
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textColor="@color/sys_sub_color"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:layout_toRightOf="@id/tv_sex"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/set_big_text_size" />
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+    
+    <View style="@style/dividing_view_fill" />
+    <RelativeLayout
+        android:id="@+id/rl_me_area"
+        style="@style/set_layout_view"
+        >
+        <TextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地区 "
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="福建福州"
+            android:textColor="@color/sys_sub_color"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:layout_toRightOf="@id/tv_area"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/set_big_text_size" />
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+    
+    <View style="@style/dividing_view_fill" />
+    
+    <RelativeLayout
+        android:id="@+id/rl_me_introduction"
+        style="@style/set_layout_view"
+        >
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简介 "
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="如何用美丽来修饰我的漂亮"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="@dimen/sys_default_margin_left_size"
+            android:layout_toRightOf="@id/tv_about"
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_sub_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+    
+    <View style="@style/dividing_view_fill" />
+    
+    <View 
+        android:layout_marginTop="@dimen/me_margin_top_size"
+        style="@style/dividing_view" />
+    <RelativeLayout
+        android:id="@+id/rl_me_home"
+        style="@style/set_layout_view"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的主页"
+            android:layout_centerVertical="true"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/set_big_text_size" />
+        <ImageView 
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/list_chevron"
+		    />
+    </RelativeLayout>
+    <View style="@style/dividing_view_fill" />
+</LinearLayout>

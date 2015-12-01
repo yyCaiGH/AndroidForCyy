@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include layout="@layout/view_common_top"/>
+    <RadioGroup 
+        android:id="@+id/rg_member"
+        android:layout_height="40dp"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+        
+        <RadioButton 
+            android:id="@+id/rb_member"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:button="@null"
+            android:checked="true"
+            android:layout_weight="1"
+            android:text="成员"/>
+         <View 
+             android:layout_width="1dp"
+             android:layout_height="fill_parent"
+             android:layout_marginTop="3dp"
+             android:background="@color/dividing_line_color"
+             android:layout_marginBottom="3dp"/>
+        <RadioButton 
+            android:id="@+id/rb_manager"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+             android:button="@null"
+            android:layout_weight="1"
+            android:text="管理员/族主"/>
+         <View 
+             android:layout_width="1dp"
+             android:layout_height="fill_parent"
+             android:layout_marginTop="3dp"
+             android:background="@color/dividing_line_color"
+             android:layout_marginBottom="3dp"/>
+        <RadioButton 
+            android:id="@+id/rb_hmd"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+             android:button="@null"
+            android:layout_weight="1"
+            android:text="禁言"/>
+    </RadioGroup>
+    <View style="@style/dividing_view_fill"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/member_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+    </android.support.v4.view.ViewPager>
+    
+    
+</LinearLayout>

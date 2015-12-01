@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@drawable/test_content_img_8"
+        android:orientation="vertical" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginTop="@dimen/society_look_over_margin_top"
+            android:layout_weight="1"
+            zhy:src="@drawable/tx9"
+            zhy:type="ring" />
+
+        <TextView
+            android:id="@+id/tv_society_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="美女如云"
+            android:textSize="@dimen/sys_main_text_size" />
+
+        <TextView
+            android:id="@+id/tv_society_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="封闭·2成员"
+            android:textColor="@color/sys_sub_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <com.geihoo.view.CustomImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            zhy:src="@drawable/rao"
+            zhy:type="circle" />
+
+        <com.geihoo.view.CustomImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            zhy:src="@drawable/ahpicture"
+            zhy:type="circle" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_state_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/society_look_over_margin_top"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="任何人都可以找到该族族并看到族族成员，但只有该族族成员才能看到该族族的动态"
+        android:textColor="@color/sys_sub_color" />
+
+    <Button
+        android:id="@+id/btn_create_society"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_main_color"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="创建族族"
+        android:minEms="7"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_border_bg"
+        android:layout_marginTop="@dimen/society_look_over_margin_top"
+        android:layout_marginBottom="70dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="取消"
+        android:minEms="7"
+        android:textColor="@color/grey"/>
+
+</LinearLayout>

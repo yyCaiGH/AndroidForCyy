@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_point_bg"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/item_left"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="5dp"
+            zhy:src="@drawable/wechat_icon" 
+            zhy:type="ring"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_icon"
+            android:text="dfsd"
+            android:textSize="15sp" />
+         <TextView
+            android:text="erwe"
+            android:id="@+id/tv_time"
+            android:layout_centerVertical="true"
+           	android:layout_toRightOf="@id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/nearby_text" />
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_icon"
+            android:layout_alignLeft="@id/tv_title"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="dfs"
+            android:textColor="@color/nearby_text" />
+      <TextView
+            android:id="@+id/push"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/push"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"/>
+       
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/item_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/item_right_txt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/join"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="加入"/>
+       <!-- <TextView
+            android:id="@+id/item_right_add"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/item_right_txt"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/guanzhu"
+            android:text="关注"/> --> 
+    </LinearLayout>
+
+</LinearLayout>

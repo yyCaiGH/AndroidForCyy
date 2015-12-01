@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sys_main_bg_color"
+        android:scrollbars="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/set_text_margin_top"
+            android:orientation="vertical" >
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_settings_name"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/edit_society_name" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_settings_background_photo"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/edit_society_background_photo" />
+
+            <View style="@style/dividing_view_fill" />
+ 			
+ 			<TextView
+                android:id="@+id/tv_settings_photo"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/edit_society_photo" />
+
+            <View style="@style/dividing_view_fill" />
+            <TextView
+                android:id="@+id/tv_more_society_describe"
+                style="@style/fragment_more_text_style_2"
+                android:text="隐私"/>
+            
+			<View style="@style/dividing_view_fill" />
+			
+			<TextView
+                style="@style/set_title_text_view"
+                android:text="发帖权限" />
+            <View style="@style/dividing_view_fill" />
+            
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sys_sub_bg_color"
+            android:padding="5dp" >
+
+            <Switch
+                android:id="@+id/post_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textOff="off"
+                android:textOn="on" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/sys_main_text_color"
+                android:text="只有管理员才能发帖"
+                android:textSize="@dimen/set_big_text_size" />
+        </RelativeLayout>
+            <View style="@style/dividing_view_fill" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

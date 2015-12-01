@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/view_top_title"
+        layout="@layout/view_common_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/view_top_title"
+        android:padding="@dimen/sys_default_padding_size" >
+
+        <RelativeLayout
+            android:id="@+id/user_info_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <com.geihoo.view.CustomImageView
+                android:id="@+id/head_img"
+                android:layout_width="@dimen/icon_small_size"
+                android:layout_height="@dimen/icon_small_size"
+                zhy:src="@drawable/tx8"
+                zhy:type="ring" />
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/head_img"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/head_img"
+                android:text="风清扬"
+                android:textSize="@dimen/zz_dyn_big_text_size" />
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/head_img"
+                android:layout_alignLeft="@+id/name_text"
+                android:layout_marginBottom="5dp"
+                android:gravity="left"
+                android:text="7月18日 下午4:25"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/zz_dyn_small_text_size" />
+
+            <ImageView
+                android:id="@+id/iv_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/head_img"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/app_name"
+                android:paddingTop="5dp"
+                android:src="@drawable/icon_drawdown_more" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_info_layout"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="长城在我脚下！"
+            android:textSize="@dimen/sys_essay_text_size" />
+
+        <ImageView
+            android:id="@+id/post_img"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/content_text"
+            android:scaleType="fitXY"
+            android:src="@drawable/test_content_img_4" />
+
+        <RelativeLayout
+            android:id="@+id/post_resp_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_img"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="6dp" >
+
+            <ImageView
+                android:id="@+id/iv_dyn_fenxiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_fenxiang" />
+
+            <ImageView
+                android:id="@+id/iv_dyn_pinglun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:layout_toLeftOf="@id/iv_dyn_fenxiang"
+                android:src="@drawable/icon_pinglun" />
+
+            <ImageView
+                android:id="@+id/iv_dyn_zan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:layout_toLeftOf="@id/iv_dyn_pinglun"
+                android:src="@drawable/icon_zan" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_like_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_resp_layout"
+            android:drawableLeft="@drawable/icon_zan"
+            android:drawablePadding="5dp"
+            android:text="小明，小华，小江，大肚等8人觉得很赞"
+            android:textColor="@color/sys_sub_color" />
+
+        <TextView
+            android:id="@+id/tv_comment_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_like_view"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/icon_pinglun"
+            android:drawablePadding="5dp"
+            android:text="全部评论"
+            android:textColor="@color/sys_sub_color" />
+
+        <ListView
+            android:id="@+id/comment_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_comment_view"
+            android:divider="@color/clear_color"
+            android:dividerHeight="0dip"
+            android:paddingLeft="10dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:background="@color/grey_light"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/et_common_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/et_border_bg"
+            android:hint="我也说一句..."
+            android:padding="5dp"
+            android:textSize="13sp" >
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="发送"
+            android:textColor="@color/grey" />
+    </LinearLayout>
+
+</RelativeLayout>

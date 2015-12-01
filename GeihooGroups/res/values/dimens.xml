@@ -1,0 +1,103 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_image_length">35dp</dimen>
+    <dimen name="tab_radio_text_size">9sp</dimen>
+    <dimen name="tab_default_margin_size">3dp</dimen>
+    <dimen name="sys_main_text_size">17sp</dimen>
+    <dimen name="sys_small_text_size">12sp</dimen>
+    <dimen name="sys_essay_text_size">13sp</dimen>
+    <dimen name="sys_small_text_size_margin">10dp</dimen>
+    <dimen name="sys_margin_common_top">20dp</dimen>
+    <dimen name="sys_margin_top">10dp</dimen>
+    <!-- 以下数据，不可更改 -->
+    <dimen name="sys_default_size">10dp</dimen>
+    
+    <dimen name="sys_default_margin_size">10dp</dimen>
+    <dimen name="sys_default_margin_size_10">10dp</dimen>
+    <dimen name="sys_default_margin_size_5">5dp</dimen>
+    <dimen name="sys_default_margin_left_size">20dp</dimen>
+    <dimen name="sys_default_margin_right_size">20dp</dimen>
+    <dimen name="sys_default_margin_top_size">5dp</dimen>
+    <dimen name="sys_default_margin_bottom_size">5dp</dimen>
+    
+    <dimen name="sys_default_padding_left_size">20dp</dimen>
+    <dimen name="sys_default_padding_right_size">20dp</dimen>
+    <dimen name="sys_default_text_padding_top_size">10dp</dimen>
+    <dimen name="sys_default_text_padding_bottom_size">10dp</dimen>
+    <dimen name="sys_default_padding_size">10dp</dimen>
+    <dimen name="sys_default_padding_size_10">10dp</dimen>
+    <dimen name="sys_default_padding_size_5">5dp</dimen>
+    <!-- 族族列表对上对下间距 -->
+    <dimen name="zuzu_list_margin_top_bottom">5dp</dimen>
+    <dimen name="zuzu_list_margin_right">10dp</dimen>
+    <!-- 联系人列表对上对下间距 -->
+    <dimen name="contact_list_margin_top_bottom_for_search">5dp</dimen>
+    <dimen name="contact_list_margin_top_bottom">10dp</dimen>
+    <dimen name="contact_list_margin_right">10dp</dimen>
+    <dimen name="contact_list_margin_Left">20dp</dimen>
+    
+    <dimen name="viewpaper_radio_button_size">5dp</dimen>
+    
+    <dimen name="activity_item_drawable_padding_size">2dp</dimen>
+    <dimen name="activity_item_small_text_size">12sp</dimen>
+    
+    <dimen name="common_top_padding_size">10dp</dimen>
+    <dimen name="common_top_margin_size">10dp</dimen>
+    
+    <dimen name="set_big_text_size_name">16sp</dimen>
+    <dimen name="set_big_text_size">15sp</dimen>
+    <dimen name="set_small_text_size">13sp</dimen>
+    <dimen name="set_text_margin_top">20dp</dimen>
+    <dimen name="set_text_margin_bottom">30dp</dimen>
+    
+    <dimen name="create_society_authority_small_text_size">13sp</dimen>
+    
+    <dimen name="dividing_line_height">0.3dp</dimen>
+    <dimen name="dividing_ling_margin_left">10dp</dimen>
+    <dimen name="dividing_ling_margin_right">10dp</dimen>
+    <dimen name="dividing_zone_height">20dp</dimen>
+    
+    <dimen name="icon_size">95dp</dimen>
+    <dimen name="icon_size_85">85dp</dimen>
+    <dimen name="icon_medium_size">75dp</dimen>
+    <dimen name="icon_small_size">45dp</dimen>
+    <dimen name="icon_zz_head_set_size">110dp</dimen>
+    <dimen name="activity_icon_size">90dp</dimen>
+    <dimen name="activity_main_text_size">15sp</dimen>
+    
+    <dimen name="album_icon_size">60dp</dimen>
+    <dimen name="album_text_size">16sp</dimen>
+    <dimen name="album_small_text_size">14sp</dimen>
+    
+    <dimen name="contacts_icon_size">40dp</dimen>
+    <dimen name="contacts_mes_icon_size">50dp</dimen>
+    <dimen name="contacts_name_text_size">16sp</dimen>
+    <dimen name="contacts_mes_text_size">13sp</dimen>
+    <dimen name="contacts_time_text_size">12sp</dimen>
+    <dimen name="contacts_margin_left_size">10dp</dimen>
+    
+    <dimen name="society_look_over_margin_top">20dp</dimen>
+    <dimen name="signup_edu_info_tv_size">18sp</dimen>
+    <dimen name="signup_edu_info_et_size">18sp</dimen>
+    <dimen name="second_text_size">16sp</dimen>
+    <dimen name="head_icon_size">50dp</dimen>
+	<dimen name="item_group_text_size">12sp</dimen>
+	<dimen name="item_grou_margin_top">5dp</dimen>
+	
+    <!-- slidingmenu -->
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">80dp</dimen>
+    <dimen name="sm_top_margin">20dp</dimen>
+    <!-- zuzu dynamic -->
+    <dimen name="zz_dyn_big_text_size">15sp</dimen>
+    <dimen name="zz_dyn_small_text_size">10sp</dimen>
+    <!-- view_mytab -->
+	<dimen name="mytab_text_size">10sp</dimen>
+	
+	<!-- me -->
+	<dimen name="me_margin_top_size">35dp</dimen>
+	<dimen name="me_icon_size">18dp</dimen>
+</resources>

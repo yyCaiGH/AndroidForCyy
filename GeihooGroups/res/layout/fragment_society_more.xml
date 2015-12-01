@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                
+				<com.geihoo.view.CustomImageView
+	                android:id="@+id/more_society_img"
+	                android:layout_width="100dp"
+	                android:layout_height="100dp"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginBottom="10dp"
+	                android:layout_gravity="center_horizontal"
+	                zhy:src="@drawable/travel"
+	                zhy:type="ring" />
+                
+                <TextView
+                    android:id="@+id/society_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="旅游"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size_name" />
+
+                <TextView
+                    android:id="@+id/society_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="封闭  | 5位成员"
+                    android:textColor="@color/sys_main_text_color"
+                	android:textSize="@dimen/set_big_text_size" />
+            </LinearLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_more_we"
+                style="@style/fragment_more_text_style_2"
+                android:text="我们" />
+            
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_more_settings"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/edit_society_setup" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_member"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/members" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_more_society_describe"
+                style="@style/fragment_more_text_style_2"
+                android:textSize="12sp"
+                android:text="@string/society_describe"
+                android:textColor="@color/sys_sub_color" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <LinearLayout
+                android:id="@+id/tv_more_notice_set"
+                style="@style/fragment_more_text_style_2"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notice_setup"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size"
+                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/notice_send"
+                    android:textColor="@color/sys_main_text_color"
+                    android:textSize="@dimen/set_big_text_size"
+                   />
+            </LinearLayout>
+
+            <View style="@style/dividing_view_fill" />
+
+            <View style="@style/dividing_zone" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                android:id="@+id/tv_more_add_to_desktop"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/add_to_desktop" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <View style="@style/dividing_zone" />
+
+            <View style="@style/dividing_view_fill" />
+            
+            <TextView
+                android:id="@+id/tv_more_document"
+                style="@style/fragment_more_text_style_2"
+                android:text="@string/document" />
+            
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                style="@style/fragment_more_text_style_2"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_horizontal"
+                android:text="@string/exit_society"
+                android:textColor="@color/white"
+                android:textSize="@dimen/set_big_text_size"
+                android:background="@color/grey_litter" />
+
+            <View style="@style/dividing_view_fill" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

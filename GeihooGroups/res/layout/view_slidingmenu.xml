@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+	<View 
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_photo_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            zhy:src="@drawable/touxiang"
+            zhy:type="ring" />
+
+        <TextView
+            android:id="@+id/tv_sm_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="小女子丶独一无二"
+            android:gravity="center"
+            android:textColor="#AAffffff"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View 
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_sm_mes"
+            style="@style/slidingmenu_text_view"
+            android:drawableLeft="@drawable/sm_mes"
+            android:text="通知" />
+
+        <TextView
+            android:id="@+id/tv_sm_activity"
+            style="@style/slidingmenu_text_view"
+            android:drawableLeft="@drawable/sm_activity"
+            android:text="活动" />
+        <!--
+         <TextView
+        android:id="@+id/tv_sm_group"
+        style="@style/slidingmenu_text_view"
+        android:drawableLeft="@drawable/sm_team"
+        -->
+
+        <TextView
+            android:id="@+id/tv_sm_file"
+            style="@style/slidingmenu_text_view"
+            android:drawableLeft="@drawable/sm_file"
+            android:text="收藏" />
+
+        <TextView
+            android:id="@+id/tv_sm_set"
+            style="@style/slidingmenu_text_view"
+            android:drawableLeft="@drawable/sm_set"
+            android:text="设置" />
+    </LinearLayout>
+<View 
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        />
+</LinearLayout>

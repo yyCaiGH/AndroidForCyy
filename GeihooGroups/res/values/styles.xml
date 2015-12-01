@@ -1,0 +1,193 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="set_title_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/sys_default_margin_left_size</item>
+        <item name="android:layout_marginTop">@dimen/set_text_margin_top</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textSize">@dimen/set_big_text_size</item>
+        <item name="android:textColor">@color/sys_set_title_text_color</item>
+    </style>
+    <style name="set_context_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/sys_default_padding_left_size</item>
+        <item name="android:paddingTop">@dimen/sys_default_text_padding_top_size</item>
+        <item name="android:paddingBottom">@dimen/sys_default_text_padding_bottom_size</item>
+        <item name="android:paddingRight">@dimen/sys_default_padding_right_size</item>
+        <item name="android:textSize">@dimen/set_big_text_size</item>
+        <item name="android:textColor">@color/sys_main_text_color</item>
+    </style>
+    
+    <style name="set_text_view_top">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dividing_ling_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/dividing_ling_margin_right</item>
+        <item name="android:layout_marginBottom">@dimen/set_text_margin_bottom</item>
+        <item name="android:textColor">@color/sys_sub_color</item>
+        <item name="android:textSize">@dimen/set_small_text_size</item>
+    </style>
+    <style name="set_layout_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/sys_default_padding_left_size</item>
+        <item name="android:paddingTop">@dimen/sys_default_text_padding_top_size</item>
+        <item name="android:paddingBottom">@dimen/sys_default_text_padding_bottom_size</item>
+        <item name="android:paddingRight">@dimen/sys_default_padding_right_size</item>
+        <item name="android:background">@color/sys_sub_bg_color</item>
+    </style>
+    <style name="dividing_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividing_line_height</item>
+        <item name="android:layout_marginLeft">@dimen/dividing_ling_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/dividing_ling_margin_right</item>
+        <item name="android:background">@color/dividing_line_color</item>
+    </style>
+
+    <style name="dividing_zone">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/dividing_zone_height</item>
+        <item name="android:background">@color/grey_light</item>
+    </style>
+
+    <style name="dividing_view_fill">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividing_line_height</item>
+        <item name="android:background">@color/dividing_line_color</item>
+    </style>
+
+    <style name="more_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/icon_more</item>
+        <item name="android:textColor">@color/sys_sub_color</item>
+        <item name="android:textSize">@dimen/sys_small_text_size</item>
+    </style>
+
+    <style name="tab_radio_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawableTop">@drawable/main_tab_contact_bg</item>
+        <item name="android:textColor">@drawable/tab_radio_text_color</item>
+        <item name="android:textSize">@dimen/tab_radio_text_size</item>
+    </style>
+
+    <style name="slidingmenu_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#aaffffff</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="pop_window_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="send_message_pop_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingRight">40dp</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="fragment_more_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/sys_default_padding_left_size</item>
+        <item name="android:paddingTop">@dimen/sys_default_text_padding_top_size</item>
+        <item name="android:paddingBottom">@dimen/sys_default_text_padding_bottom_size</item>
+        <item name="android:paddingRight">@dimen/sys_default_padding_right_size</item>
+        <item name="android:textSize">@dimen/set_big_text_size</item>
+        <item name="android:textColor">@color/sys_main_text_color</item>
+        <item name="android:background">@color/sys_sub_bg_color</item>
+    </style>
+	<style name="fragment_more_text_style_2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/sys_default_padding_left_size</item>
+        <item name="android:paddingTop">@dimen/sys_default_text_padding_top_size</item>
+        <item name="android:paddingBottom">@dimen/sys_default_text_padding_bottom_size</item>
+        <item name="android:paddingRight">@dimen/sys_default_padding_right_size</item>
+        <item name="android:textSize">@dimen/set_big_text_size</item>
+        <item name="android:textColor">@color/sys_main_text_color</item>
+        <item name="android:background">@color/sys_sub_bg_color</item>
+    </style>
+    
+    <style name="radioStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_button</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">@dimen/viewpaper_radio_button_size</item>
+        <item name="android:paddingTop">@dimen/viewpaper_radio_button_size</item>
+    </style>
+
+    <style name="PopMenuAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_right</item>
+    </style> 
+
+    <style name="activtiy_item_text_view">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/activity_item_drawable_padding_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/activity_item_small_text_size</item>
+        <item name="android:textColor">@color/sys_main_text_color</item>
+    </style>
+</resources>

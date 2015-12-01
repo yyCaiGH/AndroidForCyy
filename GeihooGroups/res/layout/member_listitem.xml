@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="horizontal" >
+
+    <com.geihoo.view.CustomImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/contacts_icon_size"
+        android:layout_height="@dimen/contacts_icon_size"
+        android:layout_centerVertical="true"
+        zhy:src="@drawable/touxiang1"
+        zhy:type="ring" />
+
+    <TextView
+        android:id="@+id/tv_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="@dimen/contacts_margin_left_size"
+        android:layout_centerVertical="true"
+        android:text="123"
+        android:textSize="@dimen/contacts_name_text_size" />
+
+     <ImageView 
+        android:id="@+id/iv_more_ope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/more_ope"
+        />
+     
+    <TextView
+        android:id="@+id/tv_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/contacts_margin_left_size"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/iv_more_ope"
+        android:textSize="@dimen/contacts_mes_text_size" />
+   
+</RelativeLayout>

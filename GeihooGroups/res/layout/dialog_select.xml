@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_select_dialog"
+     >
+
+    <ListView
+        android:id="@+id/lv_select_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#88ffffff"
+        android:dividerHeight="1dp"
+         >
+    </ListView>
+    <!--
+         <View style="@style/dividing_view_fill" />
+    
+    <TextView
+        android:id="@+id/tv_select_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="移除常用族族" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <TextView
+        android:id="@+id/tv_select_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="重排族族" />
+
+    <View style="@style/dividing_view_fill" />
+
+    <TextView
+        android:id="@+id/tv_select_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="添加至主屏幕" />
+
+    <View style="@style/dividing_view_fill" />
+    -->
+
+</LinearLayout>

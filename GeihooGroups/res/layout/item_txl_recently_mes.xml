@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_sub_bg_color"
+    android:paddingBottom="@dimen/contact_list_margin_top_bottom"
+    android:paddingLeft="@dimen/contact_list_margin_Left"
+    android:paddingRight="@dimen/contact_list_margin_right"
+    android:paddingTop="@dimen/contact_list_margin_top_bottom" >
+
+    <com.geihoo.view.CustomImageView
+        android:id="@+id/civ_contact_img"
+        android:layout_width="@dimen/contacts_mes_icon_size"
+        android:layout_height="@dimen/contacts_mes_icon_size"
+        android:layout_marginRight="@dimen/contact_list_margin_right"
+        zhy:src="@drawable/def_woman"
+        zhy:type="circle" />
+
+    <RelativeLayout
+        android:id="@+id/ll_mes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/contact_list_margin_right"
+        android:layout_toRightOf="@id/civ_contact_img"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小女子"
+            android:textSize="@dimen/contacts_name_text_size" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_contact_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="18:33"
+            android:textColor="@color/sys_sub_color"
+            android:textSize="@dimen/contacts_time_text_size" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_contact_mes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_contact_name"
+            android:layout_marginTop="3dp"
+            android:layout_toLeftOf="@id/tv_contact_time"
+            android:singleLine="true"
+            android:text="来我家吃饭吧"
+            android:textColor="@color/sys_sub_color"
+            android:textSize="@dimen/contacts_mes_text_size" >
+        </TextView>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/letter_view"
+        style="@style/send_message_pop_view"
+        android:layout_marginTop="20dp"
+        android:text="@string/letter" />
+
+    <TextView
+        android:id="@+id/photograph_view"
+        style="@style/send_message_pop_view"
+        android:text="@string/photograph" />
+
+    <TextView
+        android:id="@+id/select_from_album_view"
+        style="@style/send_message_pop_view"
+        android:layout_marginBottom="20dp"
+        android:text="@string/select_from_album" />
+
+</LinearLayout>
