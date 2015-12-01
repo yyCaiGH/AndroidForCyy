@@ -1,9 +1,15 @@
 package org.cyy.yutils.sysfunction;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-
+/**
+ * 
+ * 获取系统图片
+ *
+ * @author yy_cai
+ *
+ * 2015年12月1日
+ */
 public class GetSysImage {
 
 	/**
