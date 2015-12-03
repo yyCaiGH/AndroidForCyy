@@ -1,5 +1,9 @@
 package com.geihoo.bean;
 
+import java.util.List;
+
+import com.geihoo.utils.ImageUtil;
+
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,15 +17,27 @@ public class ZuZuBean implements Parcelable{
 	/**
 	 * 族族头像
 	 */
-	private Bitmap headIcon;
+	private Bitmap headIcon;//图片在intent传送的时候会过大
+	/**
+	 * 族族头像地址
+	 */
+	private String headIconUri;//解决传送过大图片的问题
 	/**
 	 * 族族背景
 	 */
 	private Bitmap BgIcon;
 	/**
-	 * 族族类型，1-私密，2-公开
+	 * 族族背景地址
+	 */
+	private String bgIconUri;
+	/**
+	 * 族族类型，constant.ZZ_TYPE_PRIVATE-私密，constant.ZZ_TYPE_PUBLIC-公开
 	 */
 	private int type;
+	/**
+	 * 族族成员
+	 */
+	private List<ContactsBean> contacts;
 	
 	public String getName() {
 		return name;
@@ -47,15 +63,36 @@ public class ZuZuBean implements Parcelable{
 	public void setType(int type) {
 		this.type = type;
 	}
-	
+	public List<ContactsBean> getContacts() {
+		return contacts;
+	}
+	public void setContacts(List<ContactsBean> contacts) {
+		this.contacts = contacts;
+	}
+     public String getHeadIconUri() {
+		return headIconUri;
+	}
+	public void setHeadIconUri(String headIconUri) {
+		this.headIconUri = headIconUri;
+	}
+	public String getBgIconUri() {
+		return bgIconUri;
+	}
+	public void setBgIconUri(String bgIconUri) {
+		this.bgIconUri = bgIconUri;
+	}
 
-     public static final Parcelable.Creator<ZuZuBean> CREATOR = new Creator<ZuZuBean>() { 
-            public ZuZuBean createFromParcel(Parcel source) { 
+	public static final Parcelable.Creator<ZuZuBean> CREATOR = new Creator<ZuZuBean>() { 
+            @SuppressWarnings("unchecked")
+			public ZuZuBean createFromParcel(Parcel source) { 
             	ZuZuBean pb = new ZuZuBean(); 
                 pb.name = source.readString(); 
                 pb.headIcon = Bitmap.CREATOR.createFromParcel(source);
+                pb.headIconUri = source.readString();
                 pb.BgIcon = Bitmap.CREATOR.createFromParcel(source);
+                pb.bgIconUri = source.readString();
                 pb.type = source.readInt();
+                pb.contacts = source.readArrayList(ContactsBean.class.getClassLoader());
                 return pb; 
             } 
             public ZuZuBean[] newArray(int size) { 
@@ -70,9 +107,15 @@ public class ZuZuBean implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(name);
-        headIcon.writeToParcel(parcel, 0);
-        BgIcon.writeToParcel(parcel, 0);
+        if(headIcon!=null){
+        	headIcon.writeToParcel(parcel, 0);
+        }
+        parcel.writeString(headIconUri);
+        if(BgIcon!=null){
+        	BgIcon.writeToParcel(parcel, 0);
+        }
+        parcel.writeString(bgIconUri);
         parcel.writeInt(type);
+        parcel.writeList(contacts);
     }
-	
 }

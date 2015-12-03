@@ -9,11 +9,14 @@ import android.widget.TextView;
 
 import com.geihoo.base.BaseActivity;
 import com.geihoo.base.BaseFragment;
+import com.geihoo.bean.ZuZuBean;
 import com.geihoo.fragment.createsociety.AddMemberFragment;
 import com.geihoo.fragment.createsociety.LookOverSocietyFragment;
 import com.geihoo.fragment.createsociety.SelectSocietyTypeFragment;
 import com.geihoo.fragment.createsociety.SetSocietyFragment;
 import com.geihoo.groups.R;
+import com.geihoo.utils.Constant;
+import com.geihoo.utils.ImageUtil;
 
 /**
  * 创建社团
@@ -34,6 +37,8 @@ public class CreateSocietyActivity extends BaseActivity {
 	private AddMemberFragment addMemberF;
 	private SetSocietyFragment setSocietyF;
 	private LookOverSocietyFragment lookOverSocietyF;
+	
+	private ZuZuBean newZuZuBean;//创建该族族
 	/**
 	 * Fragment事务
 	 */
@@ -50,7 +55,9 @@ public class CreateSocietyActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_create_society);
+		initData();
 		initView();
+		
 	}
 
 	@Override
@@ -63,7 +70,14 @@ public class CreateSocietyActivity extends BaseActivity {
 		setRightButtonVisibility(View.GONE);
 		initFragment(selectSoietyTypeF, null,R.id.fl_create_society);
 	}
-
+	@Override
+	protected void initData() {
+		if(newZuZuBean==null){
+			newZuZuBean=new ZuZuBean();//创建该族族
+			newZuZuBean.setBgIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_bg));//设置默认值，没值不能序列化
+			newZuZuBean.setHeadIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_head));
+		}
+	}
 	protected void initTopBar() {
 		tvTitle = (TextView) this.findViewById(R.id.tv_top_title);
 		TextView tvBack = (TextView) this.findViewById(R.id.tv_top_left);
@@ -84,6 +98,14 @@ public class CreateSocietyActivity extends BaseActivity {
 		this.findViewById(R.id.tv_top_right).setVisibility(visibility);
 	}
 
+	
+	public ZuZuBean getNewZuZuBean() {
+		return newZuZuBean;
+	}
+
+	public BaseFragment getSetSocietyFragment(){
+		return setSocietyF;
+	}
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.tv_top_left) {
@@ -91,9 +113,12 @@ public class CreateSocietyActivity extends BaseActivity {
 		} else if (v.getId() == R.id.tv_top_right) {
 			switch (tag) {
 			case SET_SOCIETY:
-				replaceFragmentAndAddToBackStack(addMemberF, null,R.id.fl_create_society);
+				if(setSocietyF.saveZuZuInfo()){
+					replaceFragmentAndAddToBackStack(addMemberF, null,R.id.fl_create_society);
+				}
 				break;
 			case ADD_MEMBER:
+				addMemberF.saveContactsToZuZu();
 				replaceFragmentAndAddToBackStack(lookOverSocietyF, null,R.id.fl_create_society);
 				break;
 			default:

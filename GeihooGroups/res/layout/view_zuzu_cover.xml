@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/iv_zuzu_bg"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="@dimen/zz_bg_height"
             android:scaleType="fitXY"
             android:src="@drawable/blank" />
 
@@ -27,8 +27,8 @@
 
             <com.geihoo.view.CustomImageView
                 android:id="@+id/civ_zuzu_head"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/zz_head_set_size"
+                android:layout_height="@dimen/zz_head_set_size"
                 zhy:src="@drawable/travel"
                 zhy:type="ring" />
 
@@ -36,9 +36,9 @@
                 android:id="@+id/tv_zz_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/zz_info_text_margin_top_size"
                 android:text="旅游"
-                android:textSize="20sp" />
+                android:textSize="@dimen/zz_name_size" />
 
             <TextView
                 android:id="@+id/tv_zz_info"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="5dp"
                 android:text="私密  | 10位成员"
                 android:textColor="@color/sys_main_text_color"
-                android:textSize="13dp" />
+                android:textSize="@dimen/zz_info_size" />
         </LinearLayout>
     </FrameLayout>
 

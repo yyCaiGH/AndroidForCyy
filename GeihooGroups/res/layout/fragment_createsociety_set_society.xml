@@ -9,23 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
+        <ImageView
             android:id="@+id/iv_add_zz_bg"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:background="@drawable/default_bg" />
+            android:layout_height="@dimen/zz_bg_height"
+            android:scaleType="fitXY"
+            android:src="@drawable/zz_def_bg" />
 
         <com.geihoo.view.CustomImageView
             android:id="@+id/civ_add_zz_tx"
-            android:layout_width="@dimen/icon_zz_head_set_size"
-            android:layout_height="@dimen/icon_zz_head_set_size"
+            android:layout_width="@dimen/zz_head_set_size"
+            android:layout_height="@dimen/zz_head_set_size"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             zhy:src="@drawable/icon_zz_tx"
             zhy:type="ring" />
 
         <EditText
-            android:id="@+id/et_society_name"
+            android:id="@+id/et_zz_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/civ_add_zz_tx"
@@ -42,12 +43,12 @@
             android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/et_society_name"
+            android:layout_below="@id/et_zz_name"
             android:layout_margin="@dimen/sys_default_margin_left_size"
             android:orientation="vertical" >
 
             <RadioButton
-                android:id="@+id/rb1"
+                android:id="@+id/rb_private"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
@@ -61,11 +62,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
-                android:hint="只有成员能找到族族并查看发布内容。"
+                android:hint="@string/zz_status_private_des"
                 android:textSize="@dimen/set_big_text_size" />
 
             <RadioButton
-                android:id="@+id/rb3"
+                android:id="@+id/rb_public"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -78,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
-                android:hint="任何用户都能看到族族、成员和成员发帖。"
+                android:hint="@string/zz_status_public_des"
                 android:textSize="@dimen/set_big_text_size" />
         </RadioGroup>
     </RelativeLayout>

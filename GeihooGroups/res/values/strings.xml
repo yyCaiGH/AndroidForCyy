@@ -41,7 +41,8 @@
     <string name="nearby_item_but_join">参加</string>
     <string name="nearby_item_but_no_interest">不感兴趣</string>
 	<string name="drawer_left_tag">LEFT</string>
-    
+    <string name="zz_status_private_des">只有成员能找到族族并查看发布内容</string>
+    <string name="zz_status_public_des">任何用户都能看到族族、成员和成员发帖</string>
     <!-- society string -->
     <string name="society_tab1">首页</string>
     <string name="society_tab2">照片</string>

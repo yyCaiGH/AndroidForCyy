@@ -18,6 +18,7 @@ import com.geihoo.adapter.ViewHolder;
 import com.geihoo.base.BaseFragment;
 import com.geihoo.groups.R;
 import com.geihoo.test.Datas;
+import com.geihoo.utils.Constant;
 /**
  * 选择社团类型
  * @author yy_cai
@@ -26,12 +27,12 @@ import com.geihoo.test.Datas;
  */
 public class SelectSocietyTypeFragment extends BaseFragment{
 
-	private CreateSocietyActivity parent;
+	private CreateSocietyActivity mActivity;
 	private GridView groupTypes;
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		parent=(CreateSocietyActivity)activity;
+		mActivity=(CreateSocietyActivity)activity;
 	}
 	
 	@Override
@@ -43,14 +44,14 @@ public class SelectSocietyTypeFragment extends BaseFragment{
 	}
 	@SuppressWarnings("static-access")
 	protected void initView(View view){
-		parent.setTopBar("选择类型",parent.SELECT_TYPE);
+		mActivity.setTopBar("选择类型",mActivity.SELECT_TYPE);
 		view.findViewById(R.id.civ_image).setOnClickListener(this);
 		initGroupTypes(view);
 	}
 	private void initGroupTypes(View view) {
 		groupTypes= (GridView)view.findViewById(R.id.gv_group_type);
-		List<HashMap<String, Object>> groups = Datas.getZuzuTypes(parent);
-		groupTypes.setAdapter(new CommonAdapter<HashMap<String, Object>>(parent,groups,R.layout.item_zuzu_type) {
+		List<HashMap<String, Object>> groups = Datas.getZuzuTypes(mActivity);
+		groupTypes.setAdapter(new CommonAdapter<HashMap<String, Object>>(mActivity,groups,R.layout.item_zuzu_type) {
 			@Override
 			public void convert(ViewHolder helper, HashMap<String, Object> item) {
 				// TODO Auto-generated method stub
@@ -61,16 +62,17 @@ public class SelectSocietyTypeFragment extends BaseFragment{
 		groupTypes.setOnItemClickListener(this);
 	}
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
+	public void onItemClick(AdapterView<?> mActivity, View view, int position,
 			long id) {
-		this.parent.replaceFragmentAndAddToBackStack(new SetSocietyFragment(), null,R.id.fl_create_society);
-		this.parent.setRightButtonVisibility(View.VISIBLE);
+		this.mActivity.replaceFragmentAndAddToBackStack(this.mActivity.getSetSocietyFragment(), null,R.id.fl_create_society);
+		this.mActivity.setRightButtonVisibility(View.VISIBLE);
+		this.mActivity.getNewZuZuBean().setType(Constant.ZZ_TYPE_PRIVATE);
 	}
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.civ_image){
-			this.parent.replaceFragmentAndAddToBackStack(new SetSocietyFragment(), null,R.id.fl_create_society);
-			this.parent.setRightButtonVisibility(View.VISIBLE);
+			this.mActivity.replaceFragmentAndAddToBackStack(this.mActivity.getSetSocietyFragment(), null,R.id.fl_create_society);
+			this.mActivity.setRightButtonVisibility(View.VISIBLE);
 		}
 	}
 }

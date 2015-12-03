@@ -40,6 +40,7 @@ import com.geihoo.groups.R;
 import com.geihoo.test.Datas;
 import com.geihoo.utils.Constant;
 import com.geihoo.utils.Constants;
+import com.geihoo.utils.ImageUtil;
 import com.geihoo.utils.ToastUtil;
 import com.geihoo.utils.ViewUtils;
 import com.geihoo.view.CustomImageView;
@@ -64,6 +65,7 @@ public class SocietyMainFragment extends BaseFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		initData();
+		Log.i("cyy-cyy", "来到族族首页");
 		super.onCreate(savedInstanceState);
 	}
 
@@ -112,7 +114,9 @@ public class SocietyMainFragment extends BaseFragment {
 		ImageView close = (ImageView)view.findViewById(R.id.iv_zuzu_close);
 		close.setOnClickListener(this);
 		societyNameSus = (TextView)view.findViewById(R.id.society_name_sus);
-		societyNameSus.setText(mZuzu.getName());
+		if(mZuzu!=null){
+			societyNameSus.setText(mZuzu.getName());
+		}
 		
 		topSuspension = (RelativeLayout)view.findViewById(R.id.rl_top_suspension);
 		
@@ -143,24 +147,41 @@ public class SocietyMainFragment extends BaseFragment {
 		
 		//设置族族名称
 		societyName = (TextView)v.findViewById(R.id.tv_zz_name);
-		societyName.setText(mZuzu.getName());
+		if(mZuzu!=null){
+			societyName.setText(mZuzu.getName());
+		}
 		//设置族族公开程度和族族成员数量
 		String type ="";
-		if(mZuzu.getType()==Constant.ZZ_TYPE_PRIVATE){
-			type = "私密";
-		}
-		else{
-			type = "公开";
+		if(mZuzu!=null){
+			if(mZuzu.getType()==Constant.ZZ_TYPE_PRIVATE){
+				type = "私密";
+			}
+			else{
+				type = "公开";
+			}
 		}
 		TextView zuzuInfo = (TextView)v.findViewById(R.id.tv_zz_info);
 		zuzuInfo.setText(type+" | 10位成员");
 		//设置背景
 		ImageView zuzubg = (ImageView)v.findViewById(R.id.iv_zuzu_bg);
-		zuzubg.setImageBitmap(mZuzu.getBgIcon());
+		if(mZuzu!=null){
+			if(mZuzu.getBgIcon()==null){
+				zuzubg.setImageBitmap(ImageUtil.readBitMap(activity, R.drawable.zz_def_bg));
+			}
+			else{
+				zuzubg.setImageBitmap(mZuzu.getBgIcon());
+			}
+		}
 		//设置头像
 		CustomImageView zuzuHeadImg = (CustomImageView)v.findViewById(R.id.civ_zuzu_head);
-		zuzuHeadImg.setPic(mZuzu.getHeadIcon());
-		
+		if(mZuzu!=null){
+			if(mZuzu.getHeadIcon()==null){
+				zuzuHeadImg.setPic(ImageUtil.readBitMap(activity, R.drawable.zz_def_head));
+			}
+			else{
+				zuzuHeadImg.setPic(mZuzu.getHeadIcon());
+			}
+		}
 		postListView.addHeaderView(v,null,false);//在onItemClick里就不会被点击到而发生错误
 		
 		

@@ -25,6 +25,7 @@ public class AddFriendsActivity extends BaseActivity{
 	}
 	@Override
 	protected void initView() {
+		initTopBar();
 		EditText etSearch = (EditText)this.findViewById(R.id.et_search);
 		etSearch.setHint("搜索昵称/账号");
 	}
