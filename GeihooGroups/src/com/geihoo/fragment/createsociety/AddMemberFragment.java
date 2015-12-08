@@ -1,9 +1,14 @@
 package com.geihoo.fragment.createsociety;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +21,7 @@ import com.geihoo.adapter.SelectContactAdapter;
 import com.geihoo.base.BaseFragment;
 import com.geihoo.bean.ContactsBean;
 import com.geihoo.groups.R;
+import com.geihoo.listener.SearchEditTextWatcher;
 import com.geihoo.test.Datas;
 /**
  * 添加成员
@@ -25,10 +31,26 @@ import com.geihoo.test.Datas;
  */
 public class AddMemberFragment extends BaseFragment{
 	String tag = "AddMemberFragment";
+	private final static int UPDATE_ADAPTER=0x100;
 	private CreateSocietyActivity mActivity;
 	private ListView lvMembers;
-	private List<ContactsBean> members;
+	private EditText etSearch;
+	private List<ContactsBean> members,searchedMembers;
 	private SelectContactAdapter selectContactAdapter;
+	private Handler handler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case UPDATE_ADAPTER:
+				selectContactAdapter.notifyDataSetChanged();
+				break;
+			default:
+				break;
+			}
+		}
+		
+	};
 	@Override
 	public void onAttach(Activity activity) {
 		Log.i(tag, "onAttach");
@@ -39,7 +61,9 @@ public class AddMemberFragment extends BaseFragment{
 	public void onCreate(Bundle savedInstanceState) {
 		Log.i(tag, "onCreate");
 		super.onCreate(savedInstanceState);
+		searchedMembers = new ArrayList<ContactsBean>();
 		members = Datas.getContacts(mActivity);//获取所有联系人
+		searchedMembers.addAll(members);
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,13 +75,28 @@ public class AddMemberFragment extends BaseFragment{
 	}
 	protected void initView(View view){
 		mActivity.setTopBar("添加成员",mActivity.ADD_MEMBER);
-		EditText etSearch = (EditText)view.findViewById(R.id.et_search);
+		etSearch = (EditText)view.findViewById(R.id.et_search);
 		etSearch.setHint("搜索好友");
+		etSearch.addTextChangedListener(new SearchEditTextWatcher(handler, mSearch));
 		initListView(view);
 	}
+	Runnable mSearch = new Runnable() {
+		
+		@Override
+		public void run() {
+			 String data = etSearch.getText().toString();
+             searchedMembers.clear();
+	          for(ContactsBean contact:members){
+	        	  if(contact.getName().contains(data)){
+	        		  searchedMembers.add(contact);
+	        	  }
+	          }
+	          handler.sendEmptyMessage(UPDATE_ADAPTER);
+		}
+	};
 	private void initListView(View view) {
 		lvMembers = (ListView)view.findViewById(R.id.lv_members);
-		selectContactAdapter = new SelectContactAdapter(members, mActivity);
+		selectContactAdapter = new SelectContactAdapter(searchedMembers, mActivity);
 		lvMembers.setAdapter(selectContactAdapter);
 	}
 	public void saveContactsToZuZu(){

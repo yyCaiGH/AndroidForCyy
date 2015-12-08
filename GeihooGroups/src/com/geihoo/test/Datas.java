@@ -104,10 +104,6 @@ public class Datas {
 		bean5.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
 		bean5.setName("陈振东");
 		allContact.add(bean5);
-		ContactsBean bean6 = new ContactsBean();
-		bean6.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
-		bean6.setName("胡陈锦");
-		allContact.add(bean6);
 		bean9 = new ContactsBean();
 		bean9.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
 		bean9.setName("Filt Super");
@@ -120,6 +116,10 @@ public class Datas {
 		bean7.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
 		bean7.setName("黄进生");
 		allContact.add(bean7);
+		ContactsBean bean6 = new ContactsBean();
+		bean6.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
+		bean6.setName("胡陈锦");
+		allContact.add(bean6);
 		bean9 = new ContactsBean();
 		bean9.setImage(ImageUtil.readBitMap(context,R.drawable.def_man));
 		bean9.setName("林俊杰");

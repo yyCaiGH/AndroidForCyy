@@ -106,7 +106,7 @@ public class SetSocietyFragment extends BaseFragment {
 
 			Bitmap photo = extras.getParcelable("data");
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();
-			photo.compress(Bitmap.CompressFormat.PNG, 50, stream);// (0-100)压缩文件
+//			photo.compress(Bitmap.CompressFormat.PNG, 100, stream);// (0-100)压缩文件
 			// 此处可以把Bitmap保存到sd卡中，具体请看：http://www.cnblogs.com/linjiqin/archive/2011/12/28/2304940.html
 			if (requestCode == FOR_HEAD_IMG) {
 				mActivity.getNewZuZuBean().setHeadIcon(photo);// zuzu对象设置bitmap的话，由于过大不能用intent传参

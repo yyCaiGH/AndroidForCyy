@@ -23,6 +23,7 @@ import com.geihoo.base.BaseFragment;
 import com.geihoo.bean.ContactsBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.groups.R;
+import com.geihoo.test.DataDemo;
 import com.geihoo.utils.Constant;
 import com.geihoo.utils.ImageLoader;
 import com.geihoo.utils.ToastUtil;
@@ -70,7 +71,7 @@ public class LookOverSocietyFragment extends BaseFragment {
 		TextView zzName = (TextView) view.findViewById(R.id.tv_zz_name);
 		zzName.setText(zuzu.getName());
 		TextView zzInfo = (TextView) view.findViewById(R.id.tv_zz_info);
-		String info = zuzu.getType() == Constant.ZZ_TYPE_PRIVATE ? "私密" : "公开"
+		String info = (zuzu.getType() == Constant.ZZ_TYPE_PRIVATE ? "私密" : "公开")
 				+ " | " + zuzu.getContacts().size() + "位成员";
 		zzInfo.setText(info);
 
@@ -97,14 +98,20 @@ public class LookOverSocietyFragment extends BaseFragment {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.btn_create_society) {
+			ZuZuBean zuzu = mActivity.getNewZuZuBean();
+			zuzu.setContacts(null);//联系人的头像太占内存
+			if(zuzu.getType()==Constant.ZZ_TYPE_PRIVATE){
+				DataDemo.getPrivateZuzu(mActivity).add(zuzu);
+			}
+			else{
+				DataDemo.getPublicZuzus(mActivity).add(zuzu);
+			}
 			ToastUtil.showTextShort(mActivity, "创建族族成功");
 			Intent i = new Intent(mActivity, SocietyMainActivity.class);
-			mActivity.getNewZuZuBean().setContacts(null);
-			i.putExtra("zuzu", mActivity.getNewZuZuBean());
-			startActivity(i);
-			mActivity.overridePendingTransition(R.anim.anim_go_up,
-					R.anim.anim_activity_out);
+			i.putExtra("zuzu", zuzu);
 			mActivity.finish();
+			startActivity(i);
+			mActivity.overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);
 		} else if (v.getId() == R.id.btn_cancel) {
 			ToastUtil.showTextShort(mActivity, "您已取消创建该族族");
 			mActivity.finish();

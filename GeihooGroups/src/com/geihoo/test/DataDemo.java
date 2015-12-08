@@ -88,7 +88,7 @@ public class DataDemo {
 		friendcircle.add(map);
 		map = new HashMap<String, Object>();
 		map.put("title", "邻居");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx7));
+		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx12));
 		friendcircle.add(map);
 		map = new HashMap<String, Object>();
 		map.put("title", "同事");

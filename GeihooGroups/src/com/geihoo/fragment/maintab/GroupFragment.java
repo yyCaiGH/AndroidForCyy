@@ -270,7 +270,7 @@ public class GroupFragment extends BaseFragment {
 	@Override
 	public void onDestroy() {
 		Log.i(tag, "onDestroy");
-		clearData();
+//		clearData();
 		super.onDestroy();
 	}
 

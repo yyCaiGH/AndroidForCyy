@@ -129,6 +129,7 @@ public class CreateSocietyActivity extends BaseActivity {
 
 	@Override
 	public void onBackPressed() {
+		Log.i("CreateSocietyActivity", "onBackPressed");
 		switch (tag) {
 		case SET_SOCIETY:
 			setRightButtonVisibility(View.GONE);
