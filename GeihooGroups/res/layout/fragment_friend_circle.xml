@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <com.geihoo.view.ElasticityScrollView
+        android:id="@+id/main_srcoll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sys_small_text_size_margin" >
+
+                <TextView
+                    android:id="@+id/tv_recent_seen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tips_friend_circle"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="@dimen/sys_small_text_size" />
+
+                <com.geihoo.view.MyGridView
+                    android:id="@+id/mgv_friend_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_recent_seen"
+                    android:layout_marginTop="20dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="10dp" >
+                </com.geihoo.view.MyGridView>
+            </RelativeLayout>
+
+            <View style="@style/dividing_view" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sys_small_text_size_margin"
+                android:text="全部动态"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="@dimen/sys_small_text_size" />
+
+            <ListView
+                android:id="@+id/postListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/grey_light"
+                android:dividerHeight="1dp"
+                android:fadingEdge="none"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </com.geihoo.view.ElasticityScrollView>
+
+</LinearLayout>

@@ -12,16 +12,19 @@ import com.geihoo.adapter.FragmentAdapter;
 import com.geihoo.base.BaseActivity;
 import com.geihoo.fragment.maintab.ContactsFragment;
 import com.geihoo.fragment.maintab.DynamicFragment;
-import com.geihoo.fragment.maintab.GroupFragment;
 import com.geihoo.fragment.maintab.MeFragment;
+import com.geihoo.fragment.maintab.ZuZuFriendCircleFragment;
+import com.geihoo.fragment.zzfc.ZuZuFragment;
 import com.geihoo.groups.R;
 import com.geihoo.listener.MyDrawerListener;
+import com.geihoo.utils.Constant;
 import com.geihoo.view.MyTabView;
 import com.geihoo.view.MyViewPager;
 
 public class MainTabActivity extends BaseActivity {
 
 	private final static String tag = "MainTabActivity";
+	private int zzfc_tab_index=Constant.ZZFC_ZZ;//族族朋友圈切换标记
 	// private GroupFragment groupF=new GroupFragment();
 	// private ContactsFragment contactF=new ContactsFragment();
 	// private DynamicFragment dynamicF=new DynamicFragment();
@@ -43,7 +46,7 @@ public class MainTabActivity extends BaseActivity {
 		mDrawerLayout.setDrawerListener(new MyDrawerListener(this));
 		
 		List<Fragment> fragments = new ArrayList<Fragment>();
-		fragments.add(new GroupFragment());
+		fragments.add(new ZuZuFriendCircleFragment());
 		fragments.add(new ContactsFragment());
 		fragments.add(new DynamicFragment());
 		fragments.add(new MeFragment());
@@ -64,7 +67,7 @@ public class MainTabActivity extends BaseActivity {
 				R.drawable.main_tab_dt, R.drawable.main_tab_dt_1,
 				R.drawable.main_tab_me, R.drawable.main_tab_me_1, };
 
-		String[] titles = { getResources().getString(R.string.tab_st),
+		String[] titles = { getResources().getString(R.string.tab_zz),
 				getResources().getString(R.string.tab_tx),
 				getResources().getString(R.string.tab_dt),
 				getResources().getString(R.string.tab_wo), };
@@ -85,4 +88,13 @@ public class MainTabActivity extends BaseActivity {
 		mDrawerLayout.openDrawer(Gravity.LEFT);// 展开侧边的菜单
 	}
 
+	public int getZzfcTabIndex() {
+		return zzfc_tab_index;
+	}
+
+	public void setZzfcTabIndex(int zzfc_tab_index) {
+		this.zzfc_tab_index = zzfc_tab_index;
+	}
+
+	
 }

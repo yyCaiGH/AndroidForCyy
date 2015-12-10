@@ -5,14 +5,14 @@
     <string name="app_name">族族</string>
     <string name="hello_world">欢迎来到哥汉族族！</string>
     <string name="action_settings">Settings</string>
-    <string name="tab_st">族族</string>
+    <string name="tab_zz">族族</string>
     <string name="tab_tz">通知</string>
     <string name="tab_dt">动态</string>
     <string name="tab_wo">我</string>
     <string name="tab_sz">设置</string>
     <string name="tab_tx">通讯</string>
     <string name="top_title">标题</string>
-    <string name="top_title_st">族族</string>
+    <string name="top_title_zz">族族</string>
     <string name="top_title_wo">我</string>
     <string name="top_title_sz">设置</string>
     <string name="top_title_tz">通知</string>
@@ -35,6 +35,7 @@
     <string name="tips_more">更多</string>
     <string name="tips_create_society">创建族族</string>
     <string name="tips_my_society">我的族族  ( 11 )</string>
+    <string name="tips_private_society">私密族族  ( 8 )</string>
     <string name="tips_attention_society">封闭族族  ( 7 )</string>
     <string name="tips_public_society">公开族族  ( 7 )</string>
     <string name="tips_hot_society">热门族族☆</string>

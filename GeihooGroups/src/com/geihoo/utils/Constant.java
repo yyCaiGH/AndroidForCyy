@@ -17,4 +17,7 @@ public class Constant {
 	 */
 //	public final static String NEW_ZZ_HEAD_IMG_URL="new_zuzu_head_img";
 //	public final static String NEW_ZZ_BG_IMG_URL="new_zuzu_bg_img";
+	
+	public final static int ZZFC_ZZ=0x1002;//标记族族tab页
+	public final static int ZZFC_FC=0x1003;//标记朋友圈tab页
 }
