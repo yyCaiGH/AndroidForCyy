@@ -52,7 +52,7 @@ public class RecentlyFragment extends BaseFragment{
 					@Override
 					public void onClick(View arg0) {
 						Intent i = new Intent(getActivity(),MeActivity.class);
-						i.putExtra("type", MeActivity.ME_INFO);
+						i.putExtra("type", MeActivity.ME_HOME);
 						i.putExtra("contact", contact);
 						getActivity().startActivity(i);
 					}

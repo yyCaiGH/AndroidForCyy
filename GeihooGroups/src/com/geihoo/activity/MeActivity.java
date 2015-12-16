@@ -51,11 +51,13 @@ public class MeActivity extends BaseActivity {
 		} else if (type == ME_SET) {
 			initFragment(new SetFragment(), null,R.id.fl_me);
 		}else if (type == ME_INFO) {
+//			Bundle bundle = new Bundle();
+//			bundle.putParcelable("contact", this.getIntent().getParcelableExtra("contact"));
+			initFragment(new MyInfoFragment(), null,R.id.fl_me);
+		}else if (type == ME_HOME) {
 			Bundle bundle = new Bundle();
 			bundle.putParcelable("contact", this.getIntent().getParcelableExtra("contact"));
-			initFragment(new MyInfoFragment(), bundle,R.id.fl_me);
-		}else if (type == ME_HOME) {
-			initFragment(new MyHomeFragment(), null,R.id.fl_me);
+			initFragment(new MyHomeFragment(), bundle,R.id.fl_me);
 		}
 		else if(type == ME_ACTIVITY){
 			initFragment(new MyActivityFragment(), null, R.id.fl_me);

@@ -17,6 +17,8 @@ import com.geihoo.base.BaseFragment;
 import com.geihoo.fragment.me.MyHomeFragment;
 import com.geihoo.fragment.me.MyInfoFragment;
 import com.geihoo.groups.R;
+import com.geihoo.utils.DialogUtil;
+import com.geihoo.utils.ImageUtil;
 
 public class MeFragment extends BaseFragment{
 
@@ -30,7 +32,6 @@ public class MeFragment extends BaseFragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		Log.i("NearbyFragment", "onCreateView");
 		view = inflater.inflate(R.layout.fragment_main_tab_me, container,false);
 		initView();
 		initData();
@@ -56,7 +57,7 @@ public class MeFragment extends BaseFragment{
 		view.findViewById(R.id.rl_me_message).setOnClickListener(this);
 		view.findViewById(R.id.rl_me_set).setOnClickListener(this);
 		view.findViewById(R.id.rl_me_activity).setOnClickListener(this);
-		
+		view.findViewById(R.id.iv_me_erweima).setOnClickListener(this);
 	}
 	protected void initData() {
 		
@@ -97,6 +98,9 @@ public class MeFragment extends BaseFragment{
 			Intent i = new Intent(activity,MeActivity.class);
 			i.putExtra("type", MeActivity.ME_ACTIVITY);
 			startActivity(i);
+		}
+		else if(v.getId()==R.id.iv_me_erweima){
+			DialogUtil.showOneImageDialog(activity, ImageUtil.readBitMap(activity, R.drawable.weixindemo));
 		}
 	}
 }

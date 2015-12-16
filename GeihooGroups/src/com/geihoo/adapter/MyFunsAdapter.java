@@ -63,7 +63,6 @@ public class MyFunsAdapter extends BaseAdapter {
 		if(item.getName()==null){
 			vh.title.setVisibility(View.GONE);
 			vh.image.setOnClickListener(new OnClickListener() {
-				
 				@Override
 				public void onClick(View v) {
 //					new FunMarketDialog(context).show();

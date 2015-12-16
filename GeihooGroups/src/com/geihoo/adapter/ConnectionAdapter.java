@@ -91,7 +91,7 @@ public class ConnectionAdapter extends BaseAdapter{
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(context,MeActivity.class);
-				i.putExtra("type", MeActivity.ME_INFO);
+				i.putExtra("type", MeActivity.ME_HOME);
 				i.putExtra("contact", contact);
 				context.startActivity(i);
 				

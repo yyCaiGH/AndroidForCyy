@@ -10,9 +10,9 @@ import com.geihoo.groups.R;
  *
  * 2015年7月24日
  */
-public class TestDialog extends BaseDialog{
+public class OneImageDialog extends BaseDialog{
 
-	public TestDialog(Context context) {
+	public OneImageDialog(Context context) {
         super(context, R.style.Dialog);
         setContentView(R.layout.view_test);
 	}

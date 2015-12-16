@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -142,4 +144,17 @@ public class DialogUtil {
 			}
 		});
     }
+	/**
+	 * 用alertDialog显示一张图片再中央
+	 * @param ctx
+	 * @param image
+	 */
+	public static void showOneImageDialog(Context ctx,Bitmap image){
+		ImageView iv = new ImageView(ctx);
+		iv.setImageBitmap(image);
+		AlertDialog dialog = new AlertDialog.Builder(ctx).create();
+		dialog.show();
+		Window window = dialog.getWindow();
+		window.setContentView(iv);
+	}
 }
