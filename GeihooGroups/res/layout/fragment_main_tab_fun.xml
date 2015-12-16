@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/xingkong"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top_image" />
+
+    <GridView
+        android:id="@+id/gv_all_fun"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:numColumns="3"
+        android:background="@drawable/bg_fun"
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingRight="10dp"
+        android:verticalSpacing="30dp" >
+    </GridView>
+    <!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical" >
+
+        <View
+            style="@style/dividing_view_fill"
+            android:layout_marginTop="@dimen/me_margin_top_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_image"
+                android:text="相册" />
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_jizhang"
+                android:text="记账" />
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_music"
+                android:text="音乐" />
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_notepad"
+                android:text="记事" />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+
+        <View
+            style="@style/dividing_view_fill"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_shipin"
+                android:text="视频" />
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_shoucang"
+                android:text="收藏" />
+
+            <TextView
+                style="@style/myfun_textview_style"
+                android:drawableTop="@drawable/my_shujiaxuanzhong"
+                android:text="书架" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/my_tianjia" />
+        </LinearLayout>
+
+        <View style="@style/dividing_view_fill" />
+    </LinearLayout>    -->
+
+</LinearLayout>

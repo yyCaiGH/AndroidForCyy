@@ -51,6 +51,7 @@
         <activity android:name="com.geihoo.activity.SocietySettingsActivity"></activity>
         <activity android:name="com.geihoo.activity.SocietyDocumentActivity"></activity>
         <activity android:name="com.geihoo.activity.FriendCircleActivity"></activity>
+        <activity android:name="com.geihoo.activity.FunMarketActivity"></activity>
     </application>
 
 </manifest>

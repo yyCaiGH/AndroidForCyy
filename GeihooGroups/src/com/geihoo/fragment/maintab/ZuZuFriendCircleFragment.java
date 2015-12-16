@@ -54,11 +54,11 @@ public class ZuZuFriendCircleFragment extends BaseFragment{
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_tow_viewpager,container,false);
 		
-		initTopBar(view, "热爱");
+		initTopBar(view, "族族");
 		
 		RadioGroup rgTab =(RadioGroup)view.findViewById(R.id.rg);
 		final RadioButton rbZuZu=(RadioButton) rgTab.findViewById(R.id.rb_left);
-		rbZuZu.setText("族族");
+		rbZuZu.setText("圈子");
 		final RadioButton rbFriendCircle=(RadioButton) rgTab.findViewById(R.id.rb_right);
 		rbFriendCircle.setText("朋友圈");
 		List<Fragment> fragments = new ArrayList<Fragment>();

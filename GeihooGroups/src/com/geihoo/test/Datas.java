@@ -11,6 +11,7 @@ import android.view.View;
 import com.geihoo.bean.ActivityBean;
 import com.geihoo.bean.AlbumBean;
 import com.geihoo.bean.ContactsBean;
+import com.geihoo.bean.FunBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.groups.R;
 import com.geihoo.utils.ImageUtil;
@@ -21,6 +22,7 @@ public class Datas {
 	private static List<HashMap<String, Object>> noCommonZuzus;// 不常用族族
 	private static List<ZuZuBean> allZuzu;// 所有族族
 	private static List<ContactsBean> allContact;//所有联系人
+	private static List<FunBean> allFun;
 	public static List<HashMap<String, Object>> getAllRecentlyMes() {
 		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 		HashMap<String, Object> bean1 = new HashMap<String, Object>();
@@ -544,5 +546,61 @@ public class Datas {
 		  imagelist.add(map11);
 		  
 		  return imagelist;
+	}
+	
+	/**
+	 * 获取所有功能
+	 * 
+	 * @param ctx
+	 * @return
+	 */
+	public static List<FunBean> getAllFuns(Context ctx) {
+		if(allFun!=null){
+			return allFun;
+		}
+		allFun = new ArrayList<FunBean>();
+		FunBean fun = new FunBean();
+		fun.setName("记事");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_notepad));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("记账");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_jizhangben));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("相册");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_image));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("音乐");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_music));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("视频");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_shipin));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("收藏");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_shoucang));
+		fun.setAdd(true);
+		allFun.add(fun);
+		fun = new FunBean();
+		fun.setName("书架");
+		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_shujiaxuanzhong));
+		fun.setAdd(true);
+		allFun.add(fun);
+		for (int i = 1; i < 11; i++) {
+			fun = new FunBean();
+			fun.setName("功能"+i);
+			fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_gongneng));
+			fun.setAdd(false);
+			allFun.add(fun);
+		}
+		return allFun;
 	}
 }

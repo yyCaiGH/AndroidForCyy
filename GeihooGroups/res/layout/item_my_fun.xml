@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+     >
+	<ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/my_image"
+         />
+    
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/myfun_icon_text_size"
+        android:layout_marginTop="@dimen/item_grou_margin_top"
+        android:text="相册"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+
+</LinearLayout>

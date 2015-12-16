@@ -2,39 +2,93 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
     android:orientation="vertical" >
 
     <include layout="@layout/view_common_top"/>
-    "
     <include layout="@layout/view_common_search" />
 
     <View style="@style/dividing_view_fill" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center" >
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/add_member" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/sys_sub_color"
-            android:text="从手机通讯录添加" />
-    </LinearLayout>
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:background="@color/sys_sub_bg_color"
+       		android:padding="15dp"
+            android:drawableLeft="@drawable/add_type_weixin"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="16sp"
+            android:text="添加微信好友" />
 
-    <View style="@style/dividing_view_fill" />
+    <View style="@style/dividing_view" />
+	
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:background="@color/sys_sub_bg_color"
+       		android:padding="15dp"
+       		android:textSize="16sp"
+            android:drawableLeft="@drawable/add_type_tongxunlu"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sys_main_text_color"
+            android:text="添加通讯录好友" />
 
-    <ListView
+    <View style="@style/dividing_view" />
+    
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:background="@color/sys_sub_bg_color"
+       		android:padding="15dp"
+       		android:textSize="16sp"
+            android:drawableLeft="@drawable/add_type_saoyisao"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sys_main_text_color"
+            android:text="扫一扫" />
+
+    <View style="@style/dividing_view" />
+    
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:background="@color/sys_sub_bg_color"
+       		android:padding="15dp"
+       		android:textSize="16sp"
+            android:drawableLeft="@drawable/add_type_faxianaicheleida"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sys_main_text_color"
+            android:text="名片雷达" />
+
+    <View style="@style/dividing_view" />
+    
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:background="@color/sys_sub_bg_color"
+       		android:padding="15dp"
+       		android:textSize="16sp"
+            android:drawableLeft="@drawable/add_type_fujin"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sys_main_text_color"
+            android:text="附近的人" />
+
+    <!-- <ListView
         android:id="@+id/lv_friend"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-    </ListView>
+    </ListView> -->
 
 </LinearLayout>

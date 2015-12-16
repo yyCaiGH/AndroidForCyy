@@ -13,6 +13,7 @@ import com.geihoo.base.BaseActivity;
 import com.geihoo.fragment.maintab.ContactsFragment;
 import com.geihoo.fragment.maintab.DynamicFragment;
 import com.geihoo.fragment.maintab.MeFragment;
+import com.geihoo.fragment.maintab.MyFunctionFragment;
 import com.geihoo.fragment.maintab.ZuZuFriendCircleFragment;
 import com.geihoo.fragment.zzfc.ZuZuFragment;
 import com.geihoo.groups.R;
@@ -48,12 +49,12 @@ public class MainTabActivity extends BaseActivity {
 		List<Fragment> fragments = new ArrayList<Fragment>();
 		fragments.add(new ZuZuFriendCircleFragment());
 		fragments.add(new ContactsFragment());
-		fragments.add(new DynamicFragment());
+		fragments.add(new MyFunctionFragment());
 		fragments.add(new MeFragment());
 		
 		pager = (MyViewPager) findViewById(R.id.cyy_view_pager);
 
-		pager.setNoScroll(true);// 设置viewPager不滚动
+//		pager.setNoScroll(true);// 设置viewPager不滚动
 		
 		pager.setAdapter(new FragmentAdapter(getSupportFragmentManager(),
 				fragments));
@@ -67,9 +68,9 @@ public class MainTabActivity extends BaseActivity {
 				R.drawable.main_tab_dt, R.drawable.main_tab_dt_1,
 				R.drawable.main_tab_me, R.drawable.main_tab_me_1, };
 
-		String[] titles = { getResources().getString(R.string.tab_zz),
+		String[] titles = { "族族",
 				getResources().getString(R.string.tab_tx),
-				getResources().getString(R.string.tab_dt),
+				"生活",
 				getResources().getString(R.string.tab_wo), };
 
 		tabView.SetTabImages(imageIds);

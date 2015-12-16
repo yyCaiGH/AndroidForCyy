@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.NoActionBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -26,6 +26,7 @@
         <item name="android:textSize">@dimen/set_big_text_size</item>
         <item name="android:textColor">@color/sys_set_title_text_color</item>
     </style>
+
     <style name="set_context_text_view">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -36,7 +37,7 @@
         <item name="android:textSize">@dimen/set_big_text_size</item>
         <item name="android:textColor">@color/sys_main_text_color</item>
     </style>
-    
+
     <style name="set_text_view_top">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -46,6 +47,7 @@
         <item name="android:textColor">@color/sys_sub_color</item>
         <item name="android:textSize">@dimen/set_small_text_size</item>
     </style>
+
     <style name="set_layout_view">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -55,6 +57,7 @@
         <item name="android:paddingRight">@dimen/sys_default_padding_right_size</item>
         <item name="android:background">@color/sys_sub_bg_color</item>
     </style>
+
     <style name="dividing_view">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dividing_line_height</item>
@@ -152,7 +155,8 @@
         <item name="android:textColor">@color/sys_main_text_color</item>
         <item name="android:background">@color/sys_sub_bg_color</item>
     </style>
-	<style name="fragment_more_text_style_2">
+
+    <style name="fragment_more_text_style_2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">@dimen/sys_default_padding_left_size</item>
@@ -163,7 +167,7 @@
         <item name="android:textColor">@color/sys_main_text_color</item>
         <item name="android:background">@color/sys_sub_bg_color</item>
     </style>
-    
+
     <style name="radioStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -180,7 +184,7 @@
     <style name="PopMenuAnimation" parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
         <item name="android:windowExitAnimation">@anim/slide_out_right</item>
-    </style> 
+    </style>
 
     <style name="activtiy_item_text_view">
         <item name="android:layout_width">fill_parent</item>
@@ -190,4 +194,16 @@
         <item name="android:textSize">@dimen/activity_item_small_text_size</item>
         <item name="android:textColor">@color/sys_main_text_color</item>
     </style>
+
+    <style name="myfun_textview_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/myfun_padding</item>
+        <item name="android:drawablePadding">@dimen/myfun_drawble_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/myfun_icon_text_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -92,6 +93,14 @@ public class ViewHolder
 		return this;
 	}
 
+	public ViewHolder setTextDrawbleTop(int viewId, Bitmap bm)
+	{
+		TextView view = getView(viewId);
+		Drawable drawable =new BitmapDrawable(bm);
+		view.setCompoundDrawables(null, drawable, null, null);
+		return this;
+	}
+	
 	public ViewHolder setCustomImageViewOnClickListener(int viewId, OnClickListener click)
 	{
 		CustomImageView view = (CustomImageView)getView(viewId);
