@@ -24,6 +24,7 @@ import com.geihoo.adapter.CommonAdapter;
 import com.geihoo.adapter.ViewHolder;
 import com.geihoo.base.BaseFragment;
 import com.geihoo.bean.ContactsBean;
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.groups.R;
 import com.geihoo.test.DataDemo;
@@ -65,22 +66,22 @@ public class LookOverFriendCircleFragment extends BaseFragment {
 		mActivity.setTopBar("朋友圈概况", CreateFriendCircleActivity.LOOK_OVER_FC);
 		mActivity.setRightButtonVisibility(View.GONE);
 		// 初始化族族信息
-		ZuZuBean zuzu = mActivity.getNewZuZuBean();
+		FriendCircleBean fc = mActivity.getNewFcBean();
 
 		LinearLayout llZuzuBg = (LinearLayout) view.findViewById(R.id.ll_zz_bg);
-		llZuzuBg.setBackgroundDrawable(new BitmapDrawable(zuzu.getBgIcon()));
+		llZuzuBg.setBackgroundDrawable(new BitmapDrawable(fc.getBgIcon()));
 		CustomImageView civZuzuHead = (CustomImageView) view.findViewById(R.id.civ_zz_head);
-		civZuzuHead.setPic(zuzu.getHeadIcon());
+		civZuzuHead.setPic(fc.getHeadIcon());
 
 		TextView zzName = (TextView) view.findViewById(R.id.tv_zz_name);
-		zzName.setText(zuzu.getName());
+		zzName.setText(fc.getName());
 		TextView zzInfo = (TextView) view.findViewById(R.id.tv_zz_info);
-		String info = zuzu.getContacts().size() + "位成员";
+		String info = fc.getContacts().size() + "位成员";
 		zzInfo.setText(info);
 
 		HorizontalListView hlvMembers = (HorizontalListView) view
 				.findViewById(R.id.hlv_members);
-		List<ContactsBean> contacts = mActivity.getNewZuZuBean().getContacts();
+		List<ContactsBean> contacts = mActivity.getNewFcBean().getContacts();
 		// 创建一个匿名适配器对象，对item进行赋值
 		hlvMembers.setAdapter(new CommonAdapter<ContactsBean>(getActivity(),
 				contacts, R.layout.item_simple_img) {
@@ -101,14 +102,12 @@ public class LookOverFriendCircleFragment extends BaseFragment {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.btn_create_society) {
-			ZuZuBean zuzu = mActivity.getNewZuZuBean();
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("title", zuzu.getName());//借用族族的实体来装载朋友圈
-			map.put("image", zuzu.getBgIcon());
-			DataDemo.getFriendsCircle(mActivity).add(map);
+			FriendCircleBean fc = mActivity.getNewFcBean();
+			fc.setContacts(null);//intent承载不了
+			DataDemo.getFriendsCircle(mActivity).add(fc);
 			ToastUtil.showTextShort(mActivity, "创建朋友圈成功");
 			Intent i = new Intent(mActivity, FriendCircleActivity.class);
-			i.putExtra("name", zuzu.getName());
+			i.putExtra("friendCircle", fc);
 			mActivity.finish();
 			startActivity(i);
 			mActivity.overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);

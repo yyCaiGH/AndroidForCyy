@@ -1,4 +1,4 @@
-package com.geihoo.test;
+package com.geihoo.adapter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.groups.R;
 import com.geihoo.utils.ImageUtil;
 import com.geihoo.view.CustomImageView;
@@ -24,24 +25,24 @@ import com.geihoo.view.CustomImageView;
  *
  * 2015年11月27日
  */
-public class MyGroupsAdapter extends BaseAdapter {
+public class FriendCircleAdapter extends BaseAdapter {
 
-	private List<HashMap<String, Object>> groups;
+	private List<FriendCircleBean> fc;
 	private Context context;
-	public MyGroupsAdapter(List<HashMap<String, Object>> groups,
+	public FriendCircleAdapter(List<FriendCircleBean> fc,
 			Context context) {
-		this.groups=groups;
+		this.fc=fc;
 		this.context=context;
 	}
 
 	@Override
 	public int getCount() {
-		return groups.size();
+		return fc.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return groups.get(position);
+		return fc.get(position);
 	}
 
 	@Override
@@ -62,9 +63,9 @@ public class MyGroupsAdapter extends BaseAdapter {
 		else{
 			vh=(ViewHolder)convertView.getTag();
 		}
-		Bitmap bitmap=ImageUtil.postScale(context, (Bitmap)groups.get(position).get("image"), R.dimen.icon_medium_size);
+		Bitmap bitmap=ImageUtil.postScale(context, fc.get(position).getHeadIcon(), R.dimen.icon_medium_size);
 		vh.civImage.setPic(bitmap);
-		String title = groups.get(position).get("title").toString();
+		String title = fc.get(position).getName().toString();
 		if(title.length()>13){
 			title = title.substring(0, 7)+"\n"+title.substring(7,13)+"...";
 		}

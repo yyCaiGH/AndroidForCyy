@@ -102,7 +102,7 @@ public class AddFriendsFragment extends BaseFragment{
 	}
 	public void saveContactsToZuZu(){
 		//由于每个Contact都有一个bitmap，导致intent的参数值过大。
-		mActivity.getNewZuZuBean().setContacts(selectContactAdapter.getSelectContacts());
+		mActivity.getNewFcBean().setContacts(selectContactAdapter.getSelectContacts());
 	}
 	
 

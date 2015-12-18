@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.geihoo.base.BaseActivity;
 import com.geihoo.base.BaseFragment;
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.fragment.createfc.AddFriendsFragment;
 import com.geihoo.fragment.createfc.LookOverFriendCircleFragment;
@@ -38,7 +39,7 @@ public class CreateFriendCircleActivity extends BaseActivity {
 	private SetFriendCircleFragment setFriendCircleF;
 	private LookOverFriendCircleFragment lookOverFriendCircleF;
 	
-	private ZuZuBean newZuZuBean;//创建该族族//这里是朋友圈的，由于朋友圈没有建设实体类，这里借用族族类
+	private FriendCircleBean newFcBean;//创建该朋友圈
 	/**
 	 * Fragment事务
 	 */
@@ -70,10 +71,10 @@ public class CreateFriendCircleActivity extends BaseActivity {
 	}
 	@Override
 	protected void initData() {
-		if(newZuZuBean==null){
-			newZuZuBean=new ZuZuBean();//创建该族族
-			newZuZuBean.setBgIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_bg));//设置默认值，没值不能序列化
-			newZuZuBean.setHeadIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_head));
+		if(newFcBean==null){
+			newFcBean=new FriendCircleBean();//创建该族族
+			newFcBean.setBgIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_bg));//设置默认值，没值不能序列化
+			newFcBean.setHeadIcon(ImageUtil.readBitMap(this, R.drawable.zz_def_head));
 		}
 	}
 	protected void initTopBar() {
@@ -97,8 +98,8 @@ public class CreateFriendCircleActivity extends BaseActivity {
 	}
 
 	
-	public ZuZuBean getNewZuZuBean() {
-		return newZuZuBean;
+	public FriendCircleBean getNewFcBean() {
+		return newFcBean;
 	}
 
 	public BaseFragment getSetFriendCircleFragment(){

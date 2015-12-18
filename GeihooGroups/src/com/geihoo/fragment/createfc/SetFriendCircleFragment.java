@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.geihoo.activity.CreateFriendCircleActivity;
 import com.geihoo.activity.CreateSocietyActivity;
 import com.geihoo.base.BaseFragment;
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.groups.R;
 import com.geihoo.utils.Constant;
@@ -32,7 +33,7 @@ import com.geihoo.utils.ToastUtil;
 import com.geihoo.view.CustomImageView;
 
 /**
- * 设置族族
+ * 设置朋友圈
  * 
  * @author yy_cai
  * 
@@ -97,10 +98,10 @@ public class SetFriendCircleFragment extends BaseFragment {
 //			photo.compress(Bitmap.CompressFormat.PNG, 100, stream);// (0-100)压缩文件
 			// 此处可以把Bitmap保存到sd卡中，具体请看：http://www.cnblogs.com/linjiqin/archive/2011/12/28/2304940.html
 			if (requestCode == FOR_HEAD_IMG) {
-				mActivity.getNewZuZuBean().setHeadIcon(photo);// zuzu对象设置bitmap的话，由于过大不能用intent传参
+				mActivity.getNewFcBean().setHeadIcon(photo);// zuzu对象设置bitmap的话，由于过大不能用intent传参
 				civZzHeadImg.setPic(photo); // 把图片显示在ImageView控件上
 			} else if (requestCode == FOR_BG_IMG) {
-				mActivity.getNewZuZuBean().setBgIcon(photo);
+				mActivity.getNewFcBean().setBgIcon(photo);
 				ivZzBgImg.setImageBitmap(photo);
 			}
 
@@ -110,16 +111,16 @@ public class SetFriendCircleFragment extends BaseFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		ZuZuBean zuzu = mActivity.getNewZuZuBean();
-		if (zuzu != null) {
-			ivZzBgImg.setImageBitmap(zuzu.getBgIcon());
-			civZzHeadImg.setPic(zuzu.getHeadIcon());
-			etZzName.setText(zuzu.getName());
+		FriendCircleBean fc = mActivity.getNewFcBean();
+		if (fc != null) {
+			ivZzBgImg.setImageBitmap(fc.getBgIcon());
+			civZzHeadImg.setPic(fc.getHeadIcon());
+			etZzName.setText(fc.getName());
 		}
 	}
 
 	/**
-	 * 保存族族信息 这里只保存了名字，其他信息分别在选择的时候已经保存
+	 * 保存朋友圈信息 这里只保存了名字，其他信息分别在选择的时候已经保存
 	 * 
 	 * @return true保存成功 false 保存失败
 	 */
@@ -129,7 +130,7 @@ public class SetFriendCircleFragment extends BaseFragment {
 			ToastUtil.showTextLong(mActivity, "朋友圈名字不能为空！");
 			return false;
 		}
-		mActivity.getNewZuZuBean().setName(zzName);
+		mActivity.getNewFcBean().setName(zzName);
 		return true;
 	}
 }

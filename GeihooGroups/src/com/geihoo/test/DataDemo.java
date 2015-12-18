@@ -7,13 +7,14 @@ import java.util.List;
 import android.content.Context;
 
 import com.geihoo.bean.ContactsBean;
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.ZuZuBean;
 import com.geihoo.groups.R;
 import com.geihoo.utils.Constant;
 import com.geihoo.utils.ImageUtil;
 
 public class DataDemo {
-	private  static List<HashMap<String, Object>> friendcircle;
+	private  static List<FriendCircleBean> friendcircle;
 	private  static List<ZuZuBean> commonZuzus,privateZuzus,publicZuzus;
 	private  List<HashMap<String, Object>> data3;
 	private  List<HashMap<String, Object>> data4;
@@ -69,40 +70,46 @@ public class DataDemo {
 		return commonZuzus;
 	}
 	//朋友圈
-	public static List<HashMap<String, Object>> getFriendsCircle(Context ctx){
+	public static List<FriendCircleBean> getFriendsCircle(Context ctx){
 		if(friendcircle!=null){
 			return friendcircle;
 		}
-		friendcircle = new ArrayList<HashMap<String, Object>>();
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("title", "家人");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx5));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "朋友");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx6));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "同学");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.rao));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "邻居");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx12));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "同事");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx9));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "客户");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx8));
-		friendcircle.add(map);
-		map = new HashMap<String, Object>();
-		map.put("title", "商家");
-		map.put("image", ImageUtil.readBitMap(ctx, R.drawable.tx3));
-		friendcircle.add(map);
-		
+		friendcircle = new ArrayList<FriendCircleBean>();
+		FriendCircleBean fc = new FriendCircleBean();
+		fc.setName("家人");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx5));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("朋友");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx6));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("同学");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.rao));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("邻居");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx12));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("同事");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx9));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("客户");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx8));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
+		fc = new FriendCircleBean();
+		fc.setName("商家");
+		fc.setHeadIcon(ImageUtil.readBitMap(ctx, R.drawable.tx3));
+		fc.setBgIcon(ImageUtil.readBitMap(ctx, R.drawable.test_content_img_10));
+		friendcircle.add(fc);
 		return friendcircle;
 	}
 	

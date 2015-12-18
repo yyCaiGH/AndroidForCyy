@@ -41,7 +41,7 @@ public class ZuZuFragment extends BaseFragment {
 	private View view;
 	private MyGridView commonZuzuGv,privateZuzuGv,publicZuzuGv;
 	List<ZuZuBean> commonZuzuDatas,privateZuzuDatas,publicZuzuDatas;
-	GroupsAdapter commonGA;
+	GroupsAdapter commonGA,privateGA,publicGA;
 	
 	@Override
 	public void onAttach(Activity activity) {
@@ -93,7 +93,8 @@ public class ZuZuFragment extends BaseFragment {
 	 */
 	private void initPrivateZuzu() {
 		privateZuzuGv = (MyGridView) view.findViewById(R.id.mgv_private_zz_type);
-		privateZuzuGv.setAdapter(new GroupsAdapter(privateZuzuDatas, mActivity));
+		privateGA = new GroupsAdapter(privateZuzuDatas, mActivity);
+		privateZuzuGv.setAdapter(privateGA);
 		privateZuzuGv.setOnItemClickListener(this);
 		privateZuzuGv.setOnItemLongClickListener(this);
 		
@@ -103,7 +104,8 @@ public class ZuZuFragment extends BaseFragment {
 	 */
 	private void initPublicZuzu() {
 		publicZuzuGv = (MyGridView) view.findViewById(R.id.mgv_public_zz_type);
-		publicZuzuGv.setAdapter(new GroupsAdapter(publicZuzuDatas, mActivity));
+		publicGA = new GroupsAdapter(publicZuzuDatas, mActivity);
+		publicZuzuGv.setAdapter(publicGA);
 		publicZuzuGv.setOnItemClickListener(this);
 		publicZuzuGv.setOnItemLongClickListener(this);
 		
@@ -167,6 +169,8 @@ public class ZuZuFragment extends BaseFragment {
 	public void onResume() {
 		Log.i(tag, "onResume");
 		super.onResume();
+		privateGA.notifyDataSetChanged();
+		publicGA.notifyDataSetChanged();
 	}
 
 	@Override

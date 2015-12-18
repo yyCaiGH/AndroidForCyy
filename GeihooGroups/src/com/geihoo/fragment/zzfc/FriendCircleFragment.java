@@ -1,7 +1,6 @@
 package com.geihoo.fragment.zzfc;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
@@ -13,17 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.geihoo.activity.FriendCircleActivity;
 import com.geihoo.activity.MainTabActivity;
+import com.geihoo.adapter.FriendCircleAdapter;
 import com.geihoo.adapter.SocietyPostAdapter;
 import com.geihoo.base.BaseFragment;
+import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.PostContentBean;
 import com.geihoo.groups.R;
 import com.geihoo.test.DataDemo;
-import com.geihoo.test.MyGroupsAdapter;
-import com.geihoo.utils.Constant;
 import com.geihoo.utils.Constants;
 import com.geihoo.utils.ListViewUtil;
 import com.geihoo.view.MyGridView;
@@ -42,8 +40,8 @@ public class FriendCircleFragment extends BaseFragment {
 	private MainTabActivity mActivity;
 	private View view;
 	private MyGridView FriendCircle;
-	List<HashMap<String, Object>> FriendCircleDatas;
-	
+	private FriendCircleAdapter fcAdapter;
+	private List<FriendCircleBean> friendCircleDatas;
 	ArrayList<PostContentBean> postList;
 	ListView postListView;
 	SocietyPostAdapter societyPostAdapter;
@@ -72,7 +70,6 @@ public class FriendCircleFragment extends BaseFragment {
 	}
 	
 	protected void initData() {
-		FriendCircleDatas = DataDemo.getFriendsCircle(mActivity);//朋友圈分类
 		postList = Constants.getPostList();//全部朋友圈动态数据
 	}
 
@@ -88,9 +85,10 @@ public class FriendCircleFragment extends BaseFragment {
 	 * 朋友圈
 	 */
 	private void initFriendCircle() {
-		MyGroupsAdapter commonGA = new MyGroupsAdapter(FriendCircleDatas, getActivity());
+		friendCircleDatas = DataDemo.getFriendsCircle(mActivity);
+		fcAdapter = new FriendCircleAdapter(friendCircleDatas, getActivity());
 		FriendCircle = (MyGridView) view.findViewById(R.id.mgv_friend_circle);
-		FriendCircle.setAdapter(commonGA);
+		FriendCircle.setAdapter(fcAdapter);
 		FriendCircle.setOnItemClickListener(this);
 	}
 
@@ -99,8 +97,8 @@ public class FriendCircleFragment extends BaseFragment {
 			long id) {
 		if(parent == FriendCircle){
 			Intent i = new Intent(getActivity(), FriendCircleActivity.class);
-			String name = FriendCircleDatas.get(position).get("title").toString();
-			i.putExtra("name", name);
+			FriendCircleBean fc = friendCircleDatas.get(position);
+			i.putExtra("friendCircle", fc);
 			startActivity(i);
 			getActivity().overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);
 			
@@ -118,6 +116,7 @@ public class FriendCircleFragment extends BaseFragment {
 	public void onResume() {
 		Log.i(tag, "onResume");
 		super.onResume();
+		fcAdapter.notifyDataSetChanged();
 	}
 
 	@Override

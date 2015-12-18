@@ -9,40 +9,36 @@ import android.os.Parcel;
 import android.os.Parcelable;
 /**
  * 
- * 族族实体类
+ * 朋友圈实体类
  *
  * @author yyCai
  *
  * 2015年12月18日
  */
-public class ZuZuBean implements Parcelable{
+public class FriendCircleBean implements Parcelable{
 
 	/**
-	 * 族族名称
+	 * 朋友圈名称
 	 */
 	private String name;
 	/**
-	 * 族族头像
+	 * 朋友圈头像
 	 */
 	private Bitmap headIcon;//图片在intent传送的时候会过大
 	/**
-	 * 族族头像地址
+	 * 朋友圈头像地址
 	 */
 	private String headIconUri;//解决传送过大图片的问题
 	/**
-	 * 族族背景
+	 * 朋友圈背景
 	 */
 	private Bitmap BgIcon;
 	/**
-	 * 族族背景地址
+	 * 朋友圈背景地址
 	 */
 	private String bgIconUri;
 	/**
-	 * 族族类型，constant.ZZ_TYPE_PRIVATE-私密，constant.ZZ_TYPE_PUBLIC-公开
-	 */
-	private int type;
-	/**
-	 * 族族成员
+	 * 朋友圈成员
 	 */
 	private List<ContactsBean> contacts;
 	
@@ -64,12 +60,6 @@ public class ZuZuBean implements Parcelable{
 	public void setBgIcon(Bitmap bgIcon) {
 		BgIcon = bgIcon;
 	}
-	public int getType() {
-		return type;
-	}
-	public void setType(int type) {
-		this.type = type;
-	}
 	public List<ContactsBean> getContacts() {
 		return contacts;
 	}
@@ -89,21 +79,20 @@ public class ZuZuBean implements Parcelable{
 		this.bgIconUri = bgIconUri;
 	}
 
-	public static final Parcelable.Creator<ZuZuBean> CREATOR = new Creator<ZuZuBean>() { 
+	public static final Parcelable.Creator<FriendCircleBean> CREATOR = new Creator<FriendCircleBean>() { 
             @SuppressWarnings("unchecked")
-			public ZuZuBean createFromParcel(Parcel source) { 
-            	ZuZuBean pb = new ZuZuBean(); 
+			public FriendCircleBean createFromParcel(Parcel source) { 
+            	FriendCircleBean pb = new FriendCircleBean(); 
                 pb.name = source.readString(); 
                 pb.headIcon = Bitmap.CREATOR.createFromParcel(source);
                 pb.headIconUri = source.readString();
                 pb.BgIcon = Bitmap.CREATOR.createFromParcel(source);
                 pb.bgIconUri = source.readString();
-                pb.type = source.readInt();
                 pb.contacts = source.readArrayList(ContactsBean.class.getClassLoader());
                 return pb; 
             } 
-            public ZuZuBean[] newArray(int size) { 
-                return new ZuZuBean[size]; 
+            public FriendCircleBean[] newArray(int size) { 
+                return new FriendCircleBean[size]; 
             } 
         }; 
     @Override
@@ -122,7 +111,6 @@ public class ZuZuBean implements Parcelable{
         	BgIcon.writeToParcel(parcel, 0);
         }
         parcel.writeString(bgIconUri);
-        parcel.writeInt(type);
         parcel.writeList(contacts);
     }
 }
