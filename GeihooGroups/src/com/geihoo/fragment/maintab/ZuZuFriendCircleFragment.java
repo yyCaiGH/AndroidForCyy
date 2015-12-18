@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.geihoo.activity.AddFriendsActivity;
+import com.geihoo.activity.CreateFriendCircleActivity;
 import com.geihoo.activity.CreateSocietyActivity;
 import com.geihoo.activity.MainTabActivity;
 import com.geihoo.adapter.FragmentAdapter;
@@ -107,7 +108,9 @@ public class ZuZuFriendCircleFragment extends BaseFragment{
 				getActivity().overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);
 			}
 			else if(mActivity.getZzfcTabIndex() == Constant.ZZFC_FC){
-				ToastUtil.showTextLong(mActivity, "朋友圈的创建功能更新中...");
+				Intent i = new Intent(getActivity(), CreateFriendCircleActivity.class);
+				startActivity(i);
+				getActivity().overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);
 			}
 		}
 	}

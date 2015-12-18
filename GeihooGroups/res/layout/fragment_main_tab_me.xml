@@ -40,7 +40,7 @@
                         android:id="@+id/tv_me_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="小女子"
+                        android:text="@string/user_name"
                         android:textColor="@color/sys_main_text_color"
                         android:textSize="@dimen/set_big_text_size" />
 

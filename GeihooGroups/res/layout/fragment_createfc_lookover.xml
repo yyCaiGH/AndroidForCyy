@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/com.geihoo.groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_zz_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zz_bg_height"
+        android:background="@drawable/zz_def_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.geihoo.view.CustomImageView
+            android:id="@+id/civ_zz_head"
+            android:layout_width="@dimen/zz_head_set_size"
+            android:layout_height="@dimen/zz_head_set_size"
+            android:layout_marginTop="@dimen/society_look_over_margin_top"
+            zhy:src="@drawable/zz_def_head"
+            zhy:type="ring" />
+
+        <TextView
+            android:id="@+id/tv_zz_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/zz_info_text_margin_top_size"
+            android:gravity="center"
+            android:text="美女如云"
+            android:textSize="@dimen/zz_name_size" />
+
+        <TextView
+            android:id="@+id/tv_zz_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/zz_info_text_margin_top_size"
+            android:gravity="center"
+            android:text="2位成员"
+            android:textColor="@color/sys_main_text_color"
+            android:textSize="@dimen/zz_info_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.geihoo.view.HorizontalListView
+            android:id="@+id/hlv_members"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="@dimen/society_look_over_margin_top" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_state_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="在该朋友圈，只有这些好友能看到你发布的动态，你也只能看到这些好友的动态"
+        android:textColor="@color/sys_sub_color" />
+
+    <Button
+        android:id="@+id/btn_create_society"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/society_look_over_margin_top"
+        android:background="@color/sys_main_color"
+        android:minEms="7"
+        android:paddingBottom="8dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="8dp"
+        android:text="创建朋友圈"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/society_look_over_margin_top"
+        android:background="@drawable/btn_border_bg"
+        android:minEms="7"
+        android:paddingBottom="8dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="8dp"
+        android:text="取消"
+        android:textColor="@color/grey" />
+
+</LinearLayout>
