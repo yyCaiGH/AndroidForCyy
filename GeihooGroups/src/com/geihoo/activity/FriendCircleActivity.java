@@ -23,6 +23,7 @@ import com.geihoo.base.BaseActivity;
 import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.PostContentBean;
 import com.geihoo.dialog.AddMemberDialog;
+import com.geihoo.dialog.FriendCircleSettingsDialog;
 import com.geihoo.groups.R;
 import com.geihoo.utils.Constants;
 import com.geihoo.utils.ImageUtil;
@@ -122,6 +123,7 @@ public class FriendCircleActivity extends BaseActivity {
 		// 设置头像
 		CustomImageView zuzuHeadImg = (CustomImageView) v
 				.findViewById(R.id.civ_zuzu_head);
+		zuzuHeadImg.setOnClickListener(this);
 		if (mFc != null) {
 			if (mFc.getHeadIcon() == null) {
 				zuzuHeadImg.setPic(ImageUtil.readBitMap(this,
@@ -208,7 +210,10 @@ public class FriendCircleActivity extends BaseActivity {
 		} else if (v.getId() == R.id.send_pic_btn) {
 			Intent intent = new Intent(this, SendPicActivity.class);
 			this.startActivity(intent);
+		} else if(v.getId() == R.id.civ_zuzu_head){
+			new FriendCircleSettingsDialog(this).show();
 		}
+		
 	}
 
 	protected void initData() {

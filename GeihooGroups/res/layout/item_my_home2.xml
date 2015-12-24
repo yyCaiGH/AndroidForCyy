@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     >
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="8月20日"
+        android:ems="4"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/tv_time"
+        android:text="欣赏了那个日出，我就不再那个了"
+        android:textSize="@dimen/item_group_text_size" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/tv_time"
+        android:paddingBottom="5dp" >
+
+        <ImageView
+            android:id="@+id/iv_my_home_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/test_content_img_8" />
+
+        <com.geihoo.view.MyGridView
+            android:id="@+id/gv_my_home_imgs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="3dp"
+            android:verticalSpacing="3dp"
+            android:numColumns="3"
+            android:visibility="gone" >
+        </com.geihoo.view.MyGridView>
+    </FrameLayout>
+    <!--
+         <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="@dimen/icon_medium_size"
+        android:layout_height="@dimen/icon_medium_size"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/tv_time"
+        android:paddingBottom="5dp"
+        android:src="@drawable/txzh" />
+    -->
+
+
+</RelativeLayout>

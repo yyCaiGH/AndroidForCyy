@@ -134,6 +134,7 @@ public class SocietyPostAdapter extends BaseAdapter implements OnClickListener{
 		if(v.getId()==R.id.head_img){
 			Intent i = new Intent(activity,MeActivity.class);
 			i.putExtra("type", MeActivity.ME_HOME);
+			i.putExtra("friendly", false);
 			activity.startActivity(i);
 		}
 		else if(v.getId()==R.id.content_text){

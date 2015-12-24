@@ -1,28 +1,33 @@
 package com.geihoo.fragment.me;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.geihoo.activity.MeActivity;
+import com.geihoo.adapter.CommonAdapter;
 import com.geihoo.adapter.MyHomeAdapter;
-import com.geihoo.adapter.NoticesAdapter;
-import com.geihoo.base.BaseDialog;
+import com.geihoo.adapter.ViewHolder;
 import com.geihoo.base.BaseFragment;
 import com.geihoo.bean.ContactsBean;
+import com.geihoo.bean.HomePageBean;
 import com.geihoo.groups.R;
+import com.geihoo.test.Datas;
+import com.geihoo.utils.Constant;
 import com.geihoo.utils.ImageUtil;
+import com.geihoo.utils.ToastUtil;
 import com.geihoo.view.CustomImageView;
+import com.geihoo.view.HorizontalListView;
 /**
  * 我的主页
  * @author yy_cai
@@ -34,6 +39,7 @@ public class MyHomeFragment extends BaseFragment{
 	private MeActivity activity;
 	private ListView dynamicList;
 	private Bundle contactBundle;
+	
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -48,70 +54,72 @@ public class MyHomeFragment extends BaseFragment{
 				false);
 		contactBundle = this.getArguments();
 		initView(view);
-		initDynamicList();
 		return view;
 	}
 
 
 	protected void initView(View view) {
 		initTopView();
+		boolean isFriend = true;
+		List<Bitmap> imgs = new ArrayList<Bitmap>();//横向listview的照片展示数据
 		dynamicList = (ListView)view.findViewById(R.id.lv_home_dyn);
 		View v = LayoutInflater.from(activity).inflate(R.layout.view_my_home_head, null);
 		if(contactBundle!=null){
+			isFriend = contactBundle.getBoolean("friendly");
 			ContactsBean contact = contactBundle.getParcelable("contact");
 			if(contact!=null){
 				CustomImageView headImg = (CustomImageView)v.findViewById(R.id.civ_contact_head);
 				headImg.setPic(contact.getImage());
-				TextView name = (TextView)v.findViewById(R.id.tv_contact_name);
-				name.setText(contact.getName());
+				imgs.add(contact.getImage());
+				TextView nameSex = (TextView)v.findViewById(R.id.tv_contact_name_sex);
+				int imgId = contact.getSex()==Constant.CONTACT_SEX_MAN?R.drawable.sex_boy:R.drawable.sex_girl;
+				Log.i("cyy-cyy", "imgId="+imgId);
+				nameSex.setText(contact.getName());
+				nameSex.setCompoundDrawablesWithIntrinsicBounds(null, null, activity.getResources().getDrawable(imgId), null);
 			}
 		}
+		if(imgs.size()==0){
+			imgs.add(ImageUtil.readBitMap(activity, R.drawable.imgs_demo));
+			imgs.add(ImageUtil.readBitMap(activity, R.drawable.imgs_demo2));
+			imgs.add(ImageUtil.readBitMap(activity, R.drawable.imgs_demo));
+			imgs.add(ImageUtil.readBitMap(activity, R.drawable.imgs_demo2));
+			imgs.add(ImageUtil.readBitMap(activity, R.drawable.imgs_demo));
+		}
+			
 		dynamicList.addHeaderView(v,null,false);
+		List<HomePageBean> listDatas=new ArrayList<HomePageBean>();
+		if(isFriend){
+			listDatas = Datas.getHomePageContent(activity);
+		}
+		else{
+			Button addZzFriend = (Button)view.findViewById(R.id.btn_add_zz_friend);
+			addZzFriend.setOnClickListener(this);
+			addZzFriend.setVisibility(View.VISIBLE);
+		}
+		dynamicList.setAdapter(new MyHomeAdapter(listDatas, activity));
+		
+		HorizontalListView hlvUserImgs = (HorizontalListView) v.findViewById(R.id.hlv_user_img);
+		
+		// 创建一个匿名适配器对象，对item进行赋值
+		hlvUserImgs.setAdapter(new CommonAdapter<Bitmap>(getActivity(),imgs, R.layout.item_simple_img_for_userhome) {
+
+			@Override
+			public void convert(ViewHolder helper, Bitmap item) {
+				helper.setMyImageBitmap(R.id.civ_image, item);
+			}
+		});
 	}
 
 	private void initTopView() {
 		activity.setTitle(activity.getResources().getString(R.string.top_title_wdzy));
-		activity.setRightStyle(null, R.drawable.top_add_image);
+		activity.setRightStyle(null, 0);
 	}
 	
-	private void initDynamicList() {
-		List<HashMap<String, Object>> dynamic = new ArrayList<HashMap<String, Object>>();
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh01));
-		map.put("content", "开心一刻，分享给你们！！");
-		map.put("time", "1小时前");
-		map.put("imageNum", "3张");
-		dynamic.add(map);
-		map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh02));
-		map.put("content", "我最想去的几个地方！！");
-		map.put("time", "7小时前");
-		map.put("imageNum", "5张");
-		dynamic.add(map);
-		map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh03));
-		map.put("content", "世界那么大，我想去看看");
-		map.put("time", "8月30日");
-		map.put("imageNum", "8张");
-		dynamic.add(map);
-		map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh04));
-		map.put("content", "我喜欢的，你不一定喜欢");
-		map.put("time", "8月28日");
-		map.put("imageNum", "3张");
-		dynamic.add(map);
-		map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh05));
-		map.put("content", "云岚又来了，好开心！！");
-		map.put("time", "8月25日");
-		map.put("imageNum", "2张");
-		dynamic.add(map);
-		map = new HashMap<String, Object>();
-		map.put("image", ImageUtil.readBitMap(activity, R.drawable.txzh06));
-		map.put("content", "云岚来了，好开心！！");
-		map.put("time", "8月21日");
-		map.put("imageNum", "2张");
-		dynamic.add(map);
-		dynamicList.setAdapter(new MyHomeAdapter(dynamic, activity));
+	@Override
+	public void onClick(View v) {
+		super.onClick(v);
+		if(v.getId()==R.id.btn_add_zz_friend){
+			ToastUtil.showTextShort(activity, "已经发送邀请！");
+		}
 	}
 }

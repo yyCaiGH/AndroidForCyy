@@ -9,10 +9,10 @@ import com.geihoo.utils.ImageUtil;
 
 public class WeDialog extends BaseDialog{
 
-	public WeDialog(Context context) {
+	public WeDialog(Context context,int resId) {
 		super(context);
 		ImageView iv = new ImageView(context);
-		iv.setImageBitmap(ImageUtil.readBitMap(context, R.drawable.page60));
+		iv.setImageBitmap(ImageUtil.readBitMap(context, resId));
 		this.setContentView(iv);
 	}
 

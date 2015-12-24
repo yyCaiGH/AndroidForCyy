@@ -102,7 +102,7 @@ public class SocietyMoreFragment extends BaseFragment {
 			// 将社团添加都手机桌面
 
 		} else if (v.getId() == R.id.tv_more_we) {
-			new WeDialog(getActivity()).show();
+			new WeDialog(getActivity(),R.drawable.page60).show();
 		}
 	}
 

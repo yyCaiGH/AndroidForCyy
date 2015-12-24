@@ -12,7 +12,7 @@ public class ContactsBean implements Parcelable {
 	private Bitmap image;
 	private String name;
 	private boolean checked;// 选择属性，辅助选择
-
+	private int sex; //1:男，2：女
 	public Bitmap getImage() {
 		return image;
 	}
@@ -37,6 +37,15 @@ public class ContactsBean implements Parcelable {
 		this.checked = checked;
 	}
 
+	public int getSex() {
+		return sex;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+
 	public static final Parcelable.Creator<ContactsBean> CREATOR = new Creator<ContactsBean>() {
 		public ContactsBean createFromParcel(Parcel source) {
 			ContactsBean pb = new ContactsBean();
@@ -44,6 +53,7 @@ public class ContactsBean implements Parcelable {
 			pb.image = Bitmap.CREATOR.createFromParcel(source);
 			/** boolean 读出 */
 			pb.checked = (source.readInt() == 1) ? true : false;
+			pb.sex = source.readInt();
 			return pb;
 		}
 
@@ -62,5 +72,6 @@ public class ContactsBean implements Parcelable {
 		parcel.writeString(name);
 		image.writeToParcel(parcel, 0);
 		parcel.writeInt(checked ? 1 : 0);
+		parcel.writeInt(sex);
 	}
 }

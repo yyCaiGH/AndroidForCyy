@@ -19,7 +19,7 @@
         android:textSize="@dimen/myfun_icon_text_size"
         android:layout_marginTop="@dimen/item_grou_margin_top"
         android:text="相册"
-        android:textColor="@color/white"
+        android:textColor="@color/sys_main_text_color"
         android:gravity="center"
         />
 

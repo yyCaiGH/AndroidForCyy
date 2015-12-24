@@ -6,57 +6,25 @@
     android:orientation="vertical" >
 
     <ImageView
-            android:id="@+id/iv_zuzu_bg"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/zz_bg_height"
-            android:scaleType="fitXY"
-            android:src="@drawable/home_bg" />
-    
-    <!-- <com.geihoo.view.CustomImageView
-            android:id="@+id/civ_contact_head"
-            android:layout_width="@dimen/icon_medium_size"
-            android:layout_height="@dimen/icon_medium_size"
-            android:layout_marginTop="196dp"
-            android:layout_marginLeft="@dimen/sys_default_margin_size"
-            zhy:src="@drawable/touxiang"
-            zhy:type="circle" />
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="196dp"
-            android:layout_toRightOf="@id/civ_contact_head"
-            android:orientation="vertical" >
+        android:id="@+id/iv_zuzu_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zz_bg_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg" />
 
-            <TextView
-                android:id="@+id/tv_contact_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="小女子"
-                android:textSize="@dimen/set_big_text_size" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="我是个有点冲动的女孩"
-                android:textSize="@dimen/set_big_text_size" />
-        </LinearLayout> -->
-     <RelativeLayout
+    <RelativeLayout
         android:id="@+id/rl_me_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/sys_default_margin_size"
-        android:layout_marginTop="193dp"
-        >
+        android:layout_marginTop="193dp" >
 
         <com.geihoo.view.CustomImageView
             android:id="@+id/civ_contact_head"
             android:layout_width="@dimen/icon_medium_size"
             android:layout_height="@dimen/icon_medium_size"
             zhy:src="@drawable/touxiang"
-            zhy:type="ring" />
+            zhy:type="circle" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,13 +35,18 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/tv_contact_name"
+                android:id="@+id/tv_contact_name_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/user_name"
-                android:textColor="@color/white"
-                android:drawableRight="@drawable/sex_girl"
+                android:background="@drawable/bg_fun"
                 android:drawablePadding="7dp"
+                android:drawableRight="@drawable/sex_girl"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:text="@string/user_name"
+                android:textColor="@color/sys_main_text_color"
                 android:textSize="@dimen/set_big_text_size" />
 
             <TextView
@@ -83,7 +56,34 @@
                 android:hint="签名：族族第一个用户！year！"
                 android:textSize="@dimen/set_big_text_size" />
         </LinearLayout>
-
     </RelativeLayout>
+
+    <com.geihoo.view.HorizontalListView
+        android:id="@+id/hlv_user_img"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_below="@id/rl_me_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <View
+        android:id="@+id/view_line"
+        style="@style/dividing_view_fill"
+        android:layout_below="@id/hlv_user_img" />
+	<View
+        style="@style/dividing_view_fill"
+        android:layout_above="@id/hlv_user_img" />
+    <Button
+        android:id="@+id/btn_add_zz_friend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_line"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="添加为族族好友"
+        android:background="@color/sys_main_color"
+        android:visibility="gone"
+         />
 
 </RelativeLayout>

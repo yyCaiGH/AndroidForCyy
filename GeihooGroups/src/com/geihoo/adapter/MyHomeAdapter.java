@@ -1,21 +1,21 @@
 package com.geihoo.adapter;
 
-import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Matrix;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.geihoo.bean.HomePageBean;
 import com.geihoo.groups.R;
-import com.geihoo.utils.ImageUtil;
-import com.geihoo.view.CustomImageView;
+import com.geihoo.view.MyGridView;
 /**
  * 我的主页动态
  * @author yy_cai
@@ -24,9 +24,9 @@ import com.geihoo.view.CustomImageView;
  */
 public class MyHomeAdapter extends BaseAdapter {
 
-	private List<HashMap<String, Object>> dynamicLists;
+	private List<HomePageBean> dynamicLists;
 	private Context context;
-	public MyHomeAdapter(List<HashMap<String, Object>> dynamicLists,
+	public MyHomeAdapter(List<HomePageBean> dynamicLists,
 			Context context) {
 		this.dynamicLists=dynamicLists;
 		this.context=context;
@@ -51,29 +51,41 @@ public class MyHomeAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder vh=null;
 		if(convertView==null){
-			convertView = LayoutInflater.from(context).inflate(R.layout.item_my_home, null);
+			convertView = LayoutInflater.from(context).inflate(R.layout.item_my_home3, parent,false);
 			vh = new ViewHolder();
-			vh.ivImage=(ImageView)convertView.findViewById(R.id.iv_image);
+			vh.ivImage=(ImageView)convertView.findViewById(R.id.iv_my_home_img);
 			vh.time=(TextView)convertView.findViewById(R.id.tv_time);
 			vh.content=(TextView)convertView.findViewById(R.id.tv_content);
-			vh.imageNum=(TextView)convertView.findViewById(R.id.tv_num);
+			vh.gvImages=(MyGridView)convertView.findViewById(R.id.gv_my_home_imgs);
 			convertView.setTag(vh);
 		}
 		else{
 			vh=(ViewHolder)convertView.getTag();
 		}
-		Bitmap bitmap=ImageUtil.postScale(context, (Bitmap)dynamicLists.get(position).get("image"), R.dimen.icon_size);
-		vh.ivImage.setImageBitmap(bitmap);
-		vh.time.setText(dynamicLists.get(position).get("time").toString());
-		vh.content.setText(dynamicLists.get(position).get("content").toString());
-		vh.imageNum.setText(dynamicLists.get(position).get("imageNum").toString());
+		List<Bitmap> imgs = dynamicLists.get(position).getImgs();
+		if(imgs.size()>1){
+			vh.ivImage.setVisibility(View.GONE);
+			vh.gvImages.setVisibility(View.VISIBLE);
+			vh.gvImages.setAdapter(new MyHomeGridViewAdapter(imgs, context));
+		}
+		else if(imgs.size()==1){
+			vh.ivImage.setVisibility(View.VISIBLE);
+			vh.gvImages.setVisibility(View.GONE);
+			vh.ivImage.setImageBitmap(imgs.get(0));
+		}
+		else{
+			vh.gvImages.setVisibility(View.GONE);
+			vh.ivImage.setVisibility(View.GONE);
+		}
+		vh.time.setText(dynamicLists.get(position).getTime().toString());
+		vh.content.setText(dynamicLists.get(position).getContent().toString());
 		return convertView;
 	}
 	private static class ViewHolder{
 		ImageView ivImage;
 		TextView time;
-		TextView imageNum;
 		TextView content;
+		MyGridView gvImages;
 	}
 
 }

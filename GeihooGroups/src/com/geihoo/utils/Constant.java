@@ -9,6 +9,9 @@ package com.geihoo.utils;
  */
 public class Constant {
 
+	public final static int CONTACT_SEX_MAN=1;//联系人性别：女
+	public final static int CONTACT_SEX_WOMEN=2;//联系人性别：男
+	
 	public final static int ZZ_TYPE_PRIVATE=0x1000;//族族私密类型
 	public final static int ZZ_TYPE_PUBLIC=0x1001;//族族公开类型
 	

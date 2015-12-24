@@ -57,6 +57,7 @@ public class MeActivity extends BaseActivity {
 		}else if (type == ME_HOME) {
 			Bundle bundle = new Bundle();
 			bundle.putParcelable("contact", this.getIntent().getParcelableExtra("contact"));
+			bundle.putBoolean("friendly", this.getIntent().getBooleanExtra("friendly", true));
 			initFragment(new MyHomeFragment(), bundle,R.id.fl_me);
 		}
 		else if(type == ME_ACTIVITY){

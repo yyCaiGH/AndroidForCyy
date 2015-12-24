@@ -48,6 +48,7 @@ public class RecentlyFragment extends BaseFragment{
 				final ContactsBean contact = new ContactsBean();
 				contact.setImage(ImageUtil.readBitMap(getActivity(),(Integer)item.get("image")));
 				contact.setName(String.valueOf(item.get("name")));
+				contact.setSex(Integer.parseInt(item.get("sex").toString()));
 				helper.setCustomImageViewOnClickListener(R.id.civ_contact_img, new OnClickListener() {
 					@Override
 					public void onClick(View arg0) {

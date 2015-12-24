@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sys_main_bg_color"
+        android:scrollbars="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <View style="@style/dividing_view_fill" />
+
+            <TextView
+                style="@style/set_title_text_view"
+                android:text="朋友圈名称" />
+
+            <View style="@style/dividing_view_fill" />
+
+            <EditText
+                android:id="@+id/tv_settings_photo"
+                style="@style/fragment_more_text_style"
+                android:hint="家人" />
+
+            <View style="@style/dividing_view_fill" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
