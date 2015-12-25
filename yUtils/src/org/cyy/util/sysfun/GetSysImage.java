@@ -1,4 +1,4 @@
-package org.cyy.yutils.sysfunction;
+package org.cyy.util.sysfun;
 
 import android.app.Activity;
 import android.content.Intent;
