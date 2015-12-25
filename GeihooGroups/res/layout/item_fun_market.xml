@@ -10,7 +10,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
-        android:src="@drawable/my_image"
+        android:src="@drawable/my_music"
          />
     
     <TextView

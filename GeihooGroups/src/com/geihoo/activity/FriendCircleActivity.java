@@ -23,6 +23,7 @@ import com.geihoo.base.BaseActivity;
 import com.geihoo.bean.FriendCircleBean;
 import com.geihoo.bean.PostContentBean;
 import com.geihoo.dialog.AddMemberDialog;
+import com.geihoo.dialog.FriendCircleMemberDialog;
 import com.geihoo.dialog.FriendCircleSettingsDialog;
 import com.geihoo.groups.R;
 import com.geihoo.utils.Constants;
@@ -200,8 +201,7 @@ public class FriendCircleActivity extends BaseActivity {
 		if (v.getId() == R.id.iv_zuzu_close) {
 			this.finish();
 		} else if (v.getId() == R.id.ll_member) {
-			Intent intent = new Intent(this, MemberActivity.class);
-			this.startActivity(intent);
+			new FriendCircleMemberDialog(this).show();
 		} else if (v.getId() == R.id.iv_member_add) {
 			new AddMemberDialog(this).show();
 		} else if (v.getId() == R.id.send_message_btn) {

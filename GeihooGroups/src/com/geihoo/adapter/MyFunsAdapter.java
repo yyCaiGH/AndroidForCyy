@@ -50,7 +50,7 @@ public class MyFunsAdapter extends BaseAdapter {
 		FunBean  item = myFuns.get(position);
 		
 		if(convertView==null){
-			convertView = LayoutInflater.from(context).inflate(R.layout.item_my_fun, null);
+			convertView = LayoutInflater.from(context).inflate(R.layout.item_my_fun, parent,false);
 			vh = new ViewHolder();
 			vh.image=(ImageView)convertView.findViewById(R.id.iv_image);
 			vh.title=(TextView)convertView.findViewById(R.id.tv_title);
@@ -62,15 +62,6 @@ public class MyFunsAdapter extends BaseAdapter {
 		vh.image.setImageBitmap(item.getImage());
 		if(item.getName()==null){
 			vh.title.setVisibility(View.GONE);
-			vh.image.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-//					new FunMarketDialog(context).show();
-					Intent i = new Intent(context, FunMarketActivity.class);
-					context.startActivity(i);
-//					context.overridePendingTransition(R.anim.anim_go_up,R.anim.anim_activity_out);
-				}
-			});
 		}
 		else{
 			vh.title.setText(item.getName().toString());

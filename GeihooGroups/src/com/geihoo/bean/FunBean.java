@@ -14,6 +14,8 @@ public class FunBean {
 
 	private Bitmap image;
 	private String name;
+	private String activityName;//用到别人的apk需要获取Activity名称
+	private String packageName;//应用包名
 	private boolean add;//是否添加到生活栏目，默认false
 	public Bitmap getImage() {
 		return image;
@@ -32,6 +34,18 @@ public class FunBean {
 	}
 	public void setAdd(boolean add) {
 		this.add = add;
+	}
+	public String getActivityName() {
+		return activityName;
+	}
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
+	}
+	public String getPackageName() {
+		return packageName;
+	}
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
 	}
 	
 }

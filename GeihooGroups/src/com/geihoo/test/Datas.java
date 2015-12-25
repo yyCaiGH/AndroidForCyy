@@ -254,6 +254,47 @@ public class Datas {
 		return members;
 	}
 
+	/**
+	 * 查看朋友圈成员
+	 * @param activity
+	 * @return
+	 */
+	public static List<HashMap<String, Object>> getFcMembers(
+			Context activity) {
+		List<HashMap<String, Object>> members = new ArrayList<HashMap<String, Object>>();
+		HashMap<String, Object> member = new HashMap<String, Object>();
+		member.put("member_name", "陈子");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx1));
+		member.put("menmber_tab", 5);// 5:朋友圈好友
+		members.add(member);
+		member = new HashMap<String, Object>();
+		member.put("member_name", "跃勇");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx2));
+		member.put("menmber_tab", 5);
+		members.add(member);
+		member = new HashMap<String, Object>();
+		member.put("member_name", "玲儿");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx3));
+		member.put("menmber_tab", 5);
+		members.add(member);
+		member = new HashMap<String, Object>();
+		member.put("member_name", "花骨");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx4));
+		member.put("menmber_tab", 5);
+		members.add(member);
+		member = new HashMap<String, Object>();
+		member.put("member_name", "喜乐");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx5));
+		member.put("menmber_tab", 5);
+		members.add(member);
+		member = new HashMap<String, Object>();
+		member.put("member_name", "饶云");
+		member.put("image", ImageUtil.readBitMap(activity, R.drawable.tx6));
+		member.put("menmber_tab", 5);
+		members.add(member);
+
+		return members;
+	}
 	public static List<HashMap<String, Object>> getCommonZuzu(Context ctx) {
 		List<HashMap<String, Object>> l = new ArrayList<HashMap<String, Object>>();
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -587,18 +628,13 @@ public class Datas {
 		}
 		allFun = new ArrayList<FunBean>();
 		FunBean fun = new FunBean();
-		fun.setName("记事");
+		fun.setName("族记");
 		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_notepad));
 		fun.setAdd(true);
 		allFun.add(fun);
 		fun = new FunBean();
 		fun.setName("记账");
 		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_jizhangben));
-		fun.setAdd(true);
-		allFun.add(fun);
-		fun = new FunBean();
-		fun.setName("相册");
-		fun.setImage(ImageUtil.readBitMap(ctx, R.drawable.my_image));
 		fun.setAdd(true);
 		allFun.add(fun);
 		fun = new FunBean();

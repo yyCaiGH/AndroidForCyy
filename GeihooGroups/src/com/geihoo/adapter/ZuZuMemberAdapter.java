@@ -96,6 +96,10 @@ public class ZuZuMemberAdapter extends BaseAdapter {
 			items.add("删除成员");
 			items.add("取消禁言");
 		}
+		else if(tab==5){//朋友圈的好友管理先放这里
+			vh.tvTab.setText("");
+			items.add("删除成员");
+		}
 		items.add("查看个人主页");
 		items.add("发消息");
 		

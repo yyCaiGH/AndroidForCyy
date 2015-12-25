@@ -36,7 +36,7 @@ public class ConnectionAdapter extends BaseAdapter{
 			char letter = getLetter(i,curName);
 			if(letter!=' '){
 				alphaIndexer.put(letter+"", i);
-				Log.i("cyy-cyy", "letter="+letter+",i="+i);
+//				Log.i("cyy-cyy", "letter="+letter+",i="+i);
 			}
 		}
 	}

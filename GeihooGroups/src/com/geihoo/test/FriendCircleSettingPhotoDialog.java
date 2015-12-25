@@ -39,8 +39,8 @@ public class FriendCircleSettingPhotoDialog extends BaseDialog {
 			tv.setText("更改封面照片");
 		}
 		else if(type==1){
-			initTopBarAndBack("选择族族头像");
-			tv.setText("更改族族头像");
+			initTopBarAndBack("选择朋友圈头像");
+			tv.setText("更改朋友圈头像");
 			civHeadImg.setVisibility(View.VISIBLE);
 			ivBgImg.setVisibility(View.GONE);
 		}
