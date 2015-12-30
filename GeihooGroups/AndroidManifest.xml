@@ -54,6 +54,7 @@
         <activity android:name="com.geihoo.activity.FriendCircleActivity"></activity>
         <activity android:name="com.geihoo.activity.FunMarketActivity"></activity>
         <activity android:name="com.geihoo.activity.CreateFriendCircleActivity"></activity>
+        <activity android:name="com.geihoo.activity.ZuZuActivityActivity"></activity>
     </application>
 
 </manifest>

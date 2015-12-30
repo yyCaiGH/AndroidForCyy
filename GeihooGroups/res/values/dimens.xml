@@ -107,6 +107,6 @@
 	<dimen name="me_icon_size">18dp</dimen>
 	<!-- my fun -->
 	<dimen name="myfun_icon_text_size">12sp</dimen>
-	<dimen name="myfun_drawble_padding">5dp</dimen>
+	<dimen name="myfun_drawble_padding">10dp</dimen>
 	<dimen name="myfun_padding">10dp</dimen>
 </resources>

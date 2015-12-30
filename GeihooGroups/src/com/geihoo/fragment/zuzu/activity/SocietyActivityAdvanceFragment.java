@@ -26,6 +26,7 @@ import com.geihoo.activity.SocietyMainActivity;
 import com.geihoo.adapter.ActivityAdapter;
 import com.geihoo.adapter.CommonAdapter;
 import com.geihoo.adapter.ViewHolder;
+import com.geihoo.base.BaseActivity;
 import com.geihoo.base.BaseFragment;
 import com.geihoo.bean.ActivityBean;
 import com.geihoo.dialog.ActivityDetailsDialog;
@@ -41,11 +42,11 @@ public class SocietyActivityAdvanceFragment extends BaseFragment{
 	static String tag="SocietyPhotoFragment_album";
 	private ListView advanceList;
 
-	private SocietyMainActivity mActivity;
+	private BaseActivity mActivity;
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		mActivity=(SocietyMainActivity)activity;
+		mActivity=(BaseActivity)activity;
 	}
 	
 	@Override

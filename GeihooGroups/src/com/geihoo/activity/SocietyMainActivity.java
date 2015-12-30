@@ -18,6 +18,7 @@ import com.geihoo.fragment.zuzu.maintab.SocietyActivityFragment;
 import com.geihoo.fragment.zuzu.maintab.SocietyMainFragment;
 import com.geihoo.fragment.zuzu.maintab.SocietyMoreFragment;
 import com.geihoo.fragment.zuzu.maintab.SocietyPhotoFragment;
+import com.geihoo.fragment.zuzu.maintab.SocietyWeFragment;
 import com.geihoo.groups.R;
 import com.geihoo.listener.MyDrawerListener;
 import com.geihoo.view.MyTabView;
@@ -49,7 +50,7 @@ public class SocietyMainActivity extends BaseActivity{
 		fragments.add(societyMainFragment);
 		fragments.add(new SocietyPhotoFragment());
 //		fragments.add(new SocietyChatFragment());
-		fragments.add(new SocietyActivityFragment());
+		fragments.add(new SocietyWeFragment());
 		fragments.add(new SocietyMoreFragment());
 		
 		pager = (ViewPager) findViewById(R.id.society_pager);

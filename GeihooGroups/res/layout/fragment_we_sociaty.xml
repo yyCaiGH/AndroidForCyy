@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sys_main_bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_common_top" />
+
+    <View
+        style="@style/dividing_view_fill"
+        android:layout_marginTop="@dimen/me_margin_top_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_sub_bg_color" >
+
+        <TextView
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_ziliao"
+            android:text="族资料" />
+
+        <TextView
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_toupiao"
+            android:text="族投票" />
+
+        <TextView
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_choujiang"
+            android:text="族抽奖" />
+    </LinearLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+    <View
+        style="@style/dividing_view_fill"
+        android:layout_marginTop="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_sub_bg_color" >
+
+        <TextView
+            android:id="@+id/tv_we_file"
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_wenjian"
+            android:text="族文件" />
+
+        <TextView
+            android:id="@+id/tv_we_activity"
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_huodong"
+            android:text="族活动" />
+
+        <TextView
+            style="@style/myfun_textview_style"
+            android:drawableTop="@drawable/we_meiti"
+            android:text="族媒体" />
+    </LinearLayout>
+
+    <View style="@style/dividing_view_fill" />
+
+</LinearLayout>

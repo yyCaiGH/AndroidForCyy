@@ -37,7 +37,7 @@ public class XUtilsActivity extends Activity{
 	@ViewInject(R.id.tv_xutils_info)
 	private TextView tvInfo;
 	
-	private String ip_port = "192.168.1.102:8080";
+	private String ip_port = "192.168.2.105:8080";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -86,7 +86,9 @@ public class XUtilsActivity extends Activity{
 	private void upload(){
 		RequestParams params = new RequestParams();
 		params.addQueryStringParameter("_token", "8db28f1e-599a-4293-81c8-c54c55f32c79");
+//		params.addBodyParameter("file1", new File(Environment.getExternalStorageDirectory(),"log.txt"));
 		params.addBodyParameter("file", new File(Environment.getExternalStorageDirectory(),"test.png"));
+//		params.addBodyParameter("file", new File(""));
 		String url = "http://"+ip_port+"/WebTest/client/user/update_face";
 		send(url,params);
 	}
