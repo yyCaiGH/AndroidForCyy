@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.cyy.demo.ontouchevent.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_test"
+    android:background="#773333"
+    android:orientation="vertical" >
+
+    <org.cyy.demo.ontouchevent.MyFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fl_test"
+        android:background="#998899" >
+
+        <org.cyy.demo.ontouchevent.MyImageView
+            android:id="@+id/iv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </org.cyy.demo.ontouchevent.MyFrameLayout>
+
+</org.cyy.demo.ontouchevent.MyLinearLayout>
