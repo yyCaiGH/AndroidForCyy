@@ -1,10 +1,10 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.NoActionBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -17,4 +17,46 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <!-- 大部分主题，比如android:Theme.Holo.Light.NoActionBar，dialog可以设置全屏 -->
+    <style name="Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!-- 分割线，有margin -->
+    <style name="dividing_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividing_line_height</item>
+        <item name="android:layout_marginLeft">@dimen/dividing_ling_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/dividing_ling_margin_right</item>
+        <item name="android:background">@color/dividing_line_color</item>
+    </style>
+	<!-- 分割线，无margin，满横屏 -->
+    <style name="dividing_view_fill">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividing_line_height</item>
+        <item name="android:background">@color/dividing_line_color</item>
+    </style>
+    <!-- 小标题TextView样式 -->
+    <style name="small_title_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/text_default_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/text_default_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/text_default_margin_bottom</item>
+        <item name="android:textSize">@dimen/sys_small_title_text_size</item>
+        <item name="android:textColor">@color/sys_small_title_text_color</item>
+    </style>
+    <!-- 内容TextView样式 -->
+    <style name="context_text_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/text_default_padding_left</item>
+        <item name="android:paddingTop">@dimen/text_default_padding_left</item>
+        <item name="android:paddingBottom">@dimen/text_default_padding_left</item>
+        <item name="android:paddingRight">@dimen/text_default_padding_left</item>
+        <item name="android:textSize">@dimen/sys_content_text_size</item>
+        <item name="android:textColor">@color/sys_content_text_color</item>
+        <item name="android:background">@color/sys_sub_bg_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/sys_default_drawble_padding</item>
+    </style>
 </resources>

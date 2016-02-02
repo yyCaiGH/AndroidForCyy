@@ -10,7 +10,14 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-
+/**
+ * 
+ * 说明：字母快速索引控件（常用于联系人快速索引）
+ *
+ * @author yy_cai
+ *
+ * 2016年2月2日
+ */
 public class MyLetterListView extends View {
     private final static String TAG="MyLetterListView";
     OnTouchingLetterChangedListener onTouchingLetterChangedListener;
