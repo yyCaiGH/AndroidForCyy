@@ -1,11 +1,11 @@
-package com.geihoo.listener;
+package org.cyy.listener;
 
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 /**
  * 
- * 说明：搜索更新适配器
+ * 说明：搜索EditText监听，更新数据
  * 
  * @author yy_cai
  *
@@ -16,8 +16,8 @@ public class SearchEditTextWatcher implements TextWatcher{
 	private Handler handler;
 	private Runnable mSearch;
 	/**
-	 * @param handler
-	 * @param search
+	 * @param handler 外部处理适配器更新
+	 * @param search 外部处理数据加载
 	 */
 	public SearchEditTextWatcher(Handler handler,Runnable search){
 		this.handler=handler;
@@ -26,13 +26,11 @@ public class SearchEditTextWatcher implements TextWatcher{
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count,
 			int after) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		// TODO Auto-generated method stub
 		
 	}
 
