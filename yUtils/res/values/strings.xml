@@ -7,4 +7,5 @@
 	<string name="topbar_left">Back</string>
 	<string name="topbar_right">OK</string>
 	<string name="topbar_title">Title</string>
+	<string name="mytab_text">tab</string>
 </resources>

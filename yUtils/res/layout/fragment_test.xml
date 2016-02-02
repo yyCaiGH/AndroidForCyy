@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include  layout="@layout/view_common_topbar_image"/>
+    <include  layout="@layout/view_common_search"/>
+    
+    <View style="@style/dividing_view_fill"/>
+    
+    <TextView 
+        style="@style/small_title_text_view"
+        android:text="small title"
+        />
+    <View style="@style/dividing_view_fill"/>
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/context_text_view"
+        android:text="Fragment" />
+	<View style="@style/dividing_view_fill"/>
+	
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:rating="3"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>

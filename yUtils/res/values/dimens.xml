@@ -33,5 +33,7 @@
     <!-- 设置listview item的默认margin值 -->
     <dimen name="listview_item_default_margin_top">8dp</dimen>
     <dimen name="listview_item_default_margin_bottom">8dp</dimen>
-    
+    <!-- MytabView -->
+    <dimen name="tab_default_margin_size">3dp</dimen>
+	<dimen name="mytab_text_size">10sp</dimen>
 </resources>

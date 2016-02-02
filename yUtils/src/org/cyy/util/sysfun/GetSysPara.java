@@ -1,10 +1,12 @@
 package org.cyy.util.sysfun;
 
 import org.cyy.util.StringUtils;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -52,6 +54,47 @@ public class GetSysPara {
 	}
 
 	/**
+
+     * 判断是否是wifi连接
+
+     */
+
+    public static boolean isWifiConn(Context ctx){
+        ConnectivityManager connectivity = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity == null) return false;
+        return connectivity.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
+    }
+    
+    /**
+	 * Gps是否打开
+	 * 需要<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />权限
+	 *
+	 * @param context the context
+	 * @return true, if is gps enabled
+	 */
+	public static boolean isGpsEnabled(Context context) {
+		LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);  
+	    return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+	}
+	
+	/**
+	 * 判断当前网络是否是移动数据网络.
+	 *
+	 * @param context the context
+	 * @return boolean
+	 */
+	public static boolean isMobile(Context context) {
+		ConnectivityManager connectivityManager = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
+		if (activeNetInfo != null
+				&& activeNetInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
 	 * 获取当前网络类型
 	 * @return 0：没有网络   1：WIFI网络   2：WAP网络    3：NET网络
 	 */
@@ -79,19 +122,4 @@ public class GetSysPara {
 		return netType;
 	}
 	
-	
-	/**
-	 * 获取App安装包信息
-	 * @return
-	 */
-	public static PackageInfo getPackageInfo(Context ctx) {
-		PackageInfo info = null;
-		try { 
-			info = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), 0);
-		} catch (NameNotFoundException e) {    
-			e.printStackTrace(System.err);
-		} 
-		if(info == null) info = new PackageInfo();
-		return info;
-	}
 }

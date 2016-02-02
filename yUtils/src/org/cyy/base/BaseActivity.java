@@ -15,7 +15,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
-public abstract class BaseActivity extends FragmentActivity implements View.OnClickListener, OnItemClickListener, OnItemLongClickListener {
+public  class BaseActivity extends FragmentActivity implements View.OnClickListener, OnItemClickListener, OnItemLongClickListener {
 
 	private FragmentTransaction ft;
 	private SystemBarTintManager tintManager;//设置状态栏颜色
@@ -31,15 +31,21 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
 	/**
 	 * 初始化标题栏
 	 */
-	abstract void initTopBar();
+	protected void initTopBar(){
+		
+	}
 	/**
 	 * 初始化界面
 	 */
-	abstract  void initView();
+	protected  void initView(){
+		
+	}
 	/**
 	 * 初始化数据
 	 */
-	abstract  void initData();
+	protected  void initData(){
+		
+	}
 	
 	/**
 	 * 初始化状态栏管理器
