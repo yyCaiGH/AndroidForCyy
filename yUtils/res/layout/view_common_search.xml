@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_sub_bg_color"
+    android:layout_margin="@dimen/sys_default_edge_padding"
+     >
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shape_search_bg"
+        android:clickable="true"
+        android:drawableLeft="@drawable/search"
+        android:drawablePadding="@dimen/sys_default_drawble_padding"
+        android:hint="搜索"
+        android:paddingBottom="@dimen/text_edit_default_padding_bottom"
+        android:paddingLeft="@dimen/text_edit_default_padding_left"
+        android:paddingTop="@dimen/text_edit_default_padding_top"
+        android:textSize="@dimen/sys_content_text_size" />
+
+    <TextView
+        android:id="@+id/tv_search_cancel"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+       	android:padding="5dp"
+       	android:layout_marginLeft="3dp"
+        android:text="取消"
+        android:textColor="@color/sys_main_color"
+        android:textSize="@dimen/sys_content_text_size" />
+
+</LinearLayout>

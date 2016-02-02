@@ -9,17 +9,23 @@
     <dimen name="sys_small_title_text_size">16sp</dimen>
     <!-- 系统内容文字大小-->
     <dimen name="sys_content_text_size">14sp</dimen>
+    <!-- 带图片的控件，默认设置图片和文字的距离 -->
+    <dimen name="sys_default_drawble_padding">8dp</dimen>
     <!-- 系统默认文字距margin的大小 -->
     <dimen name="text_default_margin_top">16dp</dimen>
     <dimen name="text_default_margin_left">16dp</dimen>
     <dimen name="text_default_margin_right">16dp</dimen>
     <dimen name="text_default_margin_bottom">4dp</dimen>
-    <!-- 系统默认文字padding的大小 -->
+    <!-- 系统默认TextView文字padding的大小 （单单一行只有文字的情况）-->
     <dimen name="text_default_padding_left">16dp</dimen>
     <dimen name="text_default_padding_right">16dp</dimen>
     <dimen name="text_default_padding_top">8dp</dimen>
     <dimen name="text_default_padding_bottom">8dp</dimen>
-    
+    <!-- 系统默认EditText文字padding的大小 -->
+    <dimen name="text_edit_default_padding_left">6dp</dimen>
+    <dimen name="text_edit_default_padding_right">6dp</dimen>
+    <dimen name="text_edit_default_padding_top">4dp</dimen>
+    <dimen name="text_edit_default_padding_bottom">4dp</dimen>
     <!-- 分割线参数设置 -->
     <dimen name="dividing_line_height">1dp</dimen>
     <dimen name="dividing_ling_margin_left">8dp</dimen>
@@ -27,7 +33,5 @@
     <!-- 设置listview item的默认margin值 -->
     <dimen name="listview_item_default_margin_top">8dp</dimen>
     <dimen name="listview_item_default_margin_bottom">8dp</dimen>
-    <!-- 带图片的控件，默认设置图片和文字的距离 -->
-    <dimen name="sys_default_drawble_padding">8dp</dimen>
     
 </resources>

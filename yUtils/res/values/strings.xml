@@ -4,5 +4,7 @@
     <string name="app_name">yUtils</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string name="topbar_left">Back</string>
+	<string name="topbar_right">OK</string>
+	<string name="topbar_title">Title</string>
 </resources>

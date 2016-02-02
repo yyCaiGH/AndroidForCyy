@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_main_color"
+     >
+
+    <TextView
+        android:id="@+id/tv_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/sys_big_title_text_color"
+        android:textSize="@dimen/sys_small_title_text_size"
+        android:drawableLeft="@drawable/top_back_image"
+        android:drawablePadding="3dp"
+        android:layout_centerVertical="true"
+        android:text="@string/topbar_left"
+        android:gravity="center"
+        android:padding="@dimen/sys_default_edge_margin"
+        />
+	
+    <TextView
+        android:id="@+id/tv_top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/sys_big_title_text_color"
+        android:textSize="@dimen/sys_big_title_text_size"
+        android:padding="@dimen/sys_default_edge_margin"
+        android:text="@string/topbar_title" />
+
+    <TextView
+        android:id="@+id/tv_top_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/sys_big_title_text_color"
+        android:textSize="@dimen/sys_small_title_text_size"
+        android:layout_centerVertical="true"
+        android:text="@string/topbar_right"
+        android:padding="@dimen/sys_default_edge_margin"
+        />
+
+</RelativeLayout>
