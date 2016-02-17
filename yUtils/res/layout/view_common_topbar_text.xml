@@ -38,6 +38,7 @@
         android:textSize="@dimen/sys_small_title_text_size"
         android:layout_centerVertical="true"
         android:text="@string/topbar_right"
+        android:visibility="gone"
         android:padding="@dimen/sys_default_edge_margin"
         />
 
