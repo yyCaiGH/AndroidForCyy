@@ -18,7 +18,7 @@ public abstract class BaseDialog extends Dialog implements android.view.View.OnC
 	}
 
 	/**
-	 * 默认进行全局设置
+	 * 默认进行全屏设置
 	 * @param context
 	 */
 	public BaseDialog(Context context){
