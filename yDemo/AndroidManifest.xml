@@ -43,9 +43,10 @@
         <activity android:name="org.cyy.demo.service.MusicListActivity" />
         <activity android:name="org.cyy.demo.recyclerview.RecycleViewActivity"></activity>
         <activity android:name="org.cyy.demo.welcome.WelcomePageActivity"></activity>
+        <activity android:name="org.cyy.demo.appdown.DownloadTest"></activity>
         
         <service android:name="org.cyy.demo.service.MusicService"></service>
-        
+        <service android:name="org.cyy.demo.appdown.DownloadService"></service>
     </application>
 
 </manifest>

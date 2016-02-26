@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:padding="@dimen/tab_default_margin_size" >
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom_0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/iv_0_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st" />
+
+        <ImageView
+            android:id="@+id/iv_0_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st_1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_0_0" >
+
+            <TextView
+                android:id="@+id/tv_0_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/mytab_text_size" />
+
+            <TextView
+                android:id="@+id/tv_0_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_main_color"
+                android:textSize="@dimen/mytab_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_mes_num_0"
+            style="@style/tab_mes_num_text_view"
+            android:layout_alignLeft="@id/iv_0_0"
+            android:text="99" />
+        <TextView 
+            android:id="@+id/tv_mes_noread_0"
+            style="@style/tab_mes_noread_text_view"
+            android:layout_alignLeft="@id/iv_0_0"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_1_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st" />
+
+        <ImageView
+            android:id="@+id/iv_1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st_1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_1_0" >
+
+            <TextView
+                android:id="@+id/tv_1_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/mytab_text_size" />
+
+            <TextView
+                android:id="@+id/tv_1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_main_color"
+                android:textSize="@dimen/mytab_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_mes_num_1"
+            style="@style/tab_mes_num_text_view"
+            android:layout_alignLeft="@id/iv_1_0"
+            android:text="99" />
+        <TextView 
+            android:id="@+id/tv_mes_noread_1"
+            style="@style/tab_mes_noread_text_view"
+            android:layout_alignLeft="@id/iv_1_0"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_2_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st" />
+
+        <ImageView
+            android:id="@+id/iv_2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st_1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_2_0" >
+
+            <TextView
+                android:id="@+id/tv_2_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/mytab_text_size" />
+
+            <TextView
+                android:id="@+id/tv_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_main_color"
+                android:textSize="@dimen/mytab_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_mes_num_2"
+            style="@style/tab_mes_num_text_view"
+            android:layout_alignLeft="@id/iv_2_0"
+            android:text="99" />
+        <TextView 
+            android:id="@+id/tv_mes_noread_2"
+            style="@style/tab_mes_noread_text_view"
+            android:layout_alignLeft="@id/iv_2_0"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_3_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st" />
+
+        <ImageView
+            android:id="@+id/iv_3_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st_1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_3_0" >
+
+            <TextView
+                android:id="@+id/tv_3_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/mytab_text_size" />
+
+            <TextView
+                android:id="@+id/tv_3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_main_color"
+                android:textSize="@dimen/mytab_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_mes_num_3"
+            style="@style/tab_mes_num_text_view"
+            android:layout_alignLeft="@id/iv_3_0"
+            android:text="99" />
+        <TextView 
+            android:id="@+id/tv_mes_noread_3"
+            style="@style/tab_mes_noread_text_view"
+            android:layout_alignLeft="@id/iv_3_0"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom_4"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_4_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st" />
+
+        <ImageView
+            android:id="@+id/iv_4_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/tab_default_margin_size"
+            android:src="@drawable/main_tab_st_1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_4_0" >
+
+            <TextView
+                android:id="@+id/tv_4_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_sub_color"
+                android:textSize="@dimen/mytab_text_size" />
+
+            <TextView
+                android:id="@+id/tv_4_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/mytab_text"
+                android:textColor="@color/sys_main_color"
+                android:textSize="@dimen/mytab_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_mes_num_4"
+            style="@style/tab_mes_num_text_view"
+            android:layout_alignLeft="@id/iv_4_0"
+            android:text="99" />
+        <TextView 
+            android:id="@+id/tv_mes_noread_4"
+            style="@style/tab_mes_noread_text_view"
+            android:layout_alignLeft="@id/iv_4_0"
+             />
+    </RelativeLayout>
+
+</LinearLayout>

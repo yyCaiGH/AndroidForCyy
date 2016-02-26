@@ -59,4 +59,26 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/sys_default_drawble_padding</item>
     </style>
+    
+    <!-- tab图标显示消息数量 -->
+    <style name="tab_mes_num_text_view">
+        <item name="android:layout_width">17dp</item>
+        <item name="android:layout_height">17dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:background">@drawable/img_mes_num_bg</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <!-- tab图标显示未读标记 -->
+    <style name="tab_mes_noread_text_view">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:background">@drawable/img_mes_num_bg</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
 </resources>

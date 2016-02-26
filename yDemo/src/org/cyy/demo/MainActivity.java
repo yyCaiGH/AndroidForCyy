@@ -1,5 +1,6 @@
 package org.cyy.demo;
 
+import org.cyy.demo.appdown.DownloadTest;
 import org.cyy.demo.customview.CustomViewActivity;
 import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
@@ -76,6 +77,10 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button10){
 			Intent i = new Intent(this,WelcomePageActivity.class);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button11){
+			Intent i = new Intent(this,DownloadTest.class);
 			startActivity(i);
 		}
 	}
