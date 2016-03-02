@@ -9,6 +9,7 @@ import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 /**
@@ -51,6 +52,27 @@ public class AppUtil {
 		intent.setDataAndType(Uri.fromFile(file),
 				"application/vnd.android.package-archive");
 		context.startActivity(intent);
+	}
+	
+	/**
+	 * 判断应用是否已安装
+	 * 
+	 * @param context
+	 * @param packageName
+	 * @return
+	 */ 
+	public static boolean isInstalled(Context context, String packageName) { 
+	    boolean hasInstalled = false; 
+	    PackageManager pm = context.getPackageManager(); 
+	    List<PackageInfo> list = pm 
+	            .getInstalledPackages(PackageManager.PERMISSION_GRANTED); 
+	    for (PackageInfo p : list) { 
+	        if (packageName != null && packageName.equals(p.packageName)) { 
+	            hasInstalled = true; 
+	            break; 
+	        } 
+	    } 
+	    return hasInstalled; 
 	}
 	
 	/**

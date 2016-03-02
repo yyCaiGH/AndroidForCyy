@@ -8,18 +8,59 @@
         android:id="@+id/btn_load_btn_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button1" />
+        android:text="百度知道" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <Button
         android:id="@+id/btn_load_btn_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button2" />
+        android:text="搜狗小说" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <Button
         android:id="@+id/btn_load_btn_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button3" />
+        android:text="君王2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="君王2下载详情" />
+
+    <!--
+         <org.cyy.demo.appdown.CustomClipLoading
+        android:id="@+id/ccl_pro"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    -->
+
+    <ImageView
+        android:id="@+id/iv_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/img_blue_pro_1"
+        android:contentDescription="@string/action_settings"
+        android:src="@drawable/clip_loading" />
 
 </LinearLayout>

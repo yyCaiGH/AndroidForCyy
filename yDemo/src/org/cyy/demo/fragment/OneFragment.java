@@ -74,5 +74,16 @@ public class OneFragment extends Fragment{
 		Log.i(tag, "onDetach");
 		super.onDetach();
 	}
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		if(isVisibleToUser){
+			Log.i(tag, "one 可见");
+		}
+		else{
+			Log.i(tag, "one 不可见");
+		}
+		super.setUserVisibleHint(isVisibleToUser);
+	}
 	
 }

@@ -43,7 +43,7 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 		viewPager = (ViewPager) findViewById(R.id.viewpager);
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());
 		viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
-		viewPager.setOffscreenPageLimit(1);
+		viewPager.setOffscreenPageLimit(0);
 		RadioGroup rg = (RadioGroup) findViewById(R.id.rg);
 		rb1 = (RadioButton) rg.findViewById(R.id.rb1);
 		rb2 = (RadioButton) rg.findViewById(R.id.rb2);

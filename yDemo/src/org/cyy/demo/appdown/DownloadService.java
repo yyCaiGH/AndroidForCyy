@@ -16,59 +16,92 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.cyy.demo.R;
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Binder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.widget.Toast;
  
 public class DownloadService extends Service{
  
-    private static NotificationManager nm;
-    private static  Notification notification;
-    private static boolean cancelUpdate = false;
-    private static MyHandler myHandler;
-    private static ExecutorService executorService = Executors.newFixedThreadPool(5); // 固定五个线程来执行任务
-    public static Map<Integer,Integer> download = new HashMap<Integer, Integer>();
-    public static Context context;
+	public static final String DOWN_LOAD_APP_ACTION="org.cyy.demo.downloadapp";
+	private DownLoadAppBinder mBinder;
+	private DownLoadAppBroadCast broadCast;
+    private NotificationManager nm;
+    private Notification notification;
+    private MyHandler myHandler;
+    private ExecutorService executorService = Executors.newFixedThreadPool(5); // 固定五个线程来执行任务
+    private Map<Integer,Integer> download = new HashMap<Integer, Integer>();
+    private Context context;
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
-    }
- 
-    @Override
-    public void onStart(Intent intent, int startId) {
-        super.onStart(intent, startId);
+    	Log.i("cyy-cyy", "====================onBind");
+        return mBinder;
     }
  
     @Override
     public void onCreate() {
+    	Log.i("cyy-cyy", "====================onCreate");
         super.onCreate();
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         myHandler = new MyHandler(Looper.myLooper(), DownloadService.this);
         context = this;
+        
+        mBinder = new DownLoadAppBinder();
+        
+        broadCast = new DownLoadAppBroadCast();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(DOWN_LOAD_APP_ACTION);
+        this.registerReceiver(broadCast, filter);
     }
  
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+    	Log.i("cyy-cyy", "====================onStartCommand");
+    	return super.onStartCommand(intent, flags, startId);
+    }
+    @Override
+	public boolean onUnbind(Intent intent) {
+    	Log.i("cyy-cyy", "====================onUnbind");
+		return super.onUnbind(intent);
+	}
+
+    
+    @Override
     public void onDestroy() {
+    	Log.i("cyy-cyy", "====================onDestroy");
         super.onDestroy();
+        unregisterReceiver(broadCast);
     }
  
-    public static void downNewFile(final String url,final int notificationId,final String name){
+    /**
+     * （Activity调用Service的方法）第一种方式：
+     * 直接public开发给外部接口调用，封装性不好
+     * @param url
+     * @param notificationId
+     * @param name
+     * @param progress 
+     */
+    public void downNewFile(String url,int notificationId,String name, ListenerProgress progress){
         if(download.containsKey(notificationId))
             return;
         notification = new Notification();
-        notification.icon = android.R.drawable.stat_sys_download;
+        notification.icon = R.drawable.delete_x;
         // notification.icon=android.R.drawable.stat_sys_download_done;
         notification.tickerText = name+"开始下载";
         notification.when = System.currentTimeMillis();
@@ -81,11 +114,12 @@ public class DownloadService extends Service{
         // 将下载任务添加到任务栏中
         nm.notify(notificationId, notification);
         // 启动线程开始执行下载任务
-        downFile(url,notificationId,name);
+        downFile(url,notificationId,name,progress);
+        
     }
      
     // 下载更新文件
-    private static  void downFile(final String url,final int notificationId,final String name) {
+    private void downFile(final String url,final int notificationId,final String name, final ListenerProgress progress) {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
@@ -121,20 +155,25 @@ public class DownloadService extends Service{
                         long count = 0;
                         int precent = 0;
                         byte[] buffer = new byte[1024];
-                        while ((read = bis.read(buffer)) != -1 && !cancelUpdate) {
+                        while ((read = bis.read(buffer)) != -1) {
                             bos.write(buffer, 0, read);
-                            count  = read;
+                            count += read;
                             precent = (int) (((double) count / length) * 100);
- 
                             // 每下载完成1%就通知任务栏进行修改下载进度
-                            if (precent - download.get(notificationId) >= 1) {
+                            Intent intent  = new Intent();  
+                            intent.setAction(DownloadTest.PROGRESS_INFO_ACTION);  
+                            intent.putExtra("notificationId", notificationId);
+                            if (precent - download.get(notificationId) >= 5) {
+                            	Log.i("cyy-cyy", precent+"%");
                                 download.put(notificationId, precent);
-                                Message message = myHandler.obtainMessage(3,precent);
-                                Bundle bundle = new Bundle();
-                                bundle.putString("name", name);
-                                message.setData(bundle);
+                                Message message = myHandler.obtainMessage(3,name);
                                 message.arg1 = notificationId;
                                 myHandler.sendMessage(message);
+//                                progress.downPro(precent);通过binder返回进度信息的方式
+                                
+                                //发送广播通知注册了该广播的所有client现在的进度信息
+                                intent.putExtra("progress", precent);  
+                                sendBroadcast(intent);
                             }
                         }
                         bos.flush();
@@ -145,7 +184,7 @@ public class DownloadService extends Service{
                         bis.close();
                     }
  
-                    if (!cancelUpdate) {
+                    if (true) {
                         Message message = myHandler.obtainMessage(2, tempFile);
                         message.arg1 = notificationId;
                         Bundle bundle = new Bundle();
@@ -218,8 +257,8 @@ public class DownloadService extends Service{
                     Instanll((File) msg.obj, context);
                     break;
                 case 3:
-                     contentIntent = PendingIntent.getActivity(DownloadService.this, msg.arg1,new Intent(DownloadService.this, DownloadTest.class), 0);
-                    notification.setLatestEventInfo(DownloadService.this, msg.getData().getString("name") +"正在下载",  download.get(msg.arg1)  + "%",contentIntent);
+                    contentIntent = PendingIntent.getActivity(DownloadService.this, msg.arg1,new Intent(DownloadService.this, DownloadTest.class), 0);
+                    notification.setLatestEventInfo(DownloadService.this, msg.obj.toString() +"正在下载",  download.get(msg.arg1)  + "%",contentIntent);
                     nm.notify(msg.arg1, notification);
                     break;
                 case 4:
@@ -232,5 +271,67 @@ public class DownloadService extends Service{
         }
     }
      
+    /**
+     * （Activity调用Service的方法）第二种方式：
+     * 说明：client直接通过bindService获取binder来调取接口
+     *
+     * @author yy_cai
+     *
+     * 2016年2月29日
+     */
+	private class DownLoadAppBinder extends Binder implements IDownloadApp{
+
+		@Override
+		public void downloadApp(String url,int notificationId,String name,ListenerProgress progress) {
+			downNewFile(url, notificationId, name,progress);
+		}
+    	
+    }
  
+	/**
+	 * 
+	 * 说明：监听进度接口
+	 *
+	 * @author yy_cai
+	 *
+	 * 2016年2月29日
+	 */
+	interface ListenerProgress{
+		void downPro(int pro);//下载进度
+	}
+	/**
+	 * 
+	 * 说明：让binder提供业务接口，ListenerProgress返回进度信息
+	 *
+	 * @author yy_cai
+	 *
+	 * 2016年2月29日
+	 */
+    interface IDownloadApp{
+    	void downloadApp(String url,int notificationId,String name,ListenerProgress listener);
+    }
+    
+    /**
+     * （Activity调用Service的方法）第三种方式
+     * 说明：通过广播来调用服务端的接口
+     *
+     * @author yy_cai
+     *
+     * 2016年2月29日
+     */
+    private class DownLoadAppBroadCast extends BroadcastReceiver{
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
+			String url = intent.getStringExtra("url");
+			int notificationId = intent.getIntExtra("notificationId", -1);
+			String name = intent.getStringExtra("name");
+			if(DOWN_LOAD_APP_ACTION.equals(action)){
+				downNewFile(url, notificationId, name,null);
+			}
+			
+		}
+    	
+    }
 }
