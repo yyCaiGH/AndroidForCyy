@@ -3,23 +3,4 @@
    <color name="white">#ffffffff</color>
     <color name="light_gray">#ffe6e6e6</color>
     <color name="black">#55000000</color>
-    
-    <!-- 系统主色调 -->
-    <color name="sys_main_color">#2EA1CE</color>
-    <!-- 系统副色调 -->
-    <color name="sys_sub_color">#666666</color>
-    <!-- 系统主背景色 -->
-    <color name="sys_main_bg_color">#F8F8F8</color>
-    <!-- 系统副背景色 -->
-    <color name="sys_sub_bg_color">#FFFFFF</color>
-    <!-- 系统文字主色调 -->
-    <color name="sys_main_text_color">#424242</color>
-    <!-- 系统大标题文字颜色 -->
-    <color name="sys_big_title_text_color">#ffffff</color>
-    <!-- 系统小标题文字颜色 -->
-    <color name="sys_small_title_text_color">#bb000000</color>
-    <!-- 系统内容文字颜色 -->
-    <color name="sys_content_text_color">#bb000000</color>
-    <!-- 分割线颜色 -->
-    <color name="dividing_line_color">#cdcdcd</color>
 </resources>

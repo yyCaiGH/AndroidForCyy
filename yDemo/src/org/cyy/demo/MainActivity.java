@@ -1,16 +1,12 @@
 package org.cyy.demo;
 
-import org.cyy.demo.appdown.DownloadTest;
 import org.cyy.demo.customview.CustomViewActivity;
 import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
 import org.cyy.demo.fragment.MainTab;
 import org.cyy.demo.ontouchevent.TestActivity;
-import org.cyy.demo.recyclerview.RecycleViewActivity;
-import org.cyy.demo.service.MusicListActivity;
 import org.cyy.demo.videoview.VideoViewActivity;
-import org.cyy.demo.welcome.WelcomePageActivity;
 import org.cyy.demo.xutils.XUtilsActivity;
 
 import android.app.Activity;
@@ -65,22 +61,6 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button7){
 			Intent i = new Intent(this,EssayActivity.class);
-			startActivity(i);
-		}
-		if(view.getId()==R.id.button8){
-			Intent i = new Intent(this,MusicListActivity.class);
-			startActivity(i);
-		}
-		if(view.getId()==R.id.button9){
-			Intent i = new Intent(this,RecycleViewActivity.class);
-			startActivity(i);
-		}
-		if(view.getId()==R.id.button10){
-			Intent i = new Intent(this,WelcomePageActivity.class);
-			startActivity(i);
-		}
-		if(view.getId()==R.id.button11){
-			Intent i = new Intent(this,DownloadTest.class);
 			startActivity(i);
 		}
 	}
