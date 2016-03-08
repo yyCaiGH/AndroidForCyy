@@ -25,6 +25,7 @@ import android.widget.Toast;
  */
 public class AppUtil {
 
+
 	/**
 	 * 通过包名启动Activity
 	 * <category android:name="android.intent.category.LAUNCHER" />
