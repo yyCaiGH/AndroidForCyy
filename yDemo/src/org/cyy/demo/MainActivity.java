@@ -1,6 +1,7 @@
 package org.cyy.demo;
 
 import org.cyy.demo.appdown.DownloadTest;
+import org.cyy.demo.customdialog.CustomDialogActivity;
 import org.cyy.demo.customview.CustomViewActivity;
 import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
