@@ -1,6 +1,4 @@
-package org.cyy.util.sysfun;
-
-import org.cyy.util.StringUtils;
+package org.cyy.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,7 +18,7 @@ import android.telephony.TelephonyManager;
  *
  * 2016年2月2日
  */
-public class GetSysPara {
+public class SysUtils {
 
 	public static final int NETTYPE_NULL = 0x00;
 	public static final int NETTYPE_WIFI = 0x01;

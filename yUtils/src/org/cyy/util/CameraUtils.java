@@ -1,4 +1,4 @@
-package org.cyy.util.sysfun;
+package org.cyy.util;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.content.Intent;
  *
  * 2015年12月1日
  */
-public class GetSysImage {
+public class CameraUtils {
 
 	/**
 	 * return-data = true
