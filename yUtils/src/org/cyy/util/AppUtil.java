@@ -6,15 +6,18 @@ import java.util.List;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
+import android.widget.Toast;
 /**
  * 
- * 说明：安装、卸载apk，判断、停止服务
+ * 说明：启动，安装、卸载apk，判断、停止服务
  *
  * @author yy_cai
  *
@@ -22,6 +25,88 @@ import android.net.Uri;
  */
 public class AppUtil {
 
+	/**
+	 * 通过包名启动Activity
+	 * <category android:name="android.intent.category.LAUNCHER" />
+	 * <action android:name="android.intent.action.MAIN" />
+	 * 启动Activity，这两个条件缺一不可
+	 * @param context
+	 * @param appPackageName
+	 */
+	public static void startApp2(Context context,String appPackageName){
+	    try{
+	        Intent intent = context.getPackageManager().getLaunchIntentForPackage(appPackageName);
+	        context.startActivity(intent);
+	    }catch(Exception e){
+	        Toast.makeText(context, "该应用没有安装", Toast.LENGTH_LONG).show();
+	    }
+	}
+	/**
+	 * 通过包名启动Activity
+	 * <category android:name="android.intent.category.LAUNCHER" />
+	 * 启动Activity可以不需要上面的条件
+	 * @param context
+	 * @param packageName
+	 */
+	public static void startApp(Context context,String packageName) {  
+        PackageInfo pi;  
+        try {  
+        	PackageManager pManager = context.getPackageManager();
+            pi = pManager.getPackageInfo(packageName, 0);  
+            Intent resolveIntent = new Intent(Intent.ACTION_MAIN);  
+            resolveIntent.setPackage(pi.packageName);  
+            List<ResolveInfo> apps = pManager.queryIntentActivities(resolveIntent, 0);  
+            ResolveInfo ri = apps.iterator().next();  
+            if (ri != null) {  
+                packageName = ri.activityInfo.packageName;  
+                String className = ri.activityInfo.name;  
+                Intent intent = new Intent(Intent.ACTION_MAIN);  
+                ComponentName cn = new ComponentName(packageName, className);  
+                intent.setComponent(cn);  
+                context.startActivity(intent);  
+            }  
+        } catch (NameNotFoundException e) {  
+            e.printStackTrace();  
+        }  
+  
+    }
+	/**
+	 * 通过包名和启动Activity名启动应用
+	 * <category android:name="android.intent.category.LAUNCHER" />
+	 * 启动Activity可以不需要上面的条件
+	 */
+	public static void startApp(Context context,String appPackageName,String LauncherActivityName){
+	    try{
+	    	ComponentName componet = new ComponentName(appPackageName, LauncherActivityName);
+			Intent i = new Intent();
+			i.setComponent(componet);
+			context.startActivity(i);
+	    }catch(Exception e){
+	        Toast.makeText(context, "该应用没有安装", Toast.LENGTH_LONG).show();
+	    }
+	}
+	
+	/**
+	 * 根据包名获得应用的信息
+	 * @param context
+	 * @param packageName
+	 * @return
+	 */
+	public static ResolveInfo getAppInfo(Context context,String packageName) {  
+        try {  
+        	PackageManager pManager = context.getPackageManager();
+        	PackageInfo pi = pManager.getPackageInfo(packageName, 0);  
+            Intent resolveIntent = new Intent(Intent.ACTION_MAIN);  
+            resolveIntent.setPackage(pi.packageName);  
+            List<ResolveInfo> apps = pManager.queryIntentActivities(resolveIntent, 0);  
+            ResolveInfo ri = apps.iterator().next();  
+            return ri;
+        } catch (NameNotFoundException e) {  
+        	Toast.makeText(context, "该应用没有安装", Toast.LENGTH_LONG).show();
+        }
+        return null;
+    }
+	
 	/**
 	 * 获取App安装包信息
 	 * @return
