@@ -80,5 +80,10 @@
         <item name="android:background">@drawable/img_mes_num_bg</item>
         <item name="android:visibility">gone</item>
     </style>
-    
+    <!-- SpotsDialog -->
+    <style name="SpotsDialogDefault" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">加载中…</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
 </resources>

@@ -36,4 +36,7 @@
     <!-- MytabView -->
     <dimen name="tab_default_margin_size">3dp</dimen>
 	<dimen name="mytab_text_size">10sp</dimen>
+	<!-- SpotsDialog -->
+	<dimen name="spots_size">6dp</dimen>
+	<dimen name="spots_progress_width">250dp</dimen>
 </resources>
