@@ -17,7 +17,7 @@
         android:text="?attr/DialogTitleText"/>
 
 
-    <com.ycss.widget.dialog.spots.ProgressLayout
+    <org.cyy.view.dialog.spots.ProgressLayout
         android:id="@+id/spots_pl_progress"
         android:layout_width="@dimen/spots_progress_width"
         android:layout_height="wrap_content"
