@@ -28,9 +28,6 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_other);
-//		SpotsDialog dialog = new SpotsDialog(this);
-//		dialog.setMessage("cyy");
-//		dialog.show();
 		tv = (TextView)this.findViewById(R.id.textView1);
 		new Thread(new Runnable() {
 			

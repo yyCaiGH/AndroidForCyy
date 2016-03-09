@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.cyy.R;
-import org.cyy.view.adapter.CommonAdapter;
-import org.cyy.view.adapter.ViewHolder;
+import org.cyy.adapter.CommonAdapter;
+import org.cyy.adapter.ViewHolder;
+import org.cyy.ybase.R;
 
 import android.content.Context;
 import android.widget.ListView;

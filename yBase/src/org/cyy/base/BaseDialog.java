@@ -1,6 +1,7 @@
 package org.cyy.base;
 
-import org.cyy.R;
+
+import org.cyy.ybase.R;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -30,7 +31,7 @@ public abstract class BaseDialog extends Dialog implements android.view.View.OnC
 	 * @param title
 	 */
 	protected  void initTopBar(String title){
-		TextView tvTitle = (TextView)this.findViewById(R.id.tv_top_title);
+		TextView tvTitle = (TextView)this.findViewById(R.id.tv_topbar_title);
 		tvTitle.setText(title);
 	}
 	/**
@@ -40,7 +41,7 @@ public abstract class BaseDialog extends Dialog implements android.view.View.OnC
 	 * 2、设置左边返回监听
 	 */
 	protected void initTopBarAndBack(String title){
-		TextView back = (TextView)this.findViewById(R.id.tv_top_left);
+		TextView back = (TextView)this.findViewById(R.id.tv_topbar_left);
 		back.setOnClickListener(this);
 		initTopBar(title);
 	}
@@ -56,7 +57,7 @@ public abstract class BaseDialog extends Dialog implements android.view.View.OnC
 	
 	@Override
 	public void onClick(View v) {
-		if(v.getId()==R.id.tv_top_left){
+		if(v.getId()==R.id.tv_topbar_left){
 			this.cancel();
 		}
 	}

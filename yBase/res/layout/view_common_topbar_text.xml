@@ -6,7 +6,7 @@
      >
 
     <TextView
-        android:id="@+id/tv_top_left"
+        android:id="@+id/tv_topbar_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/sys_big_title_text_color"
@@ -20,7 +20,7 @@
         />
 	
     <TextView
-        android:id="@+id/tv_top_title"
+        android:id="@+id/tv_topbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -30,7 +30,7 @@
         android:text="@string/topbar_title" />
 
     <TextView
-        android:id="@+id/tv_top_right"
+        android:id="@+id/tv_topbar_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
