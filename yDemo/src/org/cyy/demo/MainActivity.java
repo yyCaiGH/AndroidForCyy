@@ -7,6 +7,7 @@ import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
 import org.cyy.demo.fragment.MainTab;
 import org.cyy.demo.ontouchevent.TestActivity;
+import org.cyy.demo.other.SmallQuestionActivity;
 import org.cyy.demo.recyclerview.RecycleViewActivity;
 import org.cyy.demo.service.MusicListActivity;
 import org.cyy.demo.videoview.VideoViewActivity;
@@ -81,6 +82,10 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button11){
 			Intent i = new Intent(this,DownloadTest.class);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button13){
+			Intent i = new Intent(this,SmallQuestionActivity.class);
 			startActivity(i);
 		}
 	}
