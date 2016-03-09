@@ -15,6 +15,18 @@
         android:orientation="vertical" >
 
         <Button
+            android:id="@+id/button13"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ClickButton"
+            android:text="Other" />
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ClickButton"
+            android:text="CustomDialog" />
+        <Button
             android:id="@+id/button11"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
