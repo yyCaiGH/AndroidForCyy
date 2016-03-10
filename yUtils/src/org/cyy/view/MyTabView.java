@@ -11,16 +11,23 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 /**
+ * 更新日志：2016-2-26
+ * 加入未读消息标记和绑定标题栏的操作
+ * 
  * 使用方法：
 1、view_mytab.xml配套到资源文件下
 2、tabView = (MyTabView) findViewById(R.id.my_tab_view);
 3、int[] imageIds = {R.drawable.img1...8或10张图};
 4、String[] titles ={4或5个标题};
-5、tabView.SetTabImages(imageIds);
-6、tabView.SetTabTitles(titles);
-7、tabView.SetViewPager(pager);
+5、tabView.setTabImages(imageIds);//设置每个tab对应的图标
+6、tabView.setTabTitles(titles);//设置每个tab对应的文字
+7、tabView.bindViewPager(pager);//绑定viewPaper
+8、tabView.setTopBarTitle(_tvTitle,titles);//设置tab对应的顶部标题栏（可选）
+9、tabView.setNoReadMesNum(page, num,visibility);//设置未读消息数（可选）
+10、tabView.setNoReadMes(page,visibility);//设置未读标记（可选）
  * @author yy_cai
  *
  * 2015年7月16日
@@ -28,13 +35,16 @@ import android.widget.TextView;
 public class MyTabView extends LinearLayout implements OnClickListener{
 
 	private ViewPager pager;
-	private LinearLayout ll_bottom_0, ll_bottom_1, ll_bottom_2, ll_bottom_3 ,ll_bottom_4;
+	private RelativeLayout ll_bottom_0, ll_bottom_1, ll_bottom_2, ll_bottom_3 ,ll_bottom_4;
 	private ImageView iv_0_0, iv_0_1, iv_1_0, iv_1_1, iv_2_0, iv_2_1, iv_3_0, iv_3_1,iv_4_0, iv_4_1;
-	private TextView  tv_0_0, tv_0_1, tv_1_0, tv_1_1, tv_2_0, tv_2_1, tv_3_0, tv_3_1,tv_4_0, tv_4_1;
-	
+	private TextView tv_0_0, tv_0_1, tv_1_0, tv_1_1, tv_2_0, tv_2_1, tv_3_0, tv_3_1,tv_4_0, tv_4_1;
+	private TextView tv_tab_mes_num_0,tv_tab_mes_num_1,tv_tab_mes_num_2,tv_tab_mes_num_3,tv_tab_mes_num_4;//未读消息数量
+	private TextView tv_tab_mes_noread_0,tv_tab_mes_noread_1,tv_tab_mes_noread_2,tv_tab_mes_noread_3,tv_tab_mes_noread_4;//未读标记
+	private TextView tv_title;//标题栏控件
+	private String[] titles;//标题与底部标题一致可直接用底部标题
 	public MyTabView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		LayoutInflater.from(context).inflate(R.layout.view_mytab,this);
+		LayoutInflater.from(context).inflate(R.layout.view_mytab_up,this);
 		init();
 	}
 	
@@ -44,8 +54,11 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 		initAlpha();
 		changeSelectAlpha(0);
 	}
-	
-	public void SetViewPager(ViewPager viewPager){
+	/**
+	 * 绑定viewPaper
+	 * @param viewPager
+	 */
+	public void bindViewPager(ViewPager viewPager){
 		
 		this.pager = viewPager;
 		
@@ -55,6 +68,9 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 			public void onPageSelected(int position) {
 				initAlpha();
 				changeSelectAlpha(position);
+				if(tv_title!=null&&titles!=null){
+					tv_title.setText(titles[position]);
+				}
 			}
 
 			@Override
@@ -77,12 +93,19 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 		});
 	}
 	/**
+	 * 设置paper当前显示的页面
+	 * @param item
+	 */
+	public void setCurrenItem(int item){
+		pager.setCurrentItem(item, false);
+	}
+	/**
 	 * 第一个tab位置的暗色图标、明色图标
 	 * 第二个tab位置的暗色图标、明色图标
 	 * 如此顺序排列8个或10个
 	 * @param imageIds
 	 */
-	public void SetTabImages(int imageIds[]){
+	public void setTabImages(int imageIds[]){
 		iv_0_0.setImageResource(imageIds[0]);
 		iv_0_1.setImageResource(imageIds[1]);
 		iv_1_0.setImageResource(imageIds[2]);
@@ -101,7 +124,7 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 	 * 4或5个tab的标题
 	 * @param titles
 	 */
-	public void SetTabTitles(String titles[]){
+	public void setTabTitles(String titles[]){
 		tv_0_0.setText(titles[0]);
 		tv_0_1.setText(titles[0]);
 		tv_1_0.setText(titles[1]);
@@ -116,15 +139,83 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 		}
 	}
 	/**
+	 * 传递标题栏控件和所有标题
+	 * @param pTvTitle 标题控件
+	 * @param pTitles 所有标题
+	 */
+	public void setTopBarTitle(TextView pTvTitle,String[] pTitles) {
+		tv_title = pTvTitle;
+		titles = pTitles;
+		tv_title.setText(titles[0]);
+	}
+	/**
+	 * 设置未读消息数量
+	 * @param page tab位置，从0开始
+	 * @param num 消息数量
+	 * @param visibility 标记是否可见
+	 */
+	public void setNoReadMesNum(int page,int num,int visibility){
+		switch (page) {
+		case 0:
+			tv_tab_mes_num_0.setVisibility(View.VISIBLE);
+			tv_tab_mes_num_0.setText(num+"");
+			break;
+		case 1:
+			tv_tab_mes_num_1.setVisibility(View.VISIBLE);
+			tv_tab_mes_num_1.setText(num+"");
+			break;
+		case 2:
+			tv_tab_mes_num_2.setVisibility(View.VISIBLE);
+			tv_tab_mes_num_2.setText(num+"");
+			break;
+		case 3:
+			tv_tab_mes_num_3.setVisibility(View.VISIBLE);
+			tv_tab_mes_num_3.setText(num+"");
+			break;
+		case 4:
+			tv_tab_mes_num_4.setVisibility(View.VISIBLE);
+			tv_tab_mes_num_4.setText(num+"");
+			break;
+		default:
+			break;
+		}
+	}
+	/**
+	 * 设置未读标记
+	 * @param page tab位置,从0开始
+	 * @param visibility 标记是否可见
+	 */
+	public void setNoReadMes(int page,int visibility){
+		switch (page) {
+		case 0:
+			tv_tab_mes_noread_0.setVisibility(visibility);
+			break;
+		case 1:
+			tv_tab_mes_noread_1.setVisibility(visibility);
+			break;
+		case 2:
+			tv_tab_mes_noread_2.setVisibility(visibility);
+			break;
+		case 3:
+			tv_tab_mes_noread_3.setVisibility(visibility);
+			break;
+		case 4:
+			tv_tab_mes_noread_4.setVisibility(visibility);
+			break;
+		default:
+			break;
+		}
+	}
+	/**
 	 * 初始化控件
 	 */
 	private void initView() {
 		
-		ll_bottom_0 = (LinearLayout) findViewById(R.id.ll_bottom_0);
-		ll_bottom_1 = (LinearLayout) findViewById(R.id.ll_bottom_1);
-		ll_bottom_2 = (LinearLayout) findViewById(R.id.ll_bottom_2);
-		ll_bottom_3 = (LinearLayout) findViewById(R.id.ll_bottom_3);
-		ll_bottom_4 = (LinearLayout) findViewById(R.id.ll_bottom_4);
+		ll_bottom_0 = (RelativeLayout) findViewById(R.id.ll_bottom_0);
+		ll_bottom_1 = (RelativeLayout) findViewById(R.id.ll_bottom_1);
+		ll_bottom_2 = (RelativeLayout) findViewById(R.id.ll_bottom_2);
+		ll_bottom_3 = (RelativeLayout) findViewById(R.id.ll_bottom_3);
+		ll_bottom_4 = (RelativeLayout) findViewById(R.id.ll_bottom_4);
 		
 		iv_0_0 = (ImageView) findViewById(R.id.iv_0_0);
 		iv_0_1 = (ImageView) findViewById(R.id.iv_0_1);
@@ -147,6 +238,18 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 		tv_3_1= (TextView) findViewById(R.id.tv_3_1);
 		tv_4_0 = (TextView) findViewById(R.id.tv_4_0);
 		tv_4_1= (TextView) findViewById(R.id.tv_4_1);
+		
+		tv_tab_mes_noread_0 = (TextView) findViewById(R.id.tv_mes_noread_0);
+		tv_tab_mes_noread_1 = (TextView) findViewById(R.id.tv_mes_noread_1);
+		tv_tab_mes_noread_2 = (TextView) findViewById(R.id.tv_mes_noread_2);
+		tv_tab_mes_noread_3 = (TextView) findViewById(R.id.tv_mes_noread_3);
+		tv_tab_mes_noread_4 = (TextView) findViewById(R.id.tv_mes_noread_4);
+		
+		tv_tab_mes_num_0 = (TextView) findViewById(R.id.tv_mes_num_0);
+		tv_tab_mes_num_1 = (TextView) findViewById(R.id.tv_mes_num_1);
+		tv_tab_mes_num_2 = (TextView) findViewById(R.id.tv_mes_num_2);
+		tv_tab_mes_num_3 = (TextView) findViewById(R.id.tv_mes_num_3);
+		tv_tab_mes_num_4 = (TextView) findViewById(R.id.tv_mes_num_4);
 	}
 	
 	/**
@@ -335,4 +438,5 @@ public class MyTabView extends LinearLayout implements OnClickListener{
 		}
 
 	}
+
 }

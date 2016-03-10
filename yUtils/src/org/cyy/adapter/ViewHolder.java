@@ -1,4 +1,4 @@
-package org.cyy.view.adapter;
+package org.cyy.adapter;
 
 
 import android.content.Context;

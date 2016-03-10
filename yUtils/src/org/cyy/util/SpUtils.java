@@ -24,8 +24,8 @@ import android.preference.PreferenceManager;
  *
  * 2016年2月16日
  */
-public class spUtils {
-
+public class SpUtils {
+	public final static String SP_ZGST_DEFAULT_FILE_NAME="zgst";
 	/**
 	 * 第一次启动存储一个偏好，每次都判断是否第一次启动
 	 * 对第一次启动做针对性的处理
@@ -42,7 +42,6 @@ public class spUtils {
 
 		return false;
 	}
-	
 	/**
 	 * 存储List<String>到SharedPreferences
 	 * @param context
@@ -60,6 +59,15 @@ public class spUtils {
 	    editor.putString(key,jsonArray.toString());
 	    editor.commit();
 	  }
+	/**
+	 * 存储List<String>到SharedPreferences(默认存储文件名)
+	 * @param context
+	 * @param key
+	 * @param array
+	 */
+	public static void saveArray(Context context,String key,List<String> array) {
+		saveArray(context, SP_ZGST_DEFAULT_FILE_NAME, key, array);
+	}
 	/**
 	 * 添加值到SharedPreferences的list中
 	 * @param context
@@ -79,6 +87,16 @@ public class spUtils {
 	    SharedPreferences.Editor editor = prefs.edit();
 	    editor.putString(listKey,jsonArray.toString());
 	    editor.commit();
+	}
+	/**
+	 * 添加值到SharedPreferences的list中(默认存储文件名)
+	 * @param context
+	 * @param spFileName sp文件名
+	 * @param listKey 数据集的key
+	 * @param value 欲添加到数据集的值
+	 */
+	public static void addValueToList(Context context,String listKey,String value){
+		addValueToList(context, SP_ZGST_DEFAULT_FILE_NAME, listKey, value);
 	}
 	/**
 	 * 从SharedPreferences的list中删除某值
@@ -105,7 +123,16 @@ public class spUtils {
 	    editor.putString(listKey,newJsonArray.toString());
 	    editor.commit();
 	}
-	
+	/**
+	 * 从SharedPreferences的list中删除某值(默认存储文件名)
+	 * @param context
+	 * @param spFileName
+	 * @param listKey
+	 * @param value
+	 */
+	public static void removeValueFromList(Context context,String listKey,String value){
+		removeValueFromList(context, SP_ZGST_DEFAULT_FILE_NAME, listKey, value);
+	}
 	/**
 	 * 到SharedPreferences获取List<String>
 	 * @param context
@@ -126,6 +153,15 @@ public class spUtils {
 	    
 	    return array;
 	  }
+	/**
+	 * 到SharedPreferences获取List<String>(默认存储文件名)
+	 * @param context
+	 * @return
+	 */
+	public static List<String> getArray(Context context,String key){
+		return getArray(context, SP_ZGST_DEFAULT_FILE_NAME, key);
+	}
+	
 	/**
 	 * 将List<map>存入sharedPreferences
 	 * @param context

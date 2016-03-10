@@ -23,6 +23,7 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 		}
 		
 	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -32,7 +33,7 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 //		dialog.setMessage("cyy");
 //		dialog.show();
 		tv = (TextView)this.findViewById(R.id.textView1);
-		new Thread(new Runnable() {
+		/*new Thread(new Runnable() {
 			
 			@Override
 			public void run() {
@@ -60,10 +61,8 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 						
 					}
 				});
-				handler1.sendEmptyMessage(3);
 			}
-		}).start();
-		handler.sendEmptyMessage(2);
+		}).start();;*/
 	}
 	@Override
 	public boolean handleMessage(Message msg) {
@@ -71,4 +70,13 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 		return false;
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+	}
+	@Override
+	protected void onPause() {
+		super.onPause();
+	}
 }
