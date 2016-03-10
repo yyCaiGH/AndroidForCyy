@@ -23,6 +23,7 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 		}
 		
 	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -60,10 +61,8 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 						
 					}
 				});
-				handler1.sendEmptyMessage(3);
 			}
-		}).start();
-		handler.sendEmptyMessage(2);
+		}).start();;
 	}
 	@Override
 	public boolean handleMessage(Message msg) {

@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <include  layout="@layout/view_common_topbar_image"/>
     <include  layout="@layout/view_common_search"/>
     
     <View style="@style/dividing_view_fill"/>

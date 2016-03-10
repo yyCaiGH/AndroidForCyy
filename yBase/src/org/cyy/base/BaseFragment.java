@@ -1,6 +1,7 @@
 package org.cyy.base;
 
-import org.cyy.R;
+
+import org.cyy.ybase.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,14 +31,14 @@ public class BaseFragment extends Fragment implements OnItemClickListener,OnClic
 	 * @param title
 	 */
 	protected void initTopBar(View view,String title){
-		TextView tvTitle = (TextView)view.findViewById(R.id.tv_top_title);
+		TextView tvTitle = (TextView)view.findViewById(R.id.tv_topbar_title);
 		tvTitle.setText(title);
 	}
 	/**
 	 * 初始化标题栏并处理view_common_top的back事件
 	 */
 	protected void initTvBackTopBar(View view,String title){
-		TextView back = (TextView)view.findViewById(R.id.tv_top_left);
+		TextView back = (TextView)view.findViewById(R.id.tv_topbar_left);
 		back.setOnClickListener(this);
 		initTopBar(view, title);
 	}
@@ -62,7 +63,7 @@ public class BaseFragment extends Fragment implements OnItemClickListener,OnClic
 	
 	@Override
 	public void onClick(View v) {
-		if(v.getId()==R.id.tv_top_left){
+		if(v.getId()==R.id.tv_topbar_left){
 			getActivity().onBackPressed();
 		}
 	}
