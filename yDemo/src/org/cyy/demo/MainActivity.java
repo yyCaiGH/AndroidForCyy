@@ -7,6 +7,7 @@ import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
 import org.cyy.demo.fragment.MainTab;
+import org.cyy.demo.launchmode.StandardActivity;
 import org.cyy.demo.ontouchevent.TestActivity;
 import org.cyy.demo.other.SmallQuestionActivity;
 import org.cyy.demo.recyclerview.RecycleViewActivity;
@@ -91,6 +92,10 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button13){
 			Intent i = new Intent(this,SmallQuestionActivity.class);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button14){
+			Intent i = new Intent(this,StandardActivity.class);
 			startActivity(i);
 		}
 	}

@@ -2,6 +2,8 @@ package org.cyy.util;
 
 import java.util.regex.Pattern;
 
+import android.os.Bundle;
+
 /** 
  * 字符串操作工具包
  * @author yy_cai
@@ -109,5 +111,22 @@ public class StringUtils
 			}
 		}
 		return valueLength;
+	}
+	
+	/**
+	 * 打印所有的 intent extra 数据
+	 * @param bundle
+	 * @return
+	 */
+	public static String printBundle(Bundle bundle) {
+		StringBuilder sb = new StringBuilder();
+		for (String key : bundle.keySet()) {
+			try{
+				sb.append("\nkey:" + key + ", value:" + bundle.getInt(key));
+			} catch(Exception e) {
+				sb.append("\nkey:" + key + ", value:" + bundle.getString(key));
+			}
+		}
+	  return sb.toString();
 	}
 }

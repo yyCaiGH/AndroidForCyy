@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +27,20 @@ import android.widget.Toast;
 public class AppUtil {
 
 
+	/**
+	 * 判断应用是否在前台
+	 * @param context
+	 * @return
+	 */
+	public static  boolean isForehead(Context context,String pName) {
+		ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+		RunningTaskInfo info = manager.getRunningTasks(1).get(0);
+		String packageName = info.topActivity.getPackageName(); // 包名
+		if (packageName.equals(pName)) {
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * 通过包名启动Activity
 	 * <category android:name="android.intent.category.LAUNCHER" />
