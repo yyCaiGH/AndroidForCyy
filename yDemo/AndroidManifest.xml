@@ -57,10 +57,13 @@
         <activity android:name="org.cyy.demo.launchmode.SingleInstancekActivity"
             	  android:launchMode="singleInstance"></activity>
         <activity android:name="org.cyy.demo.launchmode.SingleTaskActivity"
+            android:taskAffinity="org.cc.demo"
             	  android:launchMode="singleTask"></activity>
         <activity android:name="org.cyy.demo.launchmode.StandardActivity"
+            android:taskAffinity="org.cc.demo"
             	  android:launchMode="standard"></activity>
         <activity android:name="org.cyy.demo.launchmode.SingleTopActivity"
+            android:taskAffinity="org.ff.demo"
             	  android:launchMode="singleTop"></activity>
         
         <service android:name="org.cyy.demo.service.MusicService"></service>

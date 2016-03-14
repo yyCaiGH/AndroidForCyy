@@ -15,6 +15,7 @@ import org.cyy.demo.service.MusicListActivity;
 import org.cyy.demo.videoview.VideoViewActivity;
 import org.cyy.demo.welcome.WelcomePageActivity;
 import org.cyy.demo.xutils.XUtilsActivity;
+import org.cyy.util.Logger;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -39,6 +40,12 @@ public class MainActivity extends Activity{
 		}
 	}
 	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Logger.i("MainActivity", "onResume，任务栈id="+this.getTaskId());
+	}
 	
 	public void ClickButton(View view) {
 		//ViewPager+Fragment+RadioButton替代TabActivity
@@ -96,6 +103,7 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button14){
 			Intent i = new Intent(this,StandardActivity.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}
 	}
