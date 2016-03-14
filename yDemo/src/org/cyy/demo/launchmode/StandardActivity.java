@@ -57,7 +57,6 @@ public class StandardActivity extends Activity implements OnClickListener{
 		super.onStop();
 		Logger.i(TAG, "onStop");
 	}
-
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
