@@ -128,7 +128,6 @@ private final static String TAG = SingleTaskActivity.class.getSimpleName();
 		super.onChildTitleChanged(childActivity, title);
 		Logger.i(TAG, "onChildTitleChanged");
 	}
-	
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		// TODO Auto-generated method stub
