@@ -55,9 +55,9 @@
         <activity android:name="org.cyy.demo.appdown.DownloadTest2"></activity>
         <activity android:name="org.cyy.demo.customdialog.CustomDialogActivity"></activity>
         <activity android:name="org.cyy.demo.launchmode.SingleInstancekActivity"
-            	  android:launchMode="singleInstance"></activity>
-        <activity android:name="org.cyy.demo.launchmode.SingleTaskActivity"
             android:taskAffinity="org.cc.demo"
+            	  android:launchMode="standard"></activity>
+        <activity android:name="org.cyy.demo.launchmode.SingleTaskActivity"
             	  android:launchMode="singleTask"></activity>
         <activity android:name="org.cyy.demo.launchmode.StandardActivity"
             android:taskAffinity="org.cc.demo"

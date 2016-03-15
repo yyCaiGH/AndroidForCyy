@@ -21,15 +21,13 @@ public class SingleInstancekActivity extends Activity implements OnClickListener
 		this.findViewById(R.id.btn_other).setOnClickListener(this);
 		Logger.i(TAG, "onCreate");
 	}
-private final static String TAG = SingleInstancekActivity.class.getSimpleName();
-	
+	private final static String TAG = SingleInstancekActivity.class.getSimpleName();
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
 		Logger.i(TAG, "onStart");
 	}
-
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -144,8 +142,8 @@ private final static String TAG = SingleInstancekActivity.class.getSimpleName();
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.btn_other){
-			Intent i = new Intent(this,SingleTopActivity.class);
-//			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			Intent i = new Intent(this,SingleTaskActivity.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}
 		

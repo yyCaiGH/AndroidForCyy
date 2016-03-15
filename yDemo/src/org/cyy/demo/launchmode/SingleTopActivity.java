@@ -146,8 +146,8 @@ private final static String TAG = SingleTopActivity.class.getSimpleName();
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.btn_other){
-			Intent i = new Intent(this,SingleTaskActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			Intent i = new Intent(this,SingleInstancekActivity.class);
+//			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}
 		

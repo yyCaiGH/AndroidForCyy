@@ -128,7 +128,6 @@ private final static String TAG = SingleTaskActivity.class.getSimpleName();
 		super.onChildTitleChanged(childActivity, title);
 		Logger.i(TAG, "onChildTitleChanged");
 	}
-	
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		// TODO Auto-generated method stub
@@ -144,7 +143,7 @@ private final static String TAG = SingleTaskActivity.class.getSimpleName();
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.btn_other){
-			Intent i = new Intent(this,StandardActivity.class);
+			Intent i = new Intent(this,SingleTopActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}

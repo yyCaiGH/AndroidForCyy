@@ -148,7 +148,7 @@ public class StandardActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		if(v.getId()==R.id.btn_other){
 			Intent i = new Intent(this,SingleTopActivity.class);
-//			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}
 		

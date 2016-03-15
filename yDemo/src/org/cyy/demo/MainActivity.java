@@ -103,7 +103,7 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button14){
 			Intent i = new Intent(this,StandardActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);
 		}
 	}
