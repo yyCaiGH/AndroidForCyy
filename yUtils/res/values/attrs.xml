@@ -8,4 +8,25 @@
         <attr name="DialogSpotCount" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="TitleBar">
+        <attr name="style" format="enum">
+            <enum name="title" value="0" />
+            <enum name="onlyText" value="1" />
+            <enum name="onlyImg" value="2" />
+            <enum name="onlyLeftText" value="3" />
+            <enum name="onlyLeftImg" value="4" />
+            <enum name="onlyLeft" value="5" />
+        </attr>
+        <attr name="background" format="color|reference" />
+        <attr name="leftStr" format="reference|string" />
+        <attr name="rightStr" format="reference|string" />
+        <attr name="titleStr" format="reference|string" />
+        <attr name="leftImg" format="reference" />
+        <attr name="rightImg" format="reference" />
+        <attr name="besideSize" format="dimension" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="besideColor" format="reference|color" />
+        <attr name="titleColor" format="reference|color" />
+    </declare-styleable>
+    
 </resources>

@@ -1,7 +1,7 @@
 <resources>
 	<dimen name="activity_vertical_margin">10dp</dimen>
     <!-- 系统默认全部内容距离屏幕边缘的大小 -->
-    <dimen name="sys_default_edge_padding">8dp</dimen>
+    <dimen name="sys_default_edge_padding">10dp</dimen>
     <dimen name="sys_default_edge_margin">8dp</dimen>
     <!-- 系统大标题文字大小 -->
     <dimen name="sys_big_title_text_size">20sp</dimen>

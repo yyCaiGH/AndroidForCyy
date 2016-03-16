@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.Button;
 
 public class MyAdapter extends ArrayAdapter<String> {  
 	  
@@ -21,11 +21,11 @@ public class MyAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {  
         View view;  
         if (convertView == null) {  
-            view = LayoutInflater.from(getContext()).inflate(R.layout.my_list_view_item, null);  
+            view = LayoutInflater.from(getContext()).inflate(R.layout.my_list_view_item, parent,false);  
         } else {  
             view = convertView;  
         }  
-        TextView textView = (TextView) view.findViewById(R.id.text_view);  
+        Button textView = (Button) view.findViewById(R.id.text_view);  
         textView.setText(getItem(position));  
         return view;  
     }  

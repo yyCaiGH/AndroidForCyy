@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_main_color"
+     >
+
+    <TextView
+        android:id="@+id/tb_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Title"
+        android:padding="@dimen/sys_default_edge_padding"
+        android:textColor="@color/sys_big_title_text_color"
+        android:textSize="@dimen/sys_big_title_text_size"
+        android:textStyle="bold" />
+    
+    <LinearLayout
+        android:id="@+id/tb_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/sys_default_edge_padding" >
+
+        <ImageView
+            android:id="@+id/tb_left_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:src="@drawable/s_top_back" />
+
+        <TextView
+            android:id="@+id/tb_left_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="返回"
+            android:textColor="@color/sys_big_title_text_color"
+            android:textSize="@dimen/sys_small_title_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tb_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/sys_default_edge_padding" >
+
+        <TextView
+            android:id="@+id/tb_right_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            android:textColor="@color/sys_big_title_text_color"
+            android:textSize="@dimen/sys_small_title_text_size" />
+
+        <ImageView
+            android:id="@+id/tb_right_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/top_add_image" />
+    </LinearLayout>
+
+</RelativeLayout>

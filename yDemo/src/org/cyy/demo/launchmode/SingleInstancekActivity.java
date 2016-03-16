@@ -41,7 +41,6 @@ public class SingleInstancekActivity extends Activity implements OnClickListener
 		super.onNewIntent(intent);
 		Logger.i(TAG, "onNewIntent");
 	}
-
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
