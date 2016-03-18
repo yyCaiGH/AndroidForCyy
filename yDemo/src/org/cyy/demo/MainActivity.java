@@ -39,7 +39,6 @@ public class MainActivity extends Activity{
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
-	
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
