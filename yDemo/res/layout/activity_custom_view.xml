@@ -22,10 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="1" />
-
-    <org.cyy.view.TitleBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <!--
          <org.cyy.demo.customview.CounterView 
 	    android:layout_width="wrap_content"

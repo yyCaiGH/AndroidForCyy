@@ -3,6 +3,7 @@ package org.cyy.demo;
 import org.cyy.demo.appdown.DownloadTest;
 import org.cyy.demo.customdialog.CustomDialogActivity;
 import org.cyy.demo.customview.CustomViewActivity;
+import org.cyy.demo.customview.CustomViewActivity2;
 import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
@@ -39,7 +40,6 @@ public class MainActivity extends Activity{
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
-	
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -59,6 +59,10 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button3){
 			Intent i = new Intent(this,CustomViewActivity.class);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button31){
+			Intent i = new Intent(this,CustomViewActivity2.class);
 			startActivity(i);
 		}
 		if(view.getId()==R.id.button4){

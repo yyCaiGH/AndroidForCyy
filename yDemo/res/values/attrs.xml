@@ -8,16 +8,6 @@
         <attr name="android:requiresFadingEdge" />
         <attr name="android:fadingEdgeLength" />
     </declare-styleable>
-    
-    <declare-styleable name="CustomImageView">
-        <attr name="borderRadius" format="dimension" />
-        <attr name="type">
-            <enum name="circle" value="0" />
-            <enum name="round" value="1" />
-        　　         <enum name="ring" value="2" />
-        </attr>
-        <attr name="src" format="reference"></attr>
-    </declare-styleable>
 
       <declare-styleable name="DragSortListView">
     <attr name="collapsed_height" format="dimension" />
@@ -47,4 +37,9 @@
     <attr name="use_default_controller" format="boolean" />
   </declare-styleable>
   
+  <declare-styleable name="MyView">
+      <attr name="viewText" format="reference|string"></attr>
+      <attr name="viewColor" format="reference|color"></attr>
+      <attr name="viewTextSize" format="dimension"></attr>
+  </declare-styleable>
 </resources>

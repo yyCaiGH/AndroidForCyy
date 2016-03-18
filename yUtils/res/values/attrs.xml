@@ -29,4 +29,13 @@
         <attr name="titleColor" format="reference|color" />
     </declare-styleable>
     
+    <declare-styleable name="YImageView">
+        <attr name="type" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        　　         <enum name="ring" value="2" />
+        </attr>
+        <attr name="src" format="reference"></attr>
+        <attr name="borderRadius" format="dimension" />
+    </declare-styleable>
 </resources>

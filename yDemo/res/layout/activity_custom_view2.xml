@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyy="http://schemas.android.com/apk/res/org.cyy.demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <org.cyy.view.TitleBar
+        cyy:style="onlyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        cyy:leftStr="返回"
+        cyy:titleStr="你好" />
+
+    <org.cyy.demo.customview.MyView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        cyy:viewColor="#111111"
+        cyy:viewText="年后"
+        cyy:viewTextSize="20sp" />
+
+   <!--  <org.cyy.demo.customview.CustomImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        cyy:type="round" /> -->
+
+    <org.cyy.view.YImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        cyy:type="round"
+        cyy:src="@drawable/tx8"
+        />
+    <org.cyy.view.YImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        cyy:type="ring"
+        cyy:src="@drawable/tx8"
+        />
+</LinearLayout>

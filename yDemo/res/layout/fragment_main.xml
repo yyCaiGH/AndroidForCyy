@@ -9,7 +9,7 @@
     <org.cyy.view.TitleBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        cyy:style="onlyImg"
+        cyy:style="onlyLeftImg"
         cyy:titleStr="标题"
         cyy:leftStr="返回"
          >
@@ -76,6 +76,12 @@
             android:onClick="ClickButton"
             android:text="Fragment替代TabActivity" />
 
+        <Button
+            android:id="@+id/button31"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ClickButton"
+            android:text="自定义view2" />
         <Button
             android:id="@+id/button3"
             android:layout_width="fill_parent"

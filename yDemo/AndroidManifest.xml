@@ -42,6 +42,7 @@
         <activity android:name="org.cyy.demo.fragment.MainTab" />
         <activity android:name="org.cyy.demo.ontouchevent.TestActivity" />
         <activity android:name="org.cyy.demo.customview.CustomViewActivity" />
+        <activity android:name="org.cyy.demo.customview.CustomViewActivity2" />
         <activity android:name="org.cyy.demo.xutils.XUtilsActivity" />
         <activity android:name="org.cyy.demo.videoview.VideoViewActivity" />
         <activity android:name="org.cyy.demo.videoview.VideoViewDialog" />
