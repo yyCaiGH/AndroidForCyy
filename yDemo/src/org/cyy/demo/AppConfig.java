@@ -1,7 +1,4 @@
-package org.cyy.app;
-
-import org.cyy.util.FileUtils;
-import org.cyy.util.NoticeUtils;
+package org.cyy.demo;
 
 import android.content.Context;
 import android.os.Environment;
@@ -14,7 +11,7 @@ import android.os.Environment;
  */
 public class AppConfig {
 
-	public final static String DEFAULT_SAVE_PATH = Environment.getExternalStorageDirectory() + "/AppName/";
+	public final static String DEFAULT_SAVE_PATH = Environment.getExternalStorageDirectory() + "/yDemo/";
 	public final static String AVATAR_SAVEPATH = DEFAULT_SAVE_PATH + "avatar/";
 	public final static String IMAGES_SAVEPATH = DEFAULT_SAVE_PATH+"images/";
 	public final static String AUDIO_SAVEPATH = DEFAULT_SAVE_PATH + "audio/";

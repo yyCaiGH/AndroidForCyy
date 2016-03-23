@@ -11,4 +11,11 @@
         android:text="Fragment 1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <ImageView 
+	    android:id="@+id/iv_face"
+	    android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher"
+        android:scaleType="fitXY" 
+	    />
 </LinearLayout>

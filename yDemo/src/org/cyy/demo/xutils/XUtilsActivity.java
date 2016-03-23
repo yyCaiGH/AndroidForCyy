@@ -3,9 +3,8 @@ package org.cyy.demo.xutils;
 import java.io.File;
 import java.util.regex.Pattern;
 
-import org.apache.http.NameValuePair;
+import org.cyy.demo.AndroidUniversalImageLoader;
 import org.cyy.demo.R;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,8 +53,7 @@ public class XUtilsActivity extends Activity{
 		ViewUtils.inject(this); //注入view和事件
 		BitmapUtils bitmapUtils = new BitmapUtils(this);
 		// 加载网络图片
-		bitmapUtils.display(ivFace, "http://geihoo.f3322.net:2222/image_upload/12320151114113856.jpg");
-//		Log.i("cyy-cyy", getAlpha("你好啊"));
+//		bitmapUtils.display(ivFace, "http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=603e37439313b07ebde8580c39e7bd15/a8014c086e061d9591b7875a7bf40ad163d9cadb.jpg");
 		 
 	}
 	

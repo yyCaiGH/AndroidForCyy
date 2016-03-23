@@ -12,6 +12,7 @@ import org.cyy.demo.launchmode.StandardActivity;
 import org.cyy.demo.ontouchevent.TestActivity;
 import org.cyy.demo.other.SmallQuestionActivity;
 import org.cyy.demo.recyclerview.RecycleViewActivity;
+import org.cyy.demo.scroll.ScrollActivity;
 import org.cyy.demo.service.MusicListActivity;
 import org.cyy.demo.videoview.VideoViewActivity;
 import org.cyy.demo.welcome.WelcomePageActivity;
@@ -46,7 +47,6 @@ public class MainActivity extends Activity{
 		super.onResume();
 		Logger.i("MainActivity", "onResume，任务栈id="+this.getTaskId());
 	}
-	
 	public void ClickButton(View view) {
 		//ViewPager+Fragment+RadioButton替代TabActivity
 		if(view.getId()==R.id.button1){
@@ -108,6 +108,10 @@ public class MainActivity extends Activity{
 		if(view.getId()==R.id.button14){
 			Intent i = new Intent(this,StandardActivity.class);
 //			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button15){
+			Intent i = new Intent(this,ScrollActivity.class);
 			startActivity(i);
 		}
 	}

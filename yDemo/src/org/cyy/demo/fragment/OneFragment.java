@@ -1,5 +1,6 @@
 package org.cyy.demo.fragment;
 
+import org.cyy.demo.AndroidUniversalImageLoader;
 import org.cyy.demo.R;
 
 import android.app.Activity;
@@ -9,15 +10,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class OneFragment extends Fragment{
 
 	static String tag = "OneFragment";
+	ImageView ivFace;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		Log.i(tag, "onCreateView");
 		View view = inflater.inflate(R.layout.fragment_one, container,false);
+		ivFace = (ImageView)view.findViewById(R.id.iv_face);
+		String url = "http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=603e37439313b07ebde8580c39e7bd15/a8014c086e061d9591b7875a7bf40ad163d9cadb.jpg";
+		AndroidUniversalImageLoader.getInstance().loadImage(url, ivFace, null, null);
 		return view;
 	}
 
