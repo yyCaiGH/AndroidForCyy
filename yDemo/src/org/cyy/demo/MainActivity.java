@@ -46,7 +46,6 @@ public class MainActivity extends Activity{
 		super.onResume();
 		Logger.i("MainActivity", "onResume，任务栈id="+this.getTaskId());
 	}
-	
 	public void ClickButton(View view) {
 		//ViewPager+Fragment+RadioButton替代TabActivity
 		if(view.getId()==R.id.button1){
