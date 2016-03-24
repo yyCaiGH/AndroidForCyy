@@ -6,10 +6,10 @@
     android:background="#773333"
     android:orientation="vertical" >
 
-    <org.cyy.demo.ontouchevent.MyFrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fl_test"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#998899" >
 
         <org.cyy.demo.ontouchevent.MyImageView
@@ -17,6 +17,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_launcher" />
-    </org.cyy.demo.ontouchevent.MyFrameLayout>
+        
+        <org.cyy.demo.ontouchevent.MyImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
 
+    <org.cyy.demo.ontouchevent.MyFrameLayout 
+        android:id="@+id/fl_test"
+        android:layout_width="match_parent"
+            android:layout_height="100dp"
+        >
+    
+    <TextView 
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:text="123"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:background="#223333"
+        />
+    </org.cyy.demo.ontouchevent.MyFrameLayout>
 </org.cyy.demo.ontouchevent.MyLinearLayout>

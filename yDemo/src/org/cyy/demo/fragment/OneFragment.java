@@ -7,15 +7,18 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class OneFragment extends Fragment{
 
 	static String tag = "OneFragment";
 	ImageView ivFace;
+	TextView tv;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class OneFragment extends Fragment{
 		ivFace = (ImageView)view.findViewById(R.id.iv_face);
 		String url = "http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=603e37439313b07ebde8580c39e7bd15/a8014c086e061d9591b7875a7bf40ad163d9cadb.jpg";
 		AndroidUniversalImageLoader.getInstance().loadImage(url, ivFace, null, null);
+		
+		tv = (TextView)view.findViewById(R.id.textView1);
+	        
 		return view;
 	}
 
@@ -55,6 +61,16 @@ public class OneFragment extends Fragment{
 	public void onPause() {
 		Log.i(tag, "onPause");
 		super.onPause();
+		 Display My_Display=getActivity().getWindow().getWindowManager().getDefaultDisplay();
+	        int Max_X=My_Display.getWidth();
+	        int Max_Y=My_Display.getHeight();
+	        
+	        int[] locations = new int[2];
+//	        ivFace.getLocationOnwin(locations);
+	        tv.getLocationInWindow(locations);
+	        int x = locations[0];//获取组件当前位置的横坐标
+	        int y = locations[1];//获取组件当前位置的纵坐标
+	        Log.i("System.out", "mx:"+Max_X+",my:"+Max_Y+"-----x:" + x + ",y:" + y);
 	}
 
 	@Override

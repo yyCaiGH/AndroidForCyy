@@ -68,6 +68,11 @@
             android:taskAffinity="org.ff.demo"
             	  android:launchMode="singleTop"></activity>
         <activity android:name="org.cyy.demo.scroll.ScrollActivity"></activity>
+        <activity android:name="org.cyy.demo.refresh.PullRefreshListViewActivity"></activity>
+        <activity android:name="org.cyy.demo.refresh.PullRefreshMainActivity"></activity>
+        <activity android:name="org.cyy.demo.refresh.PullRefreshScrollViewActivity"></activity>
+        <activity android:name="org.cyy.demo.refresh.PullRefreshWebViewActivity"></activity>
+        
         <service android:name="org.cyy.demo.service.MusicService"></service>
         <service android:name="org.cyy.demo.appdown.DownloadService"></service>
         

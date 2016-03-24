@@ -24,6 +24,13 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/button16"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickButton"
+                android:text="pull refresh" />
+            
+            <Button
                 android:id="@+id/button15"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

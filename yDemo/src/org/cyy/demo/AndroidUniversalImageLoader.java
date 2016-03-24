@@ -22,7 +22,6 @@ public class AndroidUniversalImageLoader {
 		}
 		return instance;
 	}
-	
 	private AndroidUniversalImageLoader() {
 		if(options == null) {
 			options = new DisplayImageOptions.Builder()
