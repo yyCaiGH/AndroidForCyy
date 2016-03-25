@@ -35,7 +35,6 @@ public class BaseApplication extends Application{
 		//初始化图片加载第三方包
 		initImageLoader(getApplicationContext());
 	}
-
 	/**
 	 * 创建存放文件的文件夹
 	 */

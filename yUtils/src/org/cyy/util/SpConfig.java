@@ -24,8 +24,29 @@ import android.preference.PreferenceManager;
  *
  * 2016年2月16日
  */
-public class SpUtils {
+public class SpConfig {
 	public final static String SP_ZGST_DEFAULT_FILE_NAME="zgst";
+	public final static String SP_SYS_CONFIG_FILE_NAME="sys_config";
+	public static SharedPreferences.Editor sysSpEditor;
+	/**
+	 * 默认存储到系统配置文件中
+	 * @param ctx
+	 * @return
+	 */
+	public static SharedPreferences.Editor getInstance(Context ctx){
+		if(sysSpEditor==null){
+			sysSpEditor = ctx.getSharedPreferences(SP_SYS_CONFIG_FILE_NAME, Context.MODE_PRIVATE).edit();
+		}
+		return sysSpEditor;
+	}
+	public void saveBoolean(String key,Boolean value){
+		sysSpEditor.putBoolean(key, value);
+		sysSpEditor.commit();
+	}
+	public void saveString(String key,String value){
+		sysSpEditor.putString(key, value);
+		sysSpEditor.commit();
+	}
 	/**
 	 * 第一次启动存储一个偏好，每次都判断是否第一次启动
 	 * 对第一次启动做针对性的处理
