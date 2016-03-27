@@ -1,9 +1,12 @@
 package org.cyy.demo.fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.cyy.demo.R;
-import org.cyy.demo.slidingmenu.DrawerView;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -32,6 +35,13 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 		this.setContentView(R.layout.activity_main_tab);
 		initView();
 		initSlidingMenu();
+		Log.i(tag, "------------------onCreate over");
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.i(tag, "------------------onResume over");
 	}
 	private void initSlidingMenu() {
 		Button btn= (Button)this.findViewById(R.id.btn_cyy);
@@ -39,11 +49,14 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 //		side_drawer = new DrawerView(this).initSlidingMenu();
 	}
 	private void initView() {
-		
+		List<Fragment> _fragments = new ArrayList<Fragment>();
+		_fragments.add(new ThreeFragment());
+		_fragments.add(new TowFragment());
+		_fragments.add(new OneFragment());
 		viewPager = (ViewPager) findViewById(R.id.viewpager);
+		viewPager.setOffscreenPageLimit(2);
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());
-		viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
-		viewPager.setOffscreenPageLimit(0);
+		viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager(),_fragments));
 		RadioGroup rg = (RadioGroup) findViewById(R.id.rg);
 		rb1 = (RadioButton) rg.findViewById(R.id.rb1);
 		rb2 = (RadioButton) rg.findViewById(R.id.rb2);

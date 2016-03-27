@@ -27,25 +27,35 @@ import android.preference.PreferenceManager;
 public class SpConfig {
 	public final static String SP_ZGST_DEFAULT_FILE_NAME="zgst";
 	public final static String SP_SYS_CONFIG_FILE_NAME="sys_config";
-	public static SharedPreferences.Editor sysSpEditor;
+	public static SpConfig spConfig;
+	public static SharedPreferences sysSp;
 	/**
 	 * 默认存储到系统配置文件中
 	 * @param ctx
 	 * @return
 	 */
-	public static SharedPreferences.Editor getInstance(Context ctx){
-		if(sysSpEditor==null){
-			sysSpEditor = ctx.getSharedPreferences(SP_SYS_CONFIG_FILE_NAME, Context.MODE_PRIVATE).edit();
+	public static SpConfig getInstance(Context ctx){
+		if(sysSp==null){
+			sysSp = ctx.getSharedPreferences(SP_SYS_CONFIG_FILE_NAME, Context.MODE_PRIVATE);
 		}
-		return sysSpEditor;
+		if(spConfig==null){
+			spConfig = new SpConfig();
+		}
+		return spConfig;
 	}
 	public void saveBoolean(String key,Boolean value){
-		sysSpEditor.putBoolean(key, value);
-		sysSpEditor.commit();
+		sysSp.edit().putBoolean(key, value);
+		sysSp.edit().commit();
 	}
 	public void saveString(String key,String value){
-		sysSpEditor.putString(key, value);
-		sysSpEditor.commit();
+		sysSp.edit().putString(key, value);
+		sysSp.edit().commit();
+	}
+	public void getBoolean(String key){
+		sysSp.getBoolean(key, false);
+	}
+	public void getString(String key){
+		sysSp.getString(key, "");
 	}
 	/**
 	 * 第一次启动存储一个偏好，每次都判断是否第一次启动
@@ -54,13 +64,11 @@ public class SpConfig {
 	 * @return
 	 */
 	public static boolean isFirstStart(Context ctx){
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-		boolean first = prefs.getBoolean("first", true);
+		boolean first = sysSp.getBoolean("first", true);
 		if (first) {
-			prefs.edit().putBoolean("first", false).commit();
+			sysSp.edit().putBoolean("first", false).commit();
 			return true;
 		}
-
 		return false;
 	}
 	/**
