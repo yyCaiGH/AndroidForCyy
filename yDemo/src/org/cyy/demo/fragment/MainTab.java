@@ -2,7 +2,9 @@ package org.cyy.demo.fragment;
 
 import org.cyy.demo.R;
 import org.cyy.demo.slidingmenu.DrawerView;
+import org.cyy.util.Logger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -29,6 +31,7 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Logger.i(tag, "onCreate");
 		this.setContentView(R.layout.activity_main_tab);
 		initView();
 		initSlidingMenu();
@@ -133,6 +136,48 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 		default:
 			break;
 		}
+	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		Logger.i(tag, "onDestroy");
+	}
+	@Override
+	protected void onNewIntent(Intent intent) {
+		// TODO Auto-generated method stub
+		super.onNewIntent(intent);
+		Logger.i(tag, "onNewIntent");
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		Logger.i(tag, "onPause");
+	}
+	@Override
+	protected void onPostResume() {
+		// TODO Auto-generated method stub
+		super.onPostResume();
+		Logger.i(tag, "onPostResume");
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Logger.i(tag, "onResume");
+	}
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		Logger.i(tag, "onStart");
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		Logger.i(tag, "onStop");
 	}
 
 	

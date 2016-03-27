@@ -40,7 +40,8 @@
             </intent-filter>
         </activity>
         <activity android:name="org.cyy.demo.other.SmallQuestionActivity"></activity>
-        <activity android:name="org.cyy.demo.fragment.MainTab" />
+        <activity android:name="org.cyy.demo.fragment.MainTab"
+            android:launchMode="singleTask" />
         <activity android:name="org.cyy.demo.ontouchevent.TestActivity" />
         <activity android:name="org.cyy.demo.customview.CustomViewActivity" />
         <activity android:name="org.cyy.demo.customview.CustomViewActivity2" />

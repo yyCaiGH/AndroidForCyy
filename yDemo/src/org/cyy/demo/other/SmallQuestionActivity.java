@@ -1,13 +1,17 @@
 package org.cyy.demo.other;
 
 import org.cyy.demo.R;
+import org.cyy.demo.fragment.MainTab;
 import org.cyy.util.Logger;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 public class SmallQuestionActivity extends Activity implements Handler.Callback{
@@ -33,6 +37,15 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 //		dialog.setMessage("cyy");
 //		dialog.show();
 		tv = (TextView)this.findViewById(R.id.textView1);
+		tv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(SmallQuestionActivity.this,MainTab.class);
+				SmallQuestionActivity.this.startActivity(i);
+				
+			}
+		});
 		/*new Thread(new Runnable() {
 			
 			@Override

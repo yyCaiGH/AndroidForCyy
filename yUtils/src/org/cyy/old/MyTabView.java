@@ -26,7 +26,6 @@ import android.widget.TextView;
  * 2015年7月16日
  */
 public class MyTabView extends LinearLayout implements OnClickListener{
-
 	private ViewPager pager;
 	private LinearLayout ll_bottom_0, ll_bottom_1, ll_bottom_2, ll_bottom_3 ,ll_bottom_4;
 	private ImageView iv_0_0, iv_0_1, iv_1_0, iv_1_1, iv_2_0, iv_2_1, iv_3_0, iv_3_1,iv_4_0, iv_4_1;

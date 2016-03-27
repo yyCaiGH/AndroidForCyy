@@ -2,14 +2,17 @@ package org.cyy.demo.fragment;
 
 import org.cyy.demo.AndroidUniversalImageLoader;
 import org.cyy.demo.R;
+import org.cyy.demo.other.SmallQuestionActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,7 +32,14 @@ public class OneFragment extends Fragment{
 		AndroidUniversalImageLoader.getInstance().loadImage(url, ivFace, null, null);
 		
 		tv = (TextView)view.findViewById(R.id.textView1);
-	        
+	    tv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getActivity(),SmallQuestionActivity.class);
+				startActivity(i);
+			}
+		});
 		return view;
 	}
 
@@ -107,5 +117,10 @@ public class OneFragment extends Fragment{
 		}
 		super.setUserVisibleHint(isVisibleToUser);
 	}
-	
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+		Log.i(tag, "onActivityCreated");
+	}
 }

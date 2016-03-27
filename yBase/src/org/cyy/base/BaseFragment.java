@@ -3,6 +3,7 @@ package org.cyy.base;
 
 import org.cyy.ybase.R;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -60,7 +61,7 @@ public class BaseFragment extends Fragment implements OnItemClickListener,OnClic
 			long id) {
 		
 	}
-	
+
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.tv_topbar_left){
@@ -80,7 +81,25 @@ public class BaseFragment extends Fragment implements OnItemClickListener,OnClic
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	/**
+	 * 绑定ID
+	 * 
+	 * @param viewId
+	 * @param <T>
+	 * @return
+	 */
+	public <T extends View> T bind(View v,int viewId) {
+		View view = v.findViewById(viewId);
+		return (T) view;
+	}
+	/**
+	 * Activity跳转
+	 * @param cls
+	 */
+	public void gotoActivity(Class<?> cls) {
+		Intent intent = new Intent(getActivity(), cls);
+		startActivity(intent);
+	}
 	
 
 }

@@ -145,6 +145,26 @@ public  class BaseActivity extends FragmentActivity implements View.OnClickListe
 		super.onBackPressed();
 	}
 
+	/**
+	 * 绑定ID
+	 * 
+	 * @param viewId
+	 * @param <T>
+	 * @return
+	 */
+	public <T extends View> T bind(int viewId) {
+		View view = findViewById(viewId);
+		return (T) view;
+	}
+	/**
+	 * Activity跳转
+	 * @param cls
+	 */
+	public void gotoActivity(Class<?> cls) {
+		Intent intent = new Intent(this, cls);
+		startActivity(intent);
+	}
+	
 	@Override
 	public void finish() {
 		super.finish();
