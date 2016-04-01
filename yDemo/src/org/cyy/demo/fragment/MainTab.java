@@ -19,12 +19,10 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class MainTab extends FragmentActivity implements OnClickListener{
-
 	public static final String tag="MainTab";
 	public static final int TAB_ONE = 0;
 	public static final int TAB_TOW = 1;
 	public static final int TAB_THREE = 2;
-
 	private ViewPager viewPager;
 	private RadioButton rb1, rb2, rb3;
 	
