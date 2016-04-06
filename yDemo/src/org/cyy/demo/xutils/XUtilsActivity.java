@@ -3,8 +3,8 @@ package org.cyy.demo.xutils;
 import java.io.File;
 import java.util.regex.Pattern;
 
-import org.cyy.demo.AndroidUniversalImageLoader;
 import org.cyy.demo.R;
+import org.cyy.demo.utils.ImageLoaderUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 

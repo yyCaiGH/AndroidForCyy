@@ -1,7 +1,7 @@
 package org.cyy.demo.fragment;
 
-import org.cyy.demo.AndroidUniversalImageLoader;
 import org.cyy.demo.R;
+import org.cyy.demo.utils.ImageLoaderUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,7 +26,7 @@ public class OneFragment extends Fragment{
 		View view = inflater.inflate(R.layout.fragment_one, container,false);
 		ivFace = (ImageView)view.findViewById(R.id.iv_face);
 		String url = "http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=603e37439313b07ebde8580c39e7bd15/a8014c086e061d9591b7875a7bf40ad163d9cadb.jpg";
-		AndroidUniversalImageLoader.getInstance().loadImage(url, ivFace, null, null);
+		ImageLoaderUtils.getInstance().loadImage(url, ivFace, null, null);
 		
 		tv = (TextView)view.findViewById(R.id.textView1);
 	        
