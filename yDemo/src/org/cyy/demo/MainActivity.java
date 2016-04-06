@@ -15,6 +15,7 @@ import org.cyy.demo.recyclerview.RecycleViewActivity;
 import org.cyy.demo.refresh.PullRefreshMainActivity;
 import org.cyy.demo.scroll.ScrollActivity;
 import org.cyy.demo.service.MusicListActivity;
+import org.cyy.demo.swiperefreshwidget.SwipeRefreshActivity;
 import org.cyy.demo.videoview.VideoViewActivity;
 import org.cyy.demo.welcome.WelcomePageActivity;
 import org.cyy.demo.xutils.XUtilsActivity;
@@ -117,6 +118,10 @@ public class MainActivity extends Activity{
 		}
 		if(view.getId()==R.id.button16){
 			Intent i = new Intent(this,PullRefreshMainActivity.class);
+			startActivity(i);
+		}
+		if(view.getId()==R.id.button17){
+			Intent i = new Intent(this,SwipeRefreshActivity.class);
 			startActivity(i);
 		}
 	}
