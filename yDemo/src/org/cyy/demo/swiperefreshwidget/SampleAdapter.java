@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
+
 public class SampleAdapter extends RecyclerView.Adapter<ViewHolder> {
 	private List<Integer> list;
 	private Context ctx;
