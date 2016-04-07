@@ -4,10 +4,10 @@
     android:layout_height="wrap_content"  
     android:background="@color/sys_main_bg_color"  
     android:gravity="center"  
-    android:paddingBottom="8dip"  
-    android:paddingTop="5dip" >  
+    android:padding="3dip"  
+     >  
   
-    <ProgressBar  
+    <!-- <ProgressBar  
         android:id="@+id/pull_to_refresh_load_progress"  
         style="@android:style/Widget.ProgressBar.Small.Inverse"  
         android:layout_width="wrap_content"  
@@ -15,18 +15,27 @@
         android:layout_centerVertical="true"  
         android:layout_centerHorizontal="true"  
         android:paddingRight="100dp"  
-        android:indeterminate="true" />  
+        android:indeterminate="true" />   -->
+  
+  <org.cyy.view.RotateImageView
+        android:id="@+id/pull_to_refresh_load_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/img_jiazai"
+         />
   
     <TextView  
-        android:id="@+id/pull_to_refresh_loadmore_text"  
+        android:id="@+id/pull_to_refresh_finsha_text"  
         android:layout_width="fill_parent"  
         android:layout_height="wrap_content"  
         android:layout_gravity="center"  
         android:gravity="center"  
         android:paddingTop="5dip"  
-        android:text="加载中"  
+        android:text="没有更多数据"  
+        android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceMedium"  
-        android:textColor="@android:color/darker_gray"  
+        android:textColor="@color/sys_main_color"  
         android:textSize="14sp"  
         android:textStyle="bold" />  
   

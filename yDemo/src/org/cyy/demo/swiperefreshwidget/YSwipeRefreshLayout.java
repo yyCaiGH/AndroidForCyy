@@ -1,6 +1,7 @@
 package org.cyy.demo.swiperefreshwidget;
 
 import org.cyy.demo.R;
+import org.cyy.view.RotateImageView;
 
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -13,19 +14,22 @@ import android.view.ViewConfiguration;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
- * 继承自SwipeRefreshLayout,从而实现滑动到底部时上拉加载更多的功能.
- * 
- * @author mrsimple
+ * 继承自SwipeRefreshLayout,从而实现滑动到底部时上拉加载更多的功能. 
+ * 注意 :
+ * 在下拉刷新完成时需要调用RefreshLayout的setRefreshing(false)方法来停止刷新过程；
+ * 在上拉加载更多完成时需要调用setLoading(false,flase)来标识加载完成，但数据未全部加载完毕。
+ * setLoading(false,true)来标识数据已全部加载完毕
+ * @author yy_cai
  */
-public class RefreshLayout extends SwipeRefreshLayout implements
+public class YSwipeRefreshLayout extends SwipeRefreshLayout implements
 		OnScrollListener {
-
 	/**
 	 * 滑动到最下面时的上拉操作
 	 */
-
 	private int mTouchSlop;
 	/**
 	 * listview实例
@@ -35,13 +39,16 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	/**
 	 * 上拉监听器, 到了最底部的上拉加载操作
 	 */
-	private OnLoadListener mOnLoadListener;
-
+	private OnRefreshAndLoadListener mOnLoadListener;
+	
 	/**
 	 * ListView的加载中footer
 	 */
 	private View mListViewFooter;
-
+	
+	private RotateImageView mFooterRIV;
+	
+//	private TextView mFooterTv;
 	/**
 	 * 按下时的y坐标
 	 */
@@ -55,20 +62,25 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	 */
 	private boolean isLoading = false;
 
+	private boolean isLoadComplete=false;
 	/**
 	 * @param context
 	 */
-	public RefreshLayout(Context context) {
+	public YSwipeRefreshLayout(Context context) {
 		this(context, null);
 	}
 
-	public RefreshLayout(Context context, AttributeSet attrs) {
+	public YSwipeRefreshLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
 		mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
 
 		mListViewFooter = LayoutInflater.from(context).inflate(
 				R.layout.listview_footer, null, false);
+		mListViewFooter.setVisibility(View.GONE);//默认FooterView是看不到的
+		mFooterRIV = ((RotateImageView)mListViewFooter.findViewById(R.id.pull_to_refresh_load_progress));
+		mFooterRIV.startRotate();
+//		mFooterTv = (TextView)mListViewFooter.findViewById(R.id.pull_to_refresh_finsha_text);
 	}
 
 	@Override
@@ -79,6 +91,15 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 		// 初始化ListView对象
 		if (mListView == null) {
 			getListView();
+			this.setOnRefreshListener(new OnRefreshListener() {
+				
+				@Override
+				public void onRefresh() {
+					isLoadComplete=false;//重新加载
+					mFooterRIV.startRotate();
+					mOnLoadListener.onRefresh();//整合SwipeRefreshLayout的刷新功能到本view中
+				}
+			});
 		}
 	}
 
@@ -94,7 +115,11 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 				// 设置滚动监听器给ListView, 使得滚动的情况下也可以自动加载
 				mListView.setOnScrollListener(this);
 				Log.d(VIEW_LOG_TAG, "### 找到listview");
+				mListView.addFooterView(mListViewFooter);
 			}
+		}
+		else{
+			Toast.makeText(getContext(), "请在SwipeRefreshLayout中放置一个ListView", Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -132,12 +157,12 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	}
 
 	/**
-	 * 是否可以加载更多, 条件是到了最底部, listview不在加载中, 且为上拉操作.
+	 * 是否可以加载更多, 条件是未全部加载完成, listview不在加载中, 且为上拉操作,到了最底部.
 	 * 
 	 * @return
 	 */
 	private boolean canLoad() {
-		return isBottom() && !isLoading && isPullUp();
+		return !isLoadComplete&&!isLoading && isPullUp()&&isBottom();
 	}
 
 	/**
@@ -167,21 +192,38 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	private void loadData() {
 		if (mOnLoadListener != null) {
 			// 设置状态
-			setLoading(true);
+			setLoading(true,false);
 			//
 			mOnLoadListener.onLoad();
 		}
 	}
 
 	/**
-	 * @param loading
+	 * 
+	 * @param loading 是否正在加载
+	 * @param LoadComplete 是否加载完成
 	 */
-	public void setLoading(boolean loading) {
+	public void setLoading(boolean loading,boolean LoadComplete) {
 		isLoading = loading;
-		if (isLoading) {
-			mListView.addFooterView(mListViewFooter);
-		} else {
-			mListView.removeFooterView(mListViewFooter);
+		isLoadComplete = LoadComplete;
+		if(isLoadComplete){
+			mListViewFooter.setVisibility(View.GONE);
+			mFooterRIV.stopRotate();
+			Toast.makeText(getContext(), "数据已全部加载", Toast.LENGTH_LONG).show();
+//			mFooterRIV.setVisibility(View.INVISIBLE);
+//			mFooterTv.setVisibility(View.VISIBLE);
+			mYDown = 0;
+			mLastY = 0;
+		}
+		else if (isLoading&&!isLoadComplete) {
+//			mListView.addFooterView(mListViewFooter);
+			mListViewFooter.setVisibility(View.VISIBLE);
+//			mFooterRIV.setVisibility(View.VISIBLE);
+//			mFooterTv.setVisibility(View.GONE);
+		}
+		else {
+//			mListView.removeFooterView(mListViewFooter);
+			mListViewFooter.setVisibility(View.GONE);
 			mYDown = 0;
 			mLastY = 0;
 		}
@@ -190,7 +232,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	/**
 	 * @param loadListener
 	 */
-	public void setOnLoadListener(OnLoadListener loadListener) {
+	public void setOnRefreshAndLoadListener(OnRefreshAndLoadListener loadListener) {
 		mOnLoadListener = loadListener;
 	}
 
@@ -209,11 +251,10 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	}
 
 	/**
-	 * 加载更多的监听器
-	 * 
-	 * @author mrsimple
+	 * 下拉刷新，上拉加载监听
 	 */
-	public static interface OnLoadListener {
+	public static interface OnRefreshAndLoadListener {
 		public void onLoad();
+		public void onRefresh();
 	}
 }

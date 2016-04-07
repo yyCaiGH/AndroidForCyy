@@ -73,6 +73,7 @@
         <activity android:name="org.cyy.demo.refresh.PullRefreshScrollViewActivity"></activity>
         <activity android:name="org.cyy.demo.refresh.PullRefreshWebViewActivity"></activity>
         <activity android:name="org.cyy.demo.swiperefreshwidget.SwipeRefreshActivity"></activity>
+        <activity android:name="org.cyy.demo.swiperefreshwidget.RefreshActivity"></activity>
         
         <service android:name="org.cyy.demo.service.MusicService"></service>
         <service android:name="org.cyy.demo.appdown.DownloadService"></service>
