@@ -43,7 +43,6 @@ public class CustomClipLoading extends FrameLayout {
 			}
 		}
 	};*/
-
 	public CustomClipLoading(Context context) {
 		this(context, null, 0);
 	}
