@@ -26,7 +26,6 @@ import android.widget.Toast;
  */
 public class AppUtil {
 
-
 	/**
 	 * 判断应用是否在前台
 	 * @param context
