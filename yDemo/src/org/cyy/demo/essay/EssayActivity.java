@@ -153,7 +153,7 @@ public class EssayActivity extends Activity implements OnClickListener {
 	}
 
 	// 计算图片的缩放值
-	public int calculateInSampleSize(BitmapFactory.Options options,
+	private int calculateInSampleSize(BitmapFactory.Options options,
 			int reqWidth, int reqHeight) {
 		final int height = options.outHeight;
 		final int width = options.outWidth;

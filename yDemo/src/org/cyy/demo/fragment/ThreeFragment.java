@@ -1,16 +1,20 @@
 package org.cyy.demo.fragment;
 
 import org.cyy.demo.R;
+import org.cyy.demo.other.SmallQuestionActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-public class ThreeFragment extends Fragment{
+public class ThreeFragment extends Fragment implements OnClickListener{
 
 	private final static String tag = "ThreeFragment";
 	@Override
@@ -18,9 +22,20 @@ public class ThreeFragment extends Fragment{
 			Bundle savedInstanceState) {
 		Log.i(tag, "onCreateView");
 		View view = inflater.inflate(R.layout.fragment_three, container,false);
+		view.findViewById(R.id.textView1).setOnClickListener(this);
 		return view;
 	}
-	
+	@Override
+	public void onClick(View v) {
+		Intent i = new Intent(getActivity(),SmallQuestionActivity.class);
+		startActivityForResult(i, 2);
+		
+	}
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Toast.makeText(getActivity(), "onActivityResult了。。。。。啦:"+resultCode, 0).show();
+	}
 	@Override
 	public void onAttach(Activity activity) {
 		Log.i(tag, "onAttach");
@@ -74,4 +89,6 @@ public class ThreeFragment extends Fragment{
 		Log.i(tag, "onDetach");
 		super.onDetach();
 	}
+
+	
 }

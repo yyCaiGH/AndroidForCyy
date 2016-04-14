@@ -74,6 +74,7 @@
         <activity android:name="org.cyy.demo.refresh.PullRefreshWebViewActivity"></activity>
         <activity android:name="org.cyy.demo.swiperefreshwidget.SwipeRefreshActivity"></activity>
         <activity android:name="org.cyy.demo.swiperefreshwidget.RefreshActivity"></activity>
+        <activity android:name="org.cyy.demo.dealimge.DealImageActivity"></activity>
         
         <service android:name="org.cyy.demo.service.MusicService"></service>
         <service android:name="org.cyy.demo.appdown.DownloadService"></service>

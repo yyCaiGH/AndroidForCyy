@@ -4,6 +4,7 @@ import org.cyy.demo.appdown.DownloadTest;
 import org.cyy.demo.customdialog.CustomDialogActivity;
 import org.cyy.demo.customview.CustomViewActivity;
 import org.cyy.demo.customview.CustomViewActivity2;
+import org.cyy.demo.dealimge.DealImageActivity;
 import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
@@ -26,11 +27,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ContextMenu.ContextMenuInfo;
 
 public class MainActivity extends Activity{
 
@@ -129,6 +132,16 @@ public class MainActivity extends Activity{
 			Intent i = new Intent(this,RefreshActivity.class);
 			startActivity(i);
 		}
+		if(view.getId()==R.id.button19){
+			Intent i = new Intent(this,DealImageActivity.class);
+			startActivity(i);
+		}
+	}
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		// TODO Auto-generated method stub
+		super.onCreateContextMenu(menu, v, menuInfo);
 	}
 	/**
 	 * A placeholder fragment containing a simple view.

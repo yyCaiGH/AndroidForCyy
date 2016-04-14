@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 public class SmallQuestionActivity extends Activity implements Handler.Callback{
@@ -33,6 +38,16 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 //		dialog.setMessage("cyy");
 //		dialog.show();
 		tv = (TextView)this.findViewById(R.id.textView1);
+		registerForContextMenu(tv);
+//		tv.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+////				setResult(Activity.RESULT_OK);
+////				finish();
+//				
+//			}
+//		});
 		/*new Thread(new Runnable() {
 			
 			@Override
@@ -63,6 +78,22 @@ public class SmallQuestionActivity extends Activity implements Handler.Callback{
 				});
 			}
 		}).start();;*/
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		// TODO Auto-generated method stub
+		super.onCreateContextMenu(menu, v, menuInfo);
+		 menu.setHeaderTitle("选择自己喜欢的！");
+	        menu.add(0, 3, 0, "修改");
+	        menu.add(0, 4, 1, "删除");
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		return super.onContextItemSelected(item);
 	}
 	@Override
 	public boolean handleMessage(Message msg) {

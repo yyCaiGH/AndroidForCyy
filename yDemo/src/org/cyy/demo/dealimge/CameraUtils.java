@@ -1,6 +1,10 @@
-package org.cyy.util;
+package org.cyy.demo.dealimge;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -41,7 +46,7 @@ public class CameraUtils {
 	}
 
 	/**
-	 * 从相册选择图片，与getImageUrlFromAlbum和getStreamByImageUrl配套使用
+	 * 从相册选择图片，与getBitmapOnActivityResult配套使用
 	 * 
 	 * @param act
 	 */
@@ -53,48 +58,12 @@ public class CameraUtils {
 	}
 
 	/**
-	 * 通过拍照获取图片，与getStreamByImageUrl配套使用
-	 */
-	public static void getImageByCamera(Activity act, int requestCode,Uri uri){
-		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);//action is capture
-		cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
-		act.startActivityForResult(cameraIntent, requestCode);
-	}
-	
-	/**
-	 * 从相册选择图片后，将url图片转换为Stream，与getImageFromAlbum配套使用
-	 * 该方法通过减小采样值（减小bitmap的内存）结合图片压缩技术，让图片能够最小化还挺清晰。完美结合。
+	 * 从相册选择图片后，对Data处理获得图片，与getImageFromAlbum配套使用
+	 * 
 	 * @param act
 	 * @param data
 	 */
-	public static ByteArrayOutputStream getStreamByImageUrl(String url) {
-		Bitmap photo = getSmallBitmap(url);//缩放图片大小，避免图片过大，经过不断压缩，会导致图片失真
-//		Bitmap photo = BitmapFactory.decodeFile(url);
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		photo.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-		int options = 100;  
-		//压缩图片不大于100kb,但是如果图片本身就很大，会造成过度失真
-        while ( baos.toByteArray().length / 1024>100) {  //循环判断压缩后图片是否大于100kb,大于继续压缩     
-            baos.reset();//重置baos即清空baos  
-            photo.compress(Bitmap.CompressFormat.JPEG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
-            Logger.i("CameraUtils", "已将图片压缩至大小："+baos.toByteArray().length / 1024+"KB");
-            options -= 10;//每次都减少10  
-            if(options==20){//不让过分压缩
-            	break;
-            }
-        }  
-        photo.recycle();//清理Bitmap
-        photo=null;
-		return baos;
-	}
-
-	/**
-	 * 图片从相册返回时获取图片的地址
-	 * @param act
-	 * @param data
-	 * @return
-	 */
-	public static String  getImageUrlFromAlbum(Activity act, Intent data){
+	public static Bitmap getBitmapOnActivityResult(Activity act, Intent data) {
 		Uri uri = data.getData();
 		String url = null;
 		Cursor cur = act.getContentResolver()
@@ -106,21 +75,46 @@ public class CameraUtils {
 			Toast.makeText(act, "未获得图片", Toast.LENGTH_SHORT).show();
 			return null;
 		}
-		return url;
+		Bitmap photo = getSmallBitmap(url);
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		photo.compress(Bitmap.CompressFormat.JPEG, 100, stream);// (0-100)压缩文件
+		saveByteToSD(stream,"test100.jpg");
+		
+		stream.reset();
+		photo.compress(Bitmap.CompressFormat.JPEG, 20, stream);// (0-100)压缩文件
+		saveByteToSD(stream,"test50.jpg");
+		Log.i("cyy-cyy", "压缩前的stream："+stream.toByteArray().length/1024+"kb");
+		return photo;
+	}
+
+	
+	public static String saveByteToSD(ByteArrayOutputStream baos,String fileName){
+		File file = new File(DealImageActivity.IMAGE_DIR,fileName);
+		try {
+			FileOutputStream fos = new FileOutputStream(file);  
+			fos.write(baos.toByteArray());  
+			fos.flush();  
+			fos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return file.getAbsolutePath();
 	}
 	
 	/**
-	 * 根据图片路径获得图片并对图片进行缩放
+	 * 根据图片路径获得图片并对图片进行缩放，返回bitmap用于显示
 	 * 
 	 * @param filePath
 	 * @return
 	 */
 	public static Bitmap getSmallBitmap(String filePath) {
 		final BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;//仅获取图片的宽高
-		BitmapFactory.decodeFile(filePath, options);
-//		 Calculate inSampleSize
-		options.inSampleSize = calculateInSampleSize(options, 480, 800);//缩小到480*800,足够看的清了
+//		options.inJustDecodeBounds = true;//仅获取图片的宽高
+//		BitmapFactory.decodeFile(filePath, options);
+		// Calculate inSampleSize
+//		options.inSampleSize = calculateInSampleSize(options, 240, 320);
 		// Decode bitmap with inSampleSize set
 		options.inJustDecodeBounds = false;
 		return BitmapFactory.decodeFile(filePath, options);

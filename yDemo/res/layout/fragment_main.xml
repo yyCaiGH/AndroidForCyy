@@ -24,6 +24,13 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/button19"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickButton"
+                android:text="从相册获取图片" />
+            
+            <Button
                 android:id="@+id/button18"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
