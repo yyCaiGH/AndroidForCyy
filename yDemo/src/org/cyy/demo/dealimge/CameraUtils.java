@@ -75,7 +75,10 @@ public class CameraUtils {
 			Toast.makeText(act, "未获得图片", Toast.LENGTH_SHORT).show();
 			return null;
 		}
-		Bitmap photo = getSmallBitmap(url);
+		Bitmap photo1 = getSmallBitmap(url,false);
+		Log.i("cyy-cyy", "采样率不变的photo1："+photo1.getByteCount());
+		Bitmap photo = getSmallBitmap(url,true);
+		Log.i("cyy-cyy", "采样率该变的photo1："+photo.getByteCount());
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
 		photo.compress(Bitmap.CompressFormat.JPEG, 100, stream);// (0-100)压缩文件
 		saveByteToSD(stream,"test100.jpg");
@@ -109,17 +112,18 @@ public class CameraUtils {
 	 * @param filePath
 	 * @return
 	 */
-	public static Bitmap getSmallBitmap(String filePath) {
+	public static Bitmap getSmallBitmap(String filePath,boolean isSamll) {
 		final BitmapFactory.Options options = new BitmapFactory.Options();
-//		options.inJustDecodeBounds = true;//仅获取图片的宽高
-//		BitmapFactory.decodeFile(filePath, options);
-		// Calculate inSampleSize
-//		options.inSampleSize = calculateInSampleSize(options, 240, 320);
+		if(isSamll){
+			options.inJustDecodeBounds = true;//仅获取图片的宽高
+			BitmapFactory.decodeFile(filePath, options);
+			// Calculate inSampleSize
+			options.inSampleSize = calculateInSampleSize(options, 240, 320);
+		}
 		// Decode bitmap with inSampleSize set
 		options.inJustDecodeBounds = false;
 		return BitmapFactory.decodeFile(filePath, options);
 	}
-
 	/**
 	 * 计算图片的缩放值
 	 * @param options

@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ScrollActivity extends Activity implements OnClickListener{
-
 	TextView tv,tv_hi;
 	Button right,left,top,bottom;
 	RelativeLayout ll;

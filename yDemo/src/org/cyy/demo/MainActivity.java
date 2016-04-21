@@ -5,10 +5,10 @@ import org.cyy.demo.customdialog.CustomDialogActivity;
 import org.cyy.demo.customview.CustomViewActivity;
 import org.cyy.demo.customview.CustomViewActivity2;
 import org.cyy.demo.dealimge.DealImageActivity;
-import org.cyy.demo.dragsortlistview.CursorDSLV;
 import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
 import org.cyy.demo.fragment.MainTab;
+import org.cyy.demo.imagegallery.ImagePagerActivity;
 import org.cyy.demo.launchmode.StandardActivity;
 import org.cyy.demo.ontouchevent.TestActivity;
 import org.cyy.demo.other.SmallQuestionActivity;
@@ -28,12 +28,12 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 
 public class MainActivity extends Activity{
 
@@ -136,6 +136,17 @@ public class MainActivity extends Activity{
 			Intent i = new Intent(this,DealImageActivity.class);
 			startActivity(i);
 		}
+		if(view.getId()==R.id.button20){
+			
+			Intent intent = new Intent(this, ImagePagerActivity.class);
+			// 图片url,为了演示这里使用常量，一般从数据库中或网络中获取
+//			String urls[] = {"http://g.hiphotos.bdimg.com/album/s%3D680%3Bq%3D90/sign=ccd33b46d53f8794d7ff4b26e2207fc9/0d338744ebf81a4c0f993437d62a6059242da6a1.jpg","http://c.hiphotos.bdimg.com/album/s%3D900%3Bq%3D90/sign=b8658f17f3d3572c62e290dcba28121a/5fdf8db1cb134954bb97309a574e9258d0094a47.jpg"};
+			String urls[] = {"file://"+DealImageActivity.IMAGE_DIR+"test100.jpg" + "","file://"+DealImageActivity.IMAGE_DIR+"test50.jpg"};
+			intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_URLS, urls);
+			intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, 1);
+			startActivity(intent);
+		}
+		
 	}
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,

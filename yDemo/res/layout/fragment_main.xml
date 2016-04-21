@@ -24,6 +24,13 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/button20"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickButton"
+                android:text="图片浏览橱窗" />
+            
+            <Button
                 android:id="@+id/button19"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

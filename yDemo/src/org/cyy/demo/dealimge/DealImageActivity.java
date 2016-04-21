@@ -50,6 +50,7 @@ public class DealImageActivity extends Activity implements OnClickListener{
 			
 			iv1.setImageBitmap(BitmapFactory.decodeFile(IMAGE_DIR+"test100.jpg"));
 			iv2.setImageBitmap(BitmapFactory.decodeFile(IMAGE_DIR+"test50.jpg"));
+			
 		}
 		else if(requestCode==2){
 			
