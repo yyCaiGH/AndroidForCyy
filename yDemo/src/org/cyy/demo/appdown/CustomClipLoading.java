@@ -29,7 +29,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 public class CustomClipLoading extends FrameLayout {
-
 //	private static final int MAX_PROGRESS = 10000;
 	private ClipDrawable mClipDrawable;
 	private int mProgress = 0;
