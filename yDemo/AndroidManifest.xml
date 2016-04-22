@@ -69,6 +69,7 @@
         <activity android:name="org.cyy.demo.swiperefreshwidget.RefreshActivity"></activity>
         <activity android:name="org.cyy.demo.dealimge.DealImageActivity"></activity>
         <activity android:name="org.cyy.demo.imagegallery.ImagePagerActivity"></activity>
+        <activity android:name="org.cyy.demo.itemanim.ListViewItemAnimActivity"></activity>
         
         <service android:name="org.cyy.demo.service.MusicService"></service>
         <service android:name="org.cyy.demo.appdown.DownloadService"></service>

@@ -1,17 +1,21 @@
 package com.geihoo.adapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,6 +42,8 @@ public class SocietyPostAdapter extends BaseAdapter implements OnClickListener{
 	ArrayList<PostContentBean> postList;
 	Activity activity;
 	LayoutInflater inflater = null;
+	private boolean upScroll=false;
+	private Map<Integer, Boolean> isFrist; 
 	int type;
 	/** 弹出的更多选择框  */
 	public SocietyPostAdapter(Activity activity, ArrayList<PostContentBean> postList,int type) {
@@ -45,6 +51,7 @@ public class SocietyPostAdapter extends BaseAdapter implements OnClickListener{
 		this.postList = postList;
 		this.type = type;
 		inflater = LayoutInflater.from(activity);
+		isFrist = new HashMap<Integer,Boolean>();
 	}
 
 	@Override
@@ -63,6 +70,14 @@ public class SocietyPostAdapter extends BaseAdapter implements OnClickListener{
 	@Override
 	public long getItemId(int position) {
 		return position;
+	}
+
+	public boolean isUpScroll() {
+		return upScroll;
+	}
+
+	public void setUpScroll(boolean upScroll) {
+		this.upScroll = upScroll;
 	}
 
 	@Override
@@ -112,6 +127,12 @@ public class SocietyPostAdapter extends BaseAdapter implements OnClickListener{
 			vh.headImg.setOnClickListener(this);
 			vh.contentText.setOnClickListener(this);
 			vh.ivDynPinglun.setOnClickListener(this);
+			// 如果是第一次加载该view，则使用动画     
+			Log.i("cyy-cyy", "position="+position);
+			if (isFrist.get(position) == null || !isFrist.get(position)) {
+				view.setAnimation(AnimationUtils.loadAnimation(activity, R.anim.bottom_item_in));
+				isFrist.put(position, true);     
+			} 
 		return view;
 	}
 	

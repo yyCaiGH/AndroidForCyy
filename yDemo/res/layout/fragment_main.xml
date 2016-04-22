@@ -24,6 +24,12 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/button21"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickButton"
+                android:text="item 动画" />
+            <Button
                 android:id="@+id/button20"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

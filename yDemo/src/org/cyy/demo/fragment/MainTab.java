@@ -48,9 +48,9 @@ public class MainTab extends FragmentActivity implements OnClickListener{
 	}
 	private void initView() {
 		List<Fragment> _fragments = new ArrayList<Fragment>();
+		_fragments.add(new OneFragment());
 		_fragments.add(new ThreeFragment());
 		_fragments.add(new TowFragment());
-		_fragments.add(new OneFragment());
 		viewPager = (ViewPager) findViewById(R.id.viewpager);
 		viewPager.setOffscreenPageLimit(2);
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());

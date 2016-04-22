@@ -10,6 +10,8 @@
     <color name="sys_sub_bg_color">#FFFFFF</color>
     <!-- 系统文字主色调 -->
     <color name="sys_main_text_color">#424242</color>
+    <!-- 系统文字副色调 -->
+    <color name="sys_sub_text_color">#ffffff</color>
     <!-- 系统大标题文字颜色 -->
     <color name="sys_big_title_text_color">#ffffff</color>
     <!-- 系统小标题文字颜色 -->

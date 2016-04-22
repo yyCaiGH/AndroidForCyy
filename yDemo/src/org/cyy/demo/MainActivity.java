@@ -9,6 +9,7 @@ import org.cyy.demo.dragsortlistview.DSLVActivity;
 import org.cyy.demo.essay.EssayActivity;
 import org.cyy.demo.fragment.MainTab;
 import org.cyy.demo.imagegallery.ImagePagerActivity;
+import org.cyy.demo.itemanim.ListViewItemAnimActivity;
 import org.cyy.demo.launchmode.StandardActivity;
 import org.cyy.demo.ontouchevent.TestActivity;
 import org.cyy.demo.other.SmallQuestionActivity;
@@ -146,7 +147,10 @@ public class MainActivity extends Activity{
 			intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, 1);
 			startActivity(intent);
 		}
-		
+		if(view.getId()==R.id.button21){
+			Intent i = new Intent(this,ListViewItemAnimActivity.class);
+			startActivity(i);
+		}
 	}
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,

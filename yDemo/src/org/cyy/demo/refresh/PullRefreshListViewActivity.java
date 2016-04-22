@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
 
+import org.cyy.demo.itemanim.MyAdapter;
 import org.cyy.view.refresh.PullToRefreshBase;
 import org.cyy.view.refresh.PullToRefreshBase.OnRefreshListener;
-import org.cyy.view.refresh.PullToRefreshListView;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -25,7 +25,7 @@ public class PullRefreshListViewActivity extends Activity {
 	private int pullDown=0;
     private ListView mListView;
     private PullToRefreshListView mPullListView;
-    private ArrayAdapter<String> mAdapter;
+    private MyAdapter mAdapter;
     private LinkedList<String> mListItems;
     private SimpleDateFormat mDateFormat = new SimpleDateFormat("MM-dd HH:mm");
     private int mCurIndex = 0;
@@ -44,7 +44,7 @@ public class PullRefreshListViewActivity extends Activity {
         mCurIndex = mLoadDataCount;
         mListItems = new LinkedList<String>();
         mListItems.addAll(Arrays.asList(mStrings).subList(0, mCurIndex));
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mListItems);
+        mAdapter = new MyAdapter(mListItems, this);
         mListView = mPullListView.getRefreshableView();
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new OnItemClickListener() {

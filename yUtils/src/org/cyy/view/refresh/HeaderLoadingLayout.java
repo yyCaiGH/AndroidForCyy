@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -21,6 +23,9 @@ import android.widget.TextView;
  * @since 2013-7-30
  */
 public class HeaderLoadingLayout extends LoadingLayout {
+	
+	
+    
     /** 旋转动画时间 */
     private static final int ROTATE_ANIM_DURATION = 150;
     /**Header的容器*/
@@ -39,6 +44,7 @@ public class HeaderLoadingLayout extends LoadingLayout {
     private Animation mRotateUpAnim;
     /**向下的动画*/
     private Animation mRotateDownAnim;
+   
     
     /**
      * 构造方法
@@ -85,6 +91,7 @@ public class HeaderLoadingLayout extends LoadingLayout {
                 Animation.RELATIVE_TO_SELF, pivotValue);
         mRotateDownAnim.setDuration(ROTATE_ANIM_DURATION);
         mRotateDownAnim.setFillAfter(true);
+       
     }
 
     @Override
