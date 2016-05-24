@@ -43,10 +43,6 @@ public class MyAdapter extends BaseAdapter{
 	}
 
 	@Override
-	public int getViewTypeCount() {
-		return 2;
-	}
-	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder vh=null;
 		if(convertView==null){
